@@ -1,0 +1,30 @@
+name: NBA Daily Predictions
+
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Libraries installieren
+        run: pip install pandas numpy scikit-learn requests beautifulsoup4
+
+      - name: Model ausführen
+        run: python model.py
+
+      - name: Predictions pushen
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "BetEdge Bot"
+          git add data/predictions.json
+          git diff --staged --quiet || git commit -m "🏀 NBA Predictions $(date +'%Y-%m-%d')"
+          git push
