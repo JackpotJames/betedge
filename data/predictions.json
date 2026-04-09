@@ -1,6 +1,6 @@
 {
-  "last_updated": "2026-04-09T23:33:01.187381+00:00",
-  "model_version": "3.0.0",
+  "last_updated": "2026-04-09T23:54:07.477850+00:00",
+  "model_version": "4.0.0",
   "sport": "NBA",
   "games": [
     {
@@ -16,6 +16,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -30,28 +32,31 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
+        "home_win_prob": 0.517,
+        "away_win_prob": 0.483,
         "model_pick": "TOR",
-        "confidence": 52,
+        "confidence": 51,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": -2.8,
+        "away_ev": -9.2,
         "kelly_fraction": 0,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
+          "Ausgeglichenes Matchup",
           "Win%: TOR 50.0% vs MIA 50.0%"
-        ]
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     },
     {
@@ -67,6 +72,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -81,28 +88,31 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
+        "home_win_prob": 0.517,
+        "away_win_prob": 0.483,
         "model_pick": "WSH",
-        "confidence": 52,
+        "confidence": 51,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": -2.8,
+        "away_ev": -9.2,
         "kelly_fraction": 0,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
+          "Ausgeglichenes Matchup",
           "Win%: WSH 50.0% vs CHI 50.0%"
-        ]
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     },
     {
@@ -118,6 +128,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -132,28 +144,31 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 2,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
+        "home_win_prob": 0.517,
+        "away_win_prob": 0.483,
         "model_pick": "BKN",
-        "confidence": 52,
+        "confidence": 51,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": -2.8,
+        "away_ev": -9.2,
         "kelly_fraction": 0,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
+          "Ausgeglichenes Matchup",
           "Win%: BKN 50.0% vs IND 50.0%"
-        ]
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     },
     {
@@ -169,6 +184,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 3,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -183,28 +200,30 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 1,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
+        "home_win_prob": 0.537,
+        "away_win_prob": 0.463,
         "model_pick": "NY",
-        "confidence": 52,
+        "confidence": 53,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
-        "kelly_fraction": 0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": 1.0,
+        "away_ev": -13.0,
+        "kelly_fraction": 0.0109,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
-          "Win%: NY 50.0% vs BOS 50.0%"
-        ]
+          "NY ausgeruhter (3 Ruhetage vs 1)"
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     },
     {
@@ -220,6 +239,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 1,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -234,28 +255,30 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 3,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
-        "model_pick": "HOU",
-        "confidence": 52,
+        "home_win_prob": 0.497,
+        "away_win_prob": 0.503,
+        "model_pick": "PHI",
+        "confidence": 50,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": -6.6,
+        "away_ev": -5.4,
         "kelly_fraction": 0,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
-          "Win%: HOU 50.0% vs PHI 50.0%"
-        ]
+          "PHI ausgeruhter (3 Ruhetage vs 1)"
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     },
     {
@@ -271,6 +294,8 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 1,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
@@ -285,28 +310,31 @@
         "offensive_rating": 110,
         "defensive_rating": 110,
         "net_rating": 0,
+        "rest_days": 1,
+        "back_to_back": false,
         "pace": 98,
         "true_shooting": 0.57,
         "three_pct": 0.36,
         "injuries": []
       },
       "prediction": {
-        "home_win_prob": 0.521,
-        "away_win_prob": 0.479,
+        "home_win_prob": 0.517,
+        "away_win_prob": 0.483,
         "model_pick": "GS",
-        "confidence": 52,
+        "confidence": 51,
         "book_home_prob": 0.5,
         "book_away_prob": 0.5,
-        "home_odds": 1.9,
-        "away_odds": 1.9,
-        "home_ev": -1.0,
-        "away_ev": -9.0,
+        "home_odds": 1.88,
+        "away_odds": 1.88,
+        "home_ev": -2.8,
+        "away_ev": -9.2,
         "kelly_fraction": 0,
         "value_bet": null,
         "key_factors": [
-          "Heimvorteil einkalkuliert",
+          "Ausgeglichenes Matchup",
           "Win%: GS 50.0% vs LAL 50.0%"
-        ]
+        ],
+        "tipico_note": "Quoten manuell bei tipico.de pruefen"
       }
     }
   ],
@@ -317,7 +345,9 @@
       "away_abbr": "DET",
       "away_name": "Detroit Pistons",
       "date": "11.04.2026",
-      "time": "01:00"
+      "weekday": "Sa",
+      "time": "01:00",
+      "sort_key": "2026-04-10T23:00:00+00:00"
     },
     {
       "home_abbr": "WSH",
@@ -325,7 +355,9 @@
       "away_abbr": "MIA",
       "away_name": "Miami Heat",
       "date": "11.04.2026",
-      "time": "01:00"
+      "weekday": "Sa",
+      "time": "01:00",
+      "sort_key": "2026-04-10T23:00:00+00:00"
     },
     {
       "home_abbr": "ATL",
@@ -333,7 +365,9 @@
       "away_abbr": "CLE",
       "away_name": "Cleveland Cavaliers",
       "date": "11.04.2026",
-      "time": "01:00"
+      "weekday": "Sa",
+      "time": "01:00",
+      "sort_key": "2026-04-10T23:00:00+00:00"
     },
     {
       "home_abbr": "BOS",
@@ -341,7 +375,9 @@
       "away_abbr": "NO",
       "away_name": "New Orleans Pelicans",
       "date": "11.04.2026",
-      "time": "01:30"
+      "weekday": "Sa",
+      "time": "01:30",
+      "sort_key": "2026-04-10T23:30:00+00:00"
     },
     {
       "home_abbr": "IND",
@@ -349,7 +385,9 @@
       "away_abbr": "PHI",
       "away_name": "Philadelphia 76ers",
       "date": "11.04.2026",
-      "time": "01:30"
+      "weekday": "Sa",
+      "time": "01:30",
+      "sort_key": "2026-04-10T23:30:00+00:00"
     },
     {
       "home_abbr": "NY",
@@ -357,7 +395,9 @@
       "away_abbr": "TOR",
       "away_name": "Toronto Raptors",
       "date": "11.04.2026",
-      "time": "01:30"
+      "weekday": "Sa",
+      "time": "01:30",
+      "sort_key": "2026-04-10T23:30:00+00:00"
     },
     {
       "home_abbr": "CHI",
@@ -365,7 +405,9 @@
       "away_abbr": "ORL",
       "away_name": "Orlando Magic",
       "date": "11.04.2026",
-      "time": "02:00"
+      "weekday": "Sa",
+      "time": "02:00",
+      "sort_key": "2026-04-11T00:00:00+00:00"
     },
     {
       "home_abbr": "MIL",
@@ -373,7 +415,9 @@
       "away_abbr": "BKN",
       "away_name": "Brooklyn Nets",
       "date": "11.04.2026",
-      "time": "02:00"
+      "weekday": "Sa",
+      "time": "02:00",
+      "sort_key": "2026-04-11T00:00:00+00:00"
     },
     {
       "home_abbr": "SA",
@@ -381,7 +425,9 @@
       "away_abbr": "DAL",
       "away_name": "Dallas Mavericks",
       "date": "11.04.2026",
-      "time": "02:00"
+      "weekday": "Sa",
+      "time": "02:00",
+      "sort_key": "2026-04-11T00:00:00+00:00"
     },
     {
       "home_abbr": "DEN",
@@ -389,7 +435,9 @@
       "away_abbr": "OKC",
       "away_name": "Oklahoma City Thunder",
       "date": "11.04.2026",
-      "time": "03:00"
+      "weekday": "Sa",
+      "time": "03:00",
+      "sort_key": "2026-04-11T01:00:00+00:00"
     },
     {
       "home_abbr": "HOU",
@@ -397,7 +445,9 @@
       "away_abbr": "MIN",
       "away_name": "Minnesota Timberwolves",
       "date": "11.04.2026",
-      "time": "03:30"
+      "weekday": "Sa",
+      "time": "03:30",
+      "sort_key": "2026-04-11T01:30:00+00:00"
     },
     {
       "home_abbr": "UTAH",
@@ -405,7 +455,9 @@
       "away_abbr": "MEM",
       "away_name": "Memphis Grizzlies",
       "date": "11.04.2026",
-      "time": "03:30"
+      "weekday": "Sa",
+      "time": "03:30",
+      "sort_key": "2026-04-11T01:30:00+00:00"
     },
     {
       "home_abbr": "POR",
@@ -413,7 +465,9 @@
       "away_abbr": "LAC",
       "away_name": "LA Clippers",
       "date": "11.04.2026",
-      "time": "04:00"
+      "weekday": "Sa",
+      "time": "04:00",
+      "sort_key": "2026-04-11T02:00:00+00:00"
     },
     {
       "home_abbr": "SAC",
@@ -421,7 +475,9 @@
       "away_abbr": "GS",
       "away_name": "Golden State Warriors",
       "date": "11.04.2026",
-      "time": "04:00"
+      "weekday": "Sa",
+      "time": "04:00",
+      "sort_key": "2026-04-11T02:00:00+00:00"
     },
     {
       "home_abbr": "LAL",
@@ -429,13 +485,225 @@
       "away_abbr": "PHX",
       "away_name": "Phoenix Suns",
       "date": "11.04.2026",
-      "time": "04:30"
+      "weekday": "Sa",
+      "time": "04:30",
+      "sort_key": "2026-04-11T02:30:00+00:00"
+    },
+    {
+      "home_abbr": "BOS",
+      "home_name": "Boston Celtics",
+      "away_abbr": "ORL",
+      "away_name": "Orlando Magic",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "CLE",
+      "home_name": "Cleveland Cavaliers",
+      "away_abbr": "WSH",
+      "away_name": "Washington Wizards",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "IND",
+      "home_name": "Indiana Pacers",
+      "away_abbr": "DET",
+      "away_name": "Detroit Pistons",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "MIA",
+      "home_name": "Miami Heat",
+      "away_abbr": "ATL",
+      "away_name": "Atlanta Hawks",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "NY",
+      "home_name": "New York Knicks",
+      "away_abbr": "CHA",
+      "away_name": "Charlotte Hornets",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "PHI",
+      "home_name": "Philadelphia 76ers",
+      "away_abbr": "MIL",
+      "away_name": "Milwaukee Bucks",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "TOR",
+      "home_name": "Toronto Raptors",
+      "away_abbr": "BKN",
+      "away_name": "Brooklyn Nets",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "00:00",
+      "sort_key": "2026-04-12T22:00:00+00:00"
+    },
+    {
+      "home_abbr": "DAL",
+      "home_name": "Dallas Mavericks",
+      "away_abbr": "CHI",
+      "away_name": "Chicago Bulls",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "HOU",
+      "home_name": "Houston Rockets",
+      "away_abbr": "MEM",
+      "away_name": "Memphis Grizzlies",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "MIN",
+      "home_name": "Minnesota Timberwolves",
+      "away_abbr": "NO",
+      "away_name": "New Orleans Pelicans",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "OKC",
+      "home_name": "Oklahoma City Thunder",
+      "away_abbr": "PHX",
+      "away_name": "Phoenix Suns",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "SA",
+      "home_name": "San Antonio Spurs",
+      "away_abbr": "DEN",
+      "away_name": "Denver Nuggets",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "LAL",
+      "home_name": "Los Angeles Lakers",
+      "away_abbr": "UTAH",
+      "away_name": "Utah Jazz",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "LAC",
+      "home_name": "LA Clippers",
+      "away_abbr": "GS",
+      "away_name": "Golden State Warriors",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "POR",
+      "home_name": "Portland Trail Blazers",
+      "away_abbr": "SAC",
+      "away_name": "Sacramento Kings",
+      "date": "13.04.2026",
+      "weekday": "Mo",
+      "time": "02:30",
+      "sort_key": "2026-04-13T00:30:00+00:00"
+    },
+    {
+      "home_abbr": "TBD",
+      "home_name": "TBD",
+      "away_abbr": "TBD",
+      "away_name": "TBD",
+      "date": "15.04.2026",
+      "weekday": "Mi",
+      "time": "01:30",
+      "sort_key": "2026-04-14T23:30:00+00:00"
+    },
+    {
+      "home_abbr": "PHX",
+      "home_name": "Phoenix Suns",
+      "away_abbr": "Clippers/Trail Blazers",
+      "away_name": "Clippers/Trail Blazers",
+      "date": "15.04.2026",
+      "weekday": "Mi",
+      "time": "04:00",
+      "sort_key": "2026-04-15T02:00:00+00:00"
+    },
+    {
+      "home_abbr": "TBD",
+      "home_name": "TBD",
+      "away_abbr": "TBD",
+      "away_name": "TBD",
+      "date": "16.04.2026",
+      "weekday": "Do",
+      "time": "01:30",
+      "sort_key": "2026-04-15T23:30:00+00:00"
+    },
+    {
+      "home_abbr": "Clippers/Trail Blazers",
+      "home_name": "Clippers/Trail Blazers",
+      "away_abbr": "GS",
+      "away_name": "Golden State Warriors",
+      "date": "16.04.2026",
+      "weekday": "Do",
+      "time": "04:00",
+      "sort_key": "2026-04-16T02:00:00+00:00"
+    },
+    {
+      "home_abbr": "TBD",
+      "home_name": "TBD",
+      "away_abbr": "TBD",
+      "away_name": "TBD",
+      "date": "18.04.2026",
+      "weekday": "Sa",
+      "time": "01:30",
+      "sort_key": "2026-04-17T23:30:00+00:00"
+    },
+    {
+      "home_abbr": "TBD",
+      "home_name": "TBD",
+      "away_abbr": "TBD",
+      "away_name": "TBD",
+      "date": "18.04.2026",
+      "weekday": "Sa",
+      "time": "04:00",
+      "sort_key": "2026-04-18T02:00:00+00:00"
     }
   ],
   "model_stats": {
     "season_record": "laufend",
-    "accuracy": "~62%",
+    "accuracy": "~63%",
     "roi": "laufend",
-    "avg_confidence": 52
+    "avg_confidence": 51
   }
 }
