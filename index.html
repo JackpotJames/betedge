@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetEdge — AI Sports Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080c10;
+      --surface: #0d1318;
+      --surface2: #121920;
+      --border: rgba(255,255,255,0.07);
+      --accent: #00e5a0;
+      --accent2: #00b8ff;
+      --danger: #ff4757;
+      --warn: #ffa502;
+      --text: #e8edf2;
+      --muted: #5a6a7a;
+      --card-glow: rgba(0,229,160,0.06);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,160,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,160,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,12,16,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 20px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-logo .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .nav-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      background: rgba(0,229,160,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,0.2);
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    /* MAIN */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px 16px 80px;
+    }
+
+    /* HEADER STATS */
+    .header-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stat-pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .stat-pill .val {
+      font-family: 'DM Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent);
+      display: block;
+    }
+
+    .stat-pill .lbl {
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+      display: block;
+    }
+
+    /* SECTION HEADER */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+
+    .section-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .live-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .live-badge::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* GAME CARD */
+    .game-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .game-card:hover {
+      border-color: rgba(0,229,160,0.25);
+      transform: translateY(-1px);
+    }
+
+    .game-card.expanded {
+      border-color: rgba(0,229,160,0.3);
+      box-shadow: 0 0 30px var(--card-glow);
+    }
+
+    .card-top {
+      padding: 14px 16px 0;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-sport {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-time {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    /* TEAMS */
+    .teams-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .team {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team.away { align-items: flex-end; }
+
+    .team-abbr {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .team-name {
+      font-size: 0.65rem;
+      color: var(--muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 120px;
+    }
+
+    .team-record {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .team.pick .team-abbr { color: var(--accent); }
+
+    .vs-col {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+
+    /* PROB BAR */
+    .prob-section {
+      padding: 0 16px 14px;
+    }
+
+    .prob-bar-wrap {
+      position: relative;
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .prob-bar-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 3px;
+      transition: width 1s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .prob-labels {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .prob-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .prob-val.home { color: var(--accent); }
+    .prob-val.away { color: var(--text); opacity: 0.5; }
+
+    .confidence-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: rgba(0,229,160,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,0.15);
+    }
+
+    /* EV ROW */
+    .ev-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 0 16px 14px;
+    }
+
+    .ev-box {
+      background: var(--surface2);
+      border-radius: 8px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+    }
+
+    .ev-box .ev-label {
+      font-size: 0.58rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .ev-box .ev-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .ev-pos { color: var(--accent); }
+    .ev-neg { color: var(--danger); }
+
+    /* VALUE BET BANNER */
+    .value-banner {
+      margin: 0 16px 14px;
+      background: rgba(0,229,160,0.06);
+      border: 1px solid rgba(0,229,160,0.15);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.72rem;
+    }
+
+    .value-banner .arrow { color: var(--accent); font-size: 0.9rem; }
+    .value-banner strong { color: var(--accent); }
+
+    /* EXPAND TOGGLE */
+    .expand-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .expand-toggle:hover { color: var(--accent); }
+
+    .expand-icon {
+      transition: transform 0.3s;
+      font-size: 0.8rem;
+    }
+
+    .expanded .expand-icon { transform: rotate(180deg); }
+
+    /* DETAILS PANEL */
+    .details-panel {
+      display: none;
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.3s ease;
+    }
+
+    .game-card.expanded .details-panel { display: block; }
+
+    .detail-section {
+      margin-top: 14px;
+    }
+
+    .detail-title {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* AI vs BOOK TABLE */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table th {
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 0;
+      text-align: right;
+    }
+
+    .compare-table th:first-child { text-align: left; }
+
+    .compare-table td {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 5px 0;
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table td:first-child {
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .compare-table .highlight { color: var(--accent); }
+
+    /* STATS GRID */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 4px 8px;
+    }
+
+    .stat-row-left { text-align: left; }
+    .stat-row-right { text-align: right; }
+    .stat-row-label {
+      text-align: center;
+      font-size: 0.58rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      align-self: center;
+    }
+
+    .stat-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      padding: 4px 0;
+    }
+
+    .stat-val.better { color: var(--accent); font-weight: 500; }
+
+    /* INJURIES */
+    .injury-list { display: flex; flex-direction: column; gap: 5px; }
+
+    .injury-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+    }
+
+    .injury-status {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .status-out { background: rgba(255,71,87,0.15); color: var(--danger); border: 1px solid rgba(255,71,87,0.2); }
+    .status-dtd { background: rgba(255,165,2,0.12); color: var(--warn); border: 1px solid rgba(255,165,2,0.2); }
+
+    /* KEY FACTORS */
+    .factors-list { display: flex; flex-direction: column; gap: 5px; }
+
+    .factor-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.7rem;
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    .factor-item::before {
+      content: '→';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* KELLY BOX */
+    .kelly-box {
+      background: rgba(0,229,160,0.05);
+      border: 1px solid rgba(0,229,160,0.12);
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .kelly-item .k-label {
+      font-size: 0.58rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .kelly-item .k-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    /* BOTTOM NAV */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8,12,16,0.95);
+      backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0 12px;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      opacity: 0.4;
+      transition: opacity 0.2s;
+      padding: 4px 16px;
+    }
+
+    .nav-item.active { opacity: 1; }
+    .nav-item.active .nav-icon { color: var(--accent); }
+
+    .nav-icon { font-size: 1.1rem; }
+    .nav-label { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* LAST UPDATED */
+    .last-updated {
+      text-align: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      animation: fadeUp 0.5s 0.2s ease both;
+    }
+
+    /* SPORT FILTER */
+    .sport-filter {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+
+    .sport-filter::-webkit-scrollbar { display: none; }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .filter-btn.active {
+      background: rgba(0,229,160,0.1);
+      border-color: rgba(0,229,160,0.3);
+      color: var(--accent);
+    }
+
+    /* MODEL PERFORMANCE */
+    .perf-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 12px;
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+
+    .perf-title {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .perf-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .perf-item { text-align: center; }
+
+    .perf-val {
+      font-family: 'DM Mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .perf-lbl {
+      font-size: 0.55rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <div class="dot"></div>
+    Bet<span>Edge</span>
+  </div>
+  <div class="nav-badge">AI v1.0</div>
+</nav>
+
+<main>
+  <div class="last-updated" id="lastUpdated">Aktualisiert: —</div>
+
+  <!-- Model Performance -->
+  <div class="perf-card">
+    <div class="perf-title">🧠 Modell Performance — Saison 2025/26</div>
+    <div class="perf-grid" id="perfGrid">
+      <div class="perf-item"><div class="perf-val" id="pRecord">—</div><div class="perf-lbl">Record</div></div>
+      <div class="perf-item"><div class="perf-val" id="pAcc">—</div><div class="perf-lbl">Accuracy</div></div>
+      <div class="perf-item"><div class="perf-val" id="pRoi">—</div><div class="perf-lbl">ROI</div></div>
+      <div class="perf-item"><div class="perf-val" id="pConf">—</div><div class="perf-lbl">Ø Conf.</div></div>
+    </div>
+  </div>
+
+  <!-- Header Stats -->
+  <div class="header-stats" id="headerStats">
+    <div class="stat-pill"><span class="val" id="totalGames">—</span><span class="lbl">Spiele heute</span></div>
+    <div class="stat-pill"><span class="val" id="valueBets">—</span><span class="lbl">Value Bets</span></div>
+    <div class="stat-pill"><span class="val" id="avgEv">—</span><span class="lbl">Ø +EV</span></div>
+  </div>
+
+  <!-- Sport Filter -->
+  <div class="sport-filter">
+    <button class="filter-btn active" onclick="filterSport('all', this)">Alle</button>
+    <button class="filter-btn" onclick="filterSport('NBA', this)">🏀 NBA</button>
+    <button class="filter-btn" onclick="filterSport('soccer', this)">⚽ Fußball</button>
+    <button class="filter-btn" onclick="filterSport('tennis', this)">🎾 Tennis</button>
+  </div>
+
+  <!-- Section Header -->
+  <div class="section-head">
+    <div class="section-title">Heutige Vorhersagen</div>
+    <div class="live-badge">Live Model</div>
+  </div>
+
+  <!-- Games Container -->
+  <div id="gamesContainer"></div>
+</main>
+
+<!-- Bottom Nav -->
+<div class="bottom-nav">
+  <div class="nav-item active">
+    <div class="nav-icon">🏠</div>
+    <div class="nav-label">Home</div>
+  </div>
+  <div class="nav-item">
+    <div class="nav-icon">📊</div>
+    <div class="nav-label">Analyse</div>
+  </div>
+  <div class="nav-item">
+    <div class="nav-icon">📅</div>
+    <div class="nav-label">Kalender</div>
+  </div>
+  <div class="nav-item">
+    <div class="nav-icon">⚙️</div>
+    <div class="nav-label">Strategie</div>
+  </div>
+</div>
+
+<script>
+  let allGames = [];
+
+  function formatDate(isoStr) {
+    const d = new Date(isoStr);
+    return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  }
+
+  function getStatusClass(s) {
+    if (s.toLowerCase().includes('out')) return 'status-out';
+    return 'status-dtd';
+  }
+
+  function getStatusLabel(s) {
+    if (s.toLowerCase().includes('out')) return 'Out';
+    return 'Day-to-Day';
+  }
+
+  function getPlayerName(s) {
+    return s.replace(' (Out)', '').replace(' (Day-to-Day)', '');
+  }
+
+  function renderGame(g, idx) {
+    const p = g.prediction;
+    const homeProb = Math.round(p.home_win_prob * 100);
+    const awayProb = Math.round(p.away_win_prob * 100);
+    const isPick = (team) => p.model_pick === team;
+    const evHome = p.home_ev > 0 ? `+${p.home_ev.toFixed(1)}%` : `${p.home_ev.toFixed(1)}%`;
+    const evAway = p.away_ev > 0 ? `+${p.away_ev.toFixed(1)}%` : `${p.away_ev.toFixed(1)}%`;
+    const evHomeCls = p.home_ev > 0 ? 'ev-pos' : 'ev-neg';
+    const evAwayCls = p.away_ev > 0 ? 'ev-pos' : 'ev-neg';
+    const bookDiff = ((p.home_win_prob - p.book_home_prob) * 100).toFixed(1);
+    const bookDiffStr = bookDiff > 0 ? `+${bookDiff}%` : `${bookDiff}%`;
+
+    // Stats comparison
+    const h = g.home, a = g.away;
+    const betterOff = h.offensive_rating > a.offensive_rating;
+    const betterDef = h.defensive_rating < a.defensive_rating;
+    const betterNet = h.net_rating > a.net_rating;
+
+    const allInjuries = [
+      ...h.injuries.map(inj => ({ team: h.abbr, name: inj })),
+      ...a.injuries.map(inj => ({ team: a.abbr, name: inj }))
+    ];
+
+    return `
+    <div class="game-card" id="card-${idx}" style="animation-delay: ${idx * 0.1}s" onclick="toggleCard(${idx})">
+      <div class="card-top">
+        <div class="card-meta">
+          <span class="card-sport">🏀 NBA</span>
+          <span class="card-time">${g.time} Uhr</span>
+        </div>
+        <div class="teams-row">
+          <div class="team ${isPick(h.abbr) ? 'pick' : ''}">
+            <div class="team-abbr">${h.abbr}</div>
+            <div class="team-name">${h.name}</div>
+            <div class="team-record">${h.record}</div>
+          </div>
+          <div class="vs-col">VS</div>
+          <div class="team away ${isPick(a.abbr) ? 'pick' : ''}">
+            <div class="team-abbr">${a.abbr}</div>
+            <div class="team-name">${a.name}</div>
+            <div class="team-record">${a.record}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prob-section">
+        <div class="prob-bar-wrap">
+          <div class="prob-bar-fill" style="width: ${homeProb}%"></div>
+        </div>
+        <div class="prob-labels">
+          <span class="prob-val home">${homeProb}% ${h.abbr}</span>
+          <span class="confidence-chip">${p.confidence}% Conf.</span>
+          <span class="prob-val away">${awayProb}% ${a.abbr}</span>
+        </div>
+      </div>
+
+      <div class="ev-row">
+        <div class="ev-box">
+          <div class="ev-label">${h.abbr} Expected Value</div>
+          <div class="ev-val ${evHomeCls}">${evHome}</div>
+        </div>
+        <div class="ev-box">
+          <div class="ev-label">${a.abbr} Expected Value</div>
+          <div class="ev-val ${evAwayCls}">${evAway}</div>
+        </div>
+      </div>
+
+      ${p.value_bet ? `
+      <div class="value-banner">
+        <span class="arrow">↗</span>
+        <span>Value Bet: <strong>${p.value_bet}</strong> — Modell sieht ${Math.abs(parseFloat(bookDiff)).toFixed(1)}% Edge vs. Buchmacher</span>
+      </div>` : ''}
+
+      <button class="expand-toggle">
+        <span>Vollständige Analyse</span>
+        <span class="expand-icon">▾</span>
+      </button>
+
+      <div class="details-panel">
+
+        <!-- AI vs Book -->
+        <div class="detail-section">
+          <div class="detail-title">🤖 AI vs. Buchmacher</div>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>${h.abbr}</th>
+                <th>${a.abbr}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI Prob</td>
+                <td class="highlight">${homeProb}%</td>
+                <td>${awayProb}%</td>
+              </tr>
+              <tr>
+                <td>Book Prob</td>
+                <td>${Math.round(p.book_home_prob*100)}%</td>
+                <td>${Math.round(p.book_away_prob*100)}%</td>
+              </tr>
+              <tr>
+                <td>Odds</td>
+                <td>${p.home_odds}</td>
+                <td>${p.away_odds}</td>
+              </tr>
+              <tr>
+                <td>EV</td>
+                <td class="${evHomeCls}">${evHome}</td>
+                <td class="${evAwayCls}">${evAway}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Kelly -->
+        <div class="detail-section">
+          <div class="detail-title">📐 Kelly Kriterium</div>
+          <div class="kelly-box">
+            <div class="kelly-item">
+              <div class="k-label">Kelly Fraction</div>
+              <div class="k-val">${(p.kelly_fraction * 100).toFixed(1)}%</div>
+            </div>
+            <div class="kelly-item">
+              <div class="k-label">½ Kelly (empfohlen)</div>
+              <div class="k-val">${(p.kelly_fraction * 50).toFixed(1)}%</div>
+            </div>
+            <div class="kelly-item">
+              <div class="k-label">Pick</div>
+              <div class="k-val">${p.model_pick}</div>
+            </div>
+            <div class="kelly-item">
+              <div class="k-label">Confidence</div>
+              <div class="k-val">${p.confidence}%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="detail-section">
+          <div class="detail-title">📊 Last 10 Games — Statistiken</div>
+          <div class="stats-grid">
+            <div class="stat-val stat-row-left ${betterOff ? 'better' : ''}">${h.offensive_rating}</div>
+            <div class="stat-row-label">Off Rtg</div>
+            <div class="stat-val stat-row-right ${!betterOff ? 'better' : ''}">${a.offensive_rating}</div>
+
+            <div class="stat-val stat-row-left ${betterDef ? 'better' : ''}">${h.defensive_rating}</div>
+            <div class="stat-row-label">Def Rtg</div>
+            <div class="stat-val stat-row-right ${!betterDef ? 'better' : ''}">${a.defensive_rating}</div>
+
+            <div class="stat-val stat-row-left ${betterNet ? 'better' : ''}">+${h.net_rating}</div>
+            <div class="stat-row-label">Net Rtg</div>
+            <div class="stat-val stat-row-right ${!betterNet ? 'better' : ''}">+${a.net_rating}</div>
+
+            <div class="stat-val stat-row-left ${h.true_shooting > a.true_shooting ? 'better' : ''}">${(h.true_shooting*100).toFixed(1)}%</div>
+            <div class="stat-row-label">TS%</div>
+            <div class="stat-val stat-row-right ${a.true_shooting > h.true_shooting ? 'better' : ''}">${(a.true_shooting*100).toFixed(1)}%</div>
+
+            <div class="stat-val stat-row-left ${h.three_pct > a.three_pct ? 'better' : ''}">${(h.three_pct*100).toFixed(1)}%</div>
+            <div class="stat-row-label">3P%</div>
+            <div class="stat-val stat-row-right ${a.three_pct > h.three_pct ? 'better' : ''}">${(a.three_pct*100).toFixed(1)}%</div>
+
+            <div class="stat-val stat-row-left">${h.last5}</div>
+            <div class="stat-row-label">Last 5</div>
+            <div class="stat-val stat-row-right">${a.last5}</div>
+          </div>
+        </div>
+
+        <!-- Injuries -->
+        ${allInjuries.length > 0 ? `
+        <div class="detail-section">
+          <div class="detail-title">⚠️ Injury Report</div>
+          <div class="injury-list">
+            ${allInjuries.map(inj => `
+            <div class="injury-item">
+              <span class="injury-status ${getStatusClass(inj.name)}">${getStatusLabel(inj.name)}</span>
+              <span>${inj.team} — ${getPlayerName(inj.name)}</span>
+            </div>`).join('')}
+          </div>
+        </div>` : ''}
+
+        <!-- Key Factors -->
+        <div class="detail-section">
+          <div class="detail-title">🔑 Key Factors</div>
+          <div class="factors-list">
+            ${p.key_factors.map(f => `<div class="factor-item">${f}</div>`).join('')}
+          </div>
+        </div>
+
+      </div>
+    </div>`;
+  }
+
+  function toggleCard(idx) {
+    const card = document.getElementById(`card-${idx}`);
+    card.classList.toggle('expanded');
+  }
+
+  function filterSport(sport, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGames(sport);
+  }
+
+  function renderGames(sport = 'all') {
+    const container = document.getElementById('gamesContainer');
+    const filtered = sport === 'all' ? allGames : allGames.filter(g => g.sport === sport || sport === 'NBA');
+    if (filtered.length === 0) {
+      container.innerHTML = `<div style="text-align:center;color:var(--muted);padding:40px;font-size:0.8rem;">Keine Spiele gefunden</div>`;
+      return;
+    }
+    container.innerHTML = filtered.map((g, i) => renderGame(g, i)).join('');
+
+    // Animate bars after render
+    setTimeout(() => {
+      document.querySelectorAll('.prob-bar-fill').forEach(bar => {
+        const w = bar.style.width;
+        bar.style.width = '0%';
+        setTimeout(() => { bar.style.width = w; }, 50);
+      });
+    }, 100);
+  }
+
+  async function loadData() {
+    try {
+      const res = await fetch('data/predictions.json');
+      const data = await res.json();
+      allGames = data.games;
+
+      // Last updated
+      document.getElementById('lastUpdated').textContent = `Aktualisiert: ${formatDate(data.last_updated)}`;
+
+      // Model stats
+      document.getElementById('pRecord').textContent = data.model_stats.season_record;
+      document.getElementById('pAcc').textContent = data.model_stats.accuracy;
+      document.getElementById('pRoi').textContent = data.model_stats.roi;
+      document.getElementById('pConf').textContent = data.model_stats.avg_confidence + '%';
+
+      // Header stats
+      const valueBets = allGames.filter(g => g.prediction.value_bet).length;
+      const posEVs = allGames.filter(g => Math.max(g.prediction.home_ev, g.prediction.away_ev) > 0);
+      const avgEV = posEVs.length > 0
+        ? '+' + (posEVs.reduce((s, g) => s + Math.max(g.prediction.home_ev, g.prediction.away_ev), 0) / posEVs.length).toFixed(1) + '%'
+        : '—';
+
+      document.getElementById('totalGames').textContent = allGames.length;
+      document.getElementById('valueBets').textContent = valueBets;
+      document.getElementById('avgEv').textContent = avgEV;
+
+      renderGames();
+    } catch (e) {
+      document.getElementById('gamesContainer').innerHTML =
+        `<div style="text-align:center;color:var(--muted);padding:40px;font-size:0.8rem;">Keine Daten gefunden.<br>predictions.json wird täglich aktualisiert.</div>`;
+    }
+  }
+
+  loadData();
+
+  // ─── PAGES ───────────────────────────────────────────────────────────────────
+  let currentPage = 'home';
+  let globalData = null;
+
+  function showPage(page) {
+    currentPage = page;
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    document.querySelectorAll('.nav-item')[['home','analyse','kalender','strategie'].indexOf(page)]?.classList.add('active');
+
+    const main = document.querySelector('main');
+
+    if (page === 'home') {
+      loadData();
+      return;
+    }
+
+    if (page === 'analyse') {
+      main.innerHTML = renderAnalysePage();
+    } else if (page === 'kalender') {
+      main.innerHTML = renderKalenderPage();
+    } else if (page === 'strategie') {
+      main.innerHTML = renderStrategiePage();
+    }
+  }
+
+  function renderAnalysePage() {
+    if (!globalData || !globalData.games || globalData.games.length === 0) {
+      return `<div style="padding:40px;text-align:center;color:var(--muted)">Keine Daten verfügbar</div>`;
+    }
+    const games = globalData.games;
+    const valueBets = games.filter(g => g.prediction.value_bet);
+    const avgConf = Math.round(games.reduce((s,g) => s + g.prediction.confidence, 0) / games.length);
+
+    let html = `
+    <div style="padding:16px 0 80px">
+      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:16px">📊 Analyse — Heute</div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">Tagesübersicht</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-family:'DM Mono',monospace;font-size:1.4rem;color:var(--accent)">${games.length}</div>
+            <div style="font-size:0.6rem;color:var(--muted);margin-top:2px">SPIELE</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-family:'DM Mono',monospace;font-size:1.4rem;color:var(--accent)">${valueBets.length}</div>
+            <div style="font-size:0.6rem;color:var(--muted);margin-top:2px">VALUE BETS</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-family:'DM Mono',monospace;font-size:1.4rem;color:var(--accent)">${avgConf}%</div>
+            <div style="font-size:0.6rem;color:var(--muted);margin-top:2px">Ø CONF</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-family:'DM Mono',monospace;font-size:1.4rem;color:var(--accent)">${globalData.model_stats?.roi || '—'}</div>
+            <div style="font-size:0.6rem;color:var(--muted);margin-top:2px">ROI</div>
+          </div>
+        </div>
+      </div>`;
+
+    if (valueBets.length > 0) {
+      html += `<div style="background:var(--surface);border:1px solid rgba(0,229,160,0.2);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">🔥 Value Bets heute</div>`;
+      valueBets.forEach(g => {
+        const p = g.prediction;
+        const pick = p.value_bet;
+        const isHome = pick === g.home.abbr;
+        const ev = isHome ? p.home_ev : p.away_ev;
+        const odds = isHome ? p.home_odds : p.away_odds;
+        const kelly = (p.kelly_fraction * 50 * 100).toFixed(1);
+        html += `<div style="background:var(--surface2);border-radius:10px;padding:12px;margin-bottom:8px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <span style="font-weight:700;color:var(--accent)">${pick}</span>
+            <span style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--accent)">+${ev}% EV</span>
+          </div>
+          <div style="font-size:0.65rem;color:var(--muted)">${g.home.abbr} vs ${g.away.abbr} · ${g.time} Uhr</div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <div style="background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.15);border-radius:6px;padding:4px 8px;font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--accent)">Odds: ${odds}</div>
+            <div style="background:rgba(0,229,160,0.08);border:1px solid rgba(0,229,160,0.15);border-radius:6px;padding:4px 8px;font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--accent)">½ Kelly: ${kelly}%</div>
+          </div>
+        </div>`;
+      });
+      html += `</div>`;
+    }
+
+    html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px">
+      <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">📈 Alle Picks heute</div>`;
+    games.forEach(g => {
+      const p = g.prediction;
+      const ev = p.home_ev > p.away_ev ? p.home_ev : p.away_ev;
+      const evClass = ev > 0 ? 'color:var(--accent)' : 'color:var(--danger)';
+      html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
+        <div>
+          <div style="font-size:0.8rem;font-weight:700">${g.home.abbr} vs ${g.away.abbr}</div>
+          <div style="font-size:0.6rem;color:var(--muted)">${g.time} Uhr · Pick: <span style="color:var(--accent)">${p.model_pick}</span></div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:'DM Mono',monospace;font-size:0.8rem;${evClass}">${ev > 0 ? '+' : ''}${ev}%</div>
+          <div style="font-size:0.6rem;color:var(--muted)">${p.confidence}% Conf.</div>
+        </div>
+      </div>`;
+    });
+    html += `</div></div>`;
+    return html;
+  }
+
+  function renderKalenderPage() {
+    const upcoming = globalData?.upcoming || [];
+    let html = `<div style="padding:16px 0 80px">
+      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:16px">📅 Kommende Spiele</div>`;
+
+    if (upcoming.length === 0) {
+      html += `<div style="text-align:center;color:var(--muted);padding:40px;font-size:0.8rem">Keine kommenden Spiele geladen</div>`;
+    } else {
+      let lastDate = '';
+      upcoming.forEach(g => {
+        if (g.date !== lastDate) {
+          lastDate = g.date;
+          html += `<div style="font-size:0.65rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin:16px 0 8px">${g.date}</div>`;
+        }
+        html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:700;font-size:0.85rem">${g.home_abbr} vs ${g.away_abbr}</div>
+            <div style="font-size:0.65rem;color:var(--muted);margin-top:2px">${g.home_name} · Heim</div>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--muted)">${g.time} Uhr</div>
+        </div>`;
+      });
+    }
+    html += `</div>`;
+    return html;
+  }
+
+  function renderStrategiePage() {
+    return `<div style="padding:16px 0 80px">
+      <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:16px">⚙️ Strategie</div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">📐 Kelly Kriterium</div>
+        <p style="font-size:0.75rem;line-height:1.6;color:var(--text);opacity:0.8;margin-bottom:12px">
+          Das Kelly Kriterium berechnet den optimalen Wetteinsatz basierend auf deiner geschätzten Gewinnwahrscheinlichkeit und den Buchmacher-Quoten.
+        </p>
+        <div style="background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.15);border-radius:8px;padding:12px">
+          <div style="font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--accent);margin-bottom:6px">f = (p × b - q) / b</div>
+          <div style="font-size:0.65rem;color:var(--muted)">f = Anteil Bankroll · p = Gewinnwahrsch. · b = Quotendezimal-1 · q = 1-p</div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">💡 Empfehlung</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:var(--surface2);border-radius:8px;padding:10px">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:3px">½ Kelly nutzen</div>
+            <div style="font-size:0.65rem;color:var(--muted)">Halbiertes Kelly reduziert Risiko erheblich bei ~75% des Ertrags</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:3px">Nur +EV Bets</div>
+            <div style="font-size:0.65rem;color:var(--muted)">Nur wetten wenn Expected Value positiv ist (grün markiert)</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:3px">Max 3-5% pro Wette</div>
+            <div style="font-size:0.65rem;color:var(--muted)">Nie mehr als 5% der Bankroll auf eine einzelne Wette</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:10px">
+            <div style="font-size:0.7rem;font-weight:700;color:var(--accent);margin-bottom:3px">Confidence > 60%</div>
+            <div style="font-size:0.65rem;color:var(--muted)">Nur Picks mit hohem Confidence Score in Betracht ziehen</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:12px">🎯 Buchmacher Margin</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;font-size:0.72rem;padding:6px 0;border-bottom:1px solid var(--border)">
+            <span>Tipico</span><span style="font-family:'DM Mono',monospace;color:var(--danger)">~6%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.72rem;padding:6px 0;border-bottom:1px solid var(--border)">
+            <span>Bet365</span><span style="font-family:'DM Mono',monospace;color:var(--warn)">~5%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.72rem;padding:6px 0;border-bottom:1px solid var(--border)">
+            <span>Betfair Exchange</span><span style="font-family:'DM Mono',monospace;color:var(--accent)">~2-3%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:0.72rem;padding:6px 0">
+            <span>Pinnacle</span><span style="font-family:'DM Mono',monospace;color:var(--accent)">~2%</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  // Override nav items
+  document.querySelectorAll('.nav-item').forEach((item, i) => {
+    const pages = ['home', 'analyse', 'kalender', 'strategie'];
+    item.onclick = () => showPage(pages[i]);
+  });
+
+  // Store data globally when loaded
+  const origLoadData = loadData;
+  async function loadData() {
+    try {
+      const res = await fetch('data/predictions.json');
+      const data = await res.json();
+      globalData = data;
+      allGames = data.games;
+      document.getElementById('lastUpdated').textContent = 'Aktualisiert: ' + formatDate(data.last_updated);
+      document.getElementById('pRecord').textContent = data.model_stats.season_record;
+      document.getElementById('pAcc').textContent = data.model_stats.accuracy;
+      document.getElementById('pRoi').textContent = data.model_stats.roi;
+      document.getElementById('pConf').textContent = data.model_stats.avg_confidence + '%';
+      const valueBets = allGames.filter(g => g.prediction.value_bet).length;
+      const posEVs = allGames.filter(g => Math.max(g.prediction.home_ev, g.prediction.away_ev) > 0);
+      const avgEV = posEVs.length > 0
+        ? '+' + (posEVs.reduce((s, g) => s + Math.max(g.prediction.home_ev, g.prediction.away_ev), 0) / posEVs.length).toFixed(1) + '%'
+        : '—';
+      document.getElementById('totalGames').textContent = allGames.length;
+      document.getElementById('valueBets').textContent = valueBets;
+      document.getElementById('avgEv').textContent = avgEV;
+      renderGames();
+    } catch (e) {
+      document.getElementById('gamesContainer').innerHTML =
+        '<div style="text-align:center;color:var(--muted);padding:40px;font-size:0.8rem;">Keine Daten gefunden.<br>predictions.json wird täglich aktualisiert.</div>';
+    }
+  }
+
+  loadData();
+</script>
+</body>
+</html>
