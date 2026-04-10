@@ -1,0 +1,152 @@
+[
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:00:00Z",
+    "home_abbr": "CHA",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.4609,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:00:00Z",
+    "home_abbr": "WAS",
+    "away_abbr": "MIA",
+    "pick": "MIA",
+    "home_prob": 0.3632,
+    "confidence": 64,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:00:00Z",
+    "home_abbr": "ATL",
+    "away_abbr": "CLE",
+    "pick": "CLE",
+    "home_prob": 0.4592,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:30:00Z",
+    "home_abbr": "BOS",
+    "away_abbr": "NOP",
+    "pick": "BOS",
+    "home_prob": 0.6072,
+    "confidence": 61,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:30:00Z",
+    "home_abbr": "IND",
+    "away_abbr": "PHI",
+    "pick": "PHI",
+    "home_prob": 0.3907,
+    "confidence": 61,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-10T23:30:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "TOR",
+    "pick": "NYK",
+    "home_prob": 0.5304,
+    "confidence": 53,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T00:00:00Z",
+    "home_abbr": "CHI",
+    "away_abbr": "ORL",
+    "pick": "ORL",
+    "home_prob": 0.3845,
+    "confidence": 62,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T00:00:00Z",
+    "home_abbr": "MIL",
+    "away_abbr": "BKN",
+    "pick": "MIL",
+    "home_prob": 0.6028,
+    "confidence": 60,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T00:00:00Z",
+    "home_abbr": "SAS",
+    "away_abbr": "DAL",
+    "pick": "SAS",
+    "home_prob": 0.7119,
+    "confidence": 71,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T01:00:00Z",
+    "home_abbr": "DEN",
+    "away_abbr": "OKC",
+    "pick": "OKC",
+    "home_prob": 0.4665,
+    "confidence": 53,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T01:30:00Z",
+    "home_abbr": "HOU",
+    "away_abbr": "MIN",
+    "pick": "HOU",
+    "home_prob": 0.5662,
+    "confidence": 57,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T01:30:00Z",
+    "home_abbr": "UTA",
+    "away_abbr": "MEM",
+    "pick": "MEM",
+    "home_prob": 0.4907,
+    "confidence": 51,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T02:00:00Z",
+    "home_abbr": "POR",
+    "away_abbr": "LAC",
+    "pick": "POR",
+    "home_prob": 0.5023,
+    "confidence": 50,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T02:00:00Z",
+    "home_abbr": "SAC",
+    "away_abbr": "GSW",
+    "pick": "SAC",
+    "home_prob": 0.5156,
+    "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-04-10",
+    "game_dt": "2026-04-11T02:30:00Z",
+    "home_abbr": "LAL",
+    "away_abbr": "PHX",
+    "pick": "LAL",
+    "home_prob": 0.575,
+    "confidence": 57,
+    "correct": null
+  }
+]
