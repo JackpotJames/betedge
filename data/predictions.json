@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10T00:11:07.549580+00:00",
+  "last_updated": "2026-04-10T00:16:36.816863+00:00",
   "model_version": "4.0.0",
   "sport": "NBA",
   "games": [
@@ -44,20 +44,20 @@
         "away_win_prob": 0.483,
         "model_pick": "TOR",
         "confidence": 51,
-        "book_home_prob": 0.143,
-        "book_away_prob": 0.857,
-        "home_odds": 5.7,
-        "away_odds": 1.1,
-        "home_ev": 194.7,
-        "away_ev": -46.9,
-        "kelly_fraction": 0.4142,
-        "value_bet": "TOR",
+        "book_home_prob": 0.891,
+        "book_away_prob": 0.109,
+        "home_odds": 1.02,
+        "away_odds": 10.0,
+        "home_ev": -47.3,
+        "away_ev": 383.0,
+        "kelly_fraction": 0,
+        "value_bet": "MIA",
         "key_factors": [
           "TOR spielt Back-to-Back (Nachteil)",
           "MIA spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (35 Bookies)",
+        "odds_source": "Konsensus (35 Bookies)"
       }
     },
     {
@@ -101,20 +101,20 @@
         "away_win_prob": 0.483,
         "model_pick": "WSH",
         "confidence": 51,
-        "book_home_prob": 0.698,
-        "book_away_prob": 0.302,
-        "home_odds": 1.3,
-        "away_odds": 3.2,
-        "home_ev": -32.8,
-        "away_ev": 54.6,
-        "kelly_fraction": 0,
-        "value_bet": "CHI",
+        "book_home_prob": 0.308,
+        "book_away_prob": 0.692,
+        "home_odds": 3.2,
+        "away_odds": 1.3,
+        "home_ev": 65.4,
+        "away_ev": -37.2,
+        "kelly_fraction": 0.2975,
+        "value_bet": "WSH",
         "key_factors": [
           "WSH spielt Back-to-Back (Nachteil)",
           "CHI spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (34 Bookies)",
+        "odds_source": "Konsensus (34 Bookies)"
       }
     },
     {
@@ -158,20 +158,20 @@
         "away_win_prob": 0.483,
         "model_pick": "BKN",
         "confidence": 51,
-        "book_home_prob": 0.104,
-        "book_away_prob": 0.896,
-        "home_odds": 8.5,
-        "away_odds": 1.04,
-        "home_ev": 339.4,
-        "away_ev": -49.8,
-        "kelly_fraction": 0.4526,
+        "book_home_prob": 0.115,
+        "book_away_prob": 0.885,
+        "home_odds": 9.0,
+        "away_odds": 1.03,
+        "home_ev": 365.3,
+        "away_ev": -50.3,
+        "kelly_fraction": 0.4566,
         "value_bet": "BKN",
         "key_factors": [
           "BKN spielt Back-to-Back (Nachteil)",
           "IND spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (35 Bookies)",
+        "odds_source": "Konsensus (35 Bookies)"
       }
     },
     {
@@ -215,20 +215,20 @@
         "away_win_prob": 0.483,
         "model_pick": "NY",
         "confidence": 51,
-        "book_home_prob": 0.458,
-        "book_away_prob": 0.542,
-        "home_odds": 1.95,
-        "away_odds": 1.75,
-        "home_ev": 0.8,
-        "away_ev": -15.5,
-        "kelly_fraction": 0.0086,
-        "value_bet": null,
+        "book_home_prob": 0.613,
+        "book_away_prob": 0.387,
+        "home_odds": 1.45,
+        "away_odds": 2.55,
+        "home_ev": -25.0,
+        "away_ev": 23.2,
+        "kelly_fraction": 0,
+        "value_bet": "BOS",
         "key_factors": [
           "NY spielt Back-to-Back (Nachteil)",
           "BOS spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (35 Bookies)",
+        "odds_source": "Konsensus (35 Bookies)"
       }
     },
     {
@@ -272,20 +272,20 @@
         "away_win_prob": 0.483,
         "model_pick": "HOU",
         "confidence": 51,
-        "book_home_prob": 0.671,
-        "book_away_prob": 0.329,
-        "home_odds": 1.37,
-        "away_odds": 3.0,
-        "home_ev": -29.2,
-        "away_ev": 44.9,
+        "book_home_prob": 0.663,
+        "book_away_prob": 0.337,
+        "home_odds": 1.45,
+        "away_odds": 2.55,
+        "home_ev": -25.0,
+        "away_ev": 23.2,
         "kelly_fraction": 0,
         "value_bet": "PHI",
         "key_factors": [
           "HOU spielt Back-to-Back (Nachteil)",
           "PHI spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (40 Bookies)",
+        "odds_source": "Konsensus (40 Bookies)"
       }
     },
     {
@@ -329,8 +329,8 @@
         "away_win_prob": 0.483,
         "model_pick": "GS",
         "confidence": 51,
-        "book_home_prob": 0.532,
-        "book_away_prob": 0.468,
+        "book_home_prob": 0.529,
+        "book_away_prob": 0.471,
         "home_odds": 1.77,
         "away_odds": 2.0,
         "home_ev": -8.5,
@@ -341,8 +341,8 @@
           "GS spielt Back-to-Back (Nachteil)",
           "LAL spielt Back-to-Back (Nachteil)"
         ],
-        "tipico_note": "Quoten via Konsensus (3 Bookies)",
-        "odds_source": "Konsensus (3 Bookies)"
+        "tipico_note": "Quoten via Konsensus (46 Bookies)",
+        "odds_source": "Konsensus (46 Bookies)"
       }
     }
   ],
