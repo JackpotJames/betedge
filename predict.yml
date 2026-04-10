@@ -1,0 +1,36 @@
+name: predict
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # 14:00 Uhr deutsche Zeit (UTC+2)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python Setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pakete installieren
+        run: pip install requests numpy nba_api
+
+      - name: Model ausführen
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python model.py
+
+      - name: Predictions pushen
+        run: |
+          git config user.name "BetEdge Bot"
+          git config user.email "bot@betedge"
+          git add data/
+          git diff --staged --quiet || git commit -m "Update predictions $(date +%Y-%m-%d)"
+          git push
