@@ -276,8 +276,22 @@ def get_standings():
 
 # ─── NBA.COM: TODAY'S GAMES ──────────────────────────────────────────────────────
 def get_todays_games():
-    """Get today's games from NBA.com live scoreboard."""
-    print("Lade heutige Spiele von NBA.com...")
+    """Get upcoming games — today + tomorrow. Filters out past/live/final games."""
+    utc_now = datetime.now(timezone.utc)
+    print(f"Lade Spiele (UTC: {utc_now.strftime('%Y-%m-%d %H:%M')})...")
+
+    # Try NBA.com first
+    nba_games = _get_games_nbacom(utc_now)
+    if nba_games:
+        return nba_games
+
+    # Fallback: ESPN today + tomorrow
+    print("  Fallback auf ESPN Scoreboard...")
+    return _get_games_espn_multi(utc_now)
+
+
+def _get_games_nbacom(utc_now):
+    """Get upcoming games from NBA.com live scoreboard."""
     try:
         from nba_api.live.nba.endpoints import scoreboard
         sb = scoreboard.ScoreBoard()
@@ -292,62 +306,80 @@ def get_todays_games():
             if not ha or not aa:
                 print(f"    ⚠ Skipping game: {away_tri}@{home_tri} — unknown team")
                 continue
-            # Parse game time
+            # Only scheduled (not started) games
+            status = g.get('gameStatus', 1)
+            if status != 1:
+                continue
+            # Parse game time and verify it's in the future
             game_dt_str = g.get('gameTimeUTC', '')
             try:
                 game_dt = datetime.fromisoformat(game_dt_str.replace('Z', '+00:00'))
+                if game_dt <= utc_now:
+                    continue  # Already started or past
                 de_time = game_dt.astimezone(timezone(timedelta(hours=2))).strftime('%H:%M')
             except:
                 de_time = g.get('gameStatusText', 'TBD')
             games.append({
-                'home_abbr': ha,
-                'home_name': TEAMS[ha]['name'],
-                'away_abbr': aa,
-                'away_name': TEAMS[aa]['name'],
-                'time': de_time,
-                'game_dt': game_dt_str,
-                'status': g.get('gameStatus', 1)  # 1=scheduled, 2=live, 3=final
+                'home_abbr': ha, 'home_name': TEAMS[ha]['name'],
+                'away_abbr': aa, 'away_name': TEAMS[aa]['name'],
+                'time': de_time, 'game_dt': game_dt_str, 'status': 1
             })
-        # Only return scheduled games (not yet started)
-        scheduled = [g for g in games if g['status'] == 1]
-        print(f"  ✓ {len(scheduled)} Spiele heute (scheduled), {len(games)} total")
-        return scheduled if scheduled else games
+        print(f"  NBA.com: {len(games)} upcoming games")
+        if games:
+            return games
+        # NBA.com only shows today — if nothing upcoming, try ESPN for tomorrow
+        print("  Keine upcoming Spiele auf NBA.com, checke morgen via ESPN...")
+        return None
     except Exception as e:
         print(f"  ✗ NBA.com Scoreboard fehlgeschlagen: {e}")
-        print("  Fallback auf ESPN Scoreboard...")
-        return get_todays_games_espn()
+        return None
 
 
-def get_todays_games_espn():
-    """Fallback: today's games from ESPN."""
-    utc_now = datetime.now(timezone.utc)
-    d_str = utc_now.strftime('%Y%m%d')
-    d = espn_get(f'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={d_str}')
+def _get_games_espn_multi(utc_now):
+    """Get upcoming games from ESPN — checks today and tomorrow."""
     games = []
-    for event in d.get('events', []):
-        comp = event.get('competitions', [{}])[0]
-        teams_raw = comp.get('competitors', [])
-        if len(teams_raw) < 2:
-            continue
-        home = next((t for t in teams_raw if t['homeAway'] == 'home'), teams_raw[0])
-        away = next((t for t in teams_raw if t['homeAway'] == 'away'), teams_raw[1])
-        ha = canonical(home['team']['abbreviation'])
-        aa = canonical(away['team']['abbreviation'])
-        if not ha or not aa:
-            continue
-        try:
-            game_dt = datetime.fromisoformat(comp.get('date', '').replace('Z', '+00:00'))
-            de_time = game_dt.astimezone(timezone(timedelta(hours=2))).strftime('%H:%M')
-        except:
-            de_time = 'TBD'
-        games.append({
-            'home_abbr': ha, 'home_name': TEAMS[ha]['name'],
-            'away_abbr': aa, 'away_name': TEAMS[aa]['name'],
-            'time': de_time, 'game_dt': comp.get('date', ''),
-            'status': 1
-        })
-    print(f"  ESPN Fallback: {len(games)} Spiele")
-    return games
+    for offset in range(2):  # today + tomorrow
+        d_str = (utc_now + timedelta(days=offset)).strftime('%Y%m%d')
+        d = espn_get(f'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={d_str}')
+        for event in d.get('events', []):
+            comp = event.get('competitions', [{}])[0]
+            # Skip completed or in-progress games
+            status_type = comp.get('status', {}).get('type', {})
+            if status_type.get('completed', False) or status_type.get('name') == 'STATUS_IN_PROGRESS':
+                continue
+            teams_raw = comp.get('competitors', [])
+            if len(teams_raw) < 2:
+                continue
+            home = next((t for t in teams_raw if t['homeAway'] == 'home'), teams_raw[0])
+            away = next((t for t in teams_raw if t['homeAway'] == 'away'), teams_raw[1])
+            ha = canonical(home['team']['abbreviation'])
+            aa = canonical(away['team']['abbreviation'])
+            if not ha or not aa:
+                continue
+            try:
+                game_dt = datetime.fromisoformat(comp.get('date', '').replace('Z', '+00:00'))
+                if game_dt <= utc_now:
+                    continue  # Already in the past
+                de_time = game_dt.astimezone(timezone(timedelta(hours=2))).strftime('%H:%M')
+            except:
+                de_time = 'TBD'
+            games.append({
+                'home_abbr': ha, 'home_name': TEAMS[ha]['name'],
+                'away_abbr': aa, 'away_name': TEAMS[aa]['name'],
+                'time': de_time, 'game_dt': comp.get('date', ''),
+                'status': 1
+            })
+        time.sleep(0.3)
+    # Deduplicate by matchup
+    seen = set()
+    unique = []
+    for g in games:
+        key = f"{g['home_abbr']}_{g['away_abbr']}_{g['game_dt']}"
+        if key not in seen:
+            seen.add(key)
+            unique.append(g)
+    print(f"  ESPN: {len(unique)} upcoming games (heute+morgen)")
+    return unique
 
 
 # ─── ESPN: ADVANCED GAME STATS ───────────────────────────────────────────────────
@@ -529,9 +561,9 @@ def load_all_odds():
     return []
 
 
-def get_odds_consensus(home_abbr, away_abbr):
-    """Match odds from The Odds API to our canonical teams."""
-    games = load_all_odds()
+def get_odds_consensus(home_abbr, away_abbr, all_odds=None):
+    """Match odds from The Odds API to our canonical teams. Pass all_odds to avoid repeated API calls."""
+    games = all_odds if all_odds is not None else load_all_odds()
     if not games:
         return None, None, None, None, []
     home_name = TEAMS.get(home_abbr, {}).get('name', '')
@@ -762,13 +794,13 @@ def main():
     print("\n--- HEUTIGE SPIELE ---")
     games = get_todays_games()
     if not games:
-        print("Keine Spiele heute.")
+        print("Keine upcoming Spiele gefunden (heute + morgen).")
         output = {
             'date': datetime.now().strftime('%Y-%m-%d'),
             'updated': datetime.now().strftime('%H:%M'),
             'games': [],
             'no_games': True,
-            'message': 'Heute keine NBA-Spiele.',
+            'message': 'Keine upcoming NBA-Spiele gefunden.',
             'model_version': 6
         }
         os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
@@ -779,6 +811,12 @@ def main():
 
     # Generate predictions
     print(f"\n--- VORHERSAGEN ({len(games)} Spiele) ---")
+
+    # Load odds ONCE for all games
+    print("\n--- ODDS ---")
+    all_odds = load_all_odds()
+    print(f"  {len(all_odds)} Spiele mit Odds geladen")
+
     output_games = []
     new_history = []
 
@@ -830,9 +868,8 @@ def main():
             h_rest, a_rest, h_inj_impact, a_inj_impact, weights
         )
 
-        # Odds
-        book_home, book_away, tipico_h, tipico_a, bookies = get_odds_consensus(ha, aa)
-        time.sleep(0.3)
+        # Odds (cached — no API call)
+        book_home, book_away, tipico_h, tipico_a, bookies = get_odds_consensus(ha, aa, all_odds)
 
         model_pick = ha if home_prob >= 0.5 else aa
         confidence = round(max(home_prob, away_prob) * 100)
