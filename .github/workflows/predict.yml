@@ -22,10 +22,15 @@ jobs:
       - name: Pakete installieren
         run: pip install requests numpy nba_api
 
-      - name: Model ausführen
+      - name: NBA Model ausführen
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python model.py
+
+      - name: ATP Model ausführen
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python model_atp.py
 
       - name: Predictions pushen
         run: |
