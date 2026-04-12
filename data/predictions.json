@@ -1,10 +1,10 @@
 {
-  "date": "2026-04-11",
-  "updated": "14:11",
+  "date": "2026-04-12",
+  "updated": "14:17",
   "games": [
     {
-      "id": "nba_20260411_BOS_ORL",
-      "date": "2026-04-11",
+      "id": "nba_20260412_BOS_ORL",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Boston Celtics",
@@ -19,8 +19,8 @@
         "net_rating": 7.7,
         "efg": 0.586,
         "pace": 97.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 0.7,
         "efg": 0.543,
         "pace": 105.0,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -57,17 +57,15 @@
         "value_bet": false,
         "key_factors": [
           "BOS bessere Saisonbilanz (67.9% vs 55.6%)",
-          "BOS bessere Wurfeffizienz (eFG%)",
-          "BOS spielt Back-to-Back",
-          "ORL spielt Back-to-Back"
+          "BOS bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_CLE_WAS",
-      "date": "2026-04-11",
+      "id": "nba_20260412_CLE_WAS",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Cleveland Cavaliers",
@@ -82,8 +80,8 @@
         "net_rating": 4.0,
         "efg": 0.573,
         "pace": 101.5,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -100,8 +98,8 @@
         "net_rating": -12.0,
         "efg": 0.543,
         "pace": 104.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -121,8 +119,6 @@
         "key_factors": [
           "CLE bessere Saisonbilanz (63.0% vs 21.0%)",
           "CLE bessere Wurfeffizienz (eFG%)",
-          "CLE spielt Back-to-Back",
-          "WAS spielt Back-to-Back",
           "CLE in besserer Form (L10: 7-3)"
         ],
         "odds_source": "Keine Quoten",
@@ -130,8 +126,8 @@
       }
     },
     {
-      "id": "nba_20260411_IND_DET",
-      "date": "2026-04-11",
+      "id": "nba_20260412_IND_DET",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Indiana Pacers",
@@ -146,8 +142,8 @@
         "net_rating": -7.9,
         "efg": 0.568,
         "pace": 103.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -164,8 +160,8 @@
         "net_rating": 8.1,
         "efg": 0.575,
         "pace": 100.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -184,8 +180,6 @@
         "value_bet": false,
         "key_factors": [
           "DET bessere Saisonbilanz (72.8% vs 23.5%)",
-          "IND spielt Back-to-Back",
-          "DET spielt Back-to-Back",
           "DET in besserer Form (L10: 7-3)"
         ],
         "odds_source": "Keine Quoten",
@@ -193,8 +187,8 @@
       }
     },
     {
-      "id": "nba_20260411_MIA_ATL",
-      "date": "2026-04-11",
+      "id": "nba_20260412_MIA_ATL",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Miami Heat",
@@ -209,8 +203,8 @@
         "net_rating": 2.0,
         "efg": 0.576,
         "pace": 103.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -227,8 +221,8 @@
         "net_rating": 2.8,
         "efg": 0.567,
         "pace": 102.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -246,8 +240,6 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "MIA spielt Back-to-Back",
-          "ATL spielt Back-to-Back",
           "ATL in besserer Form (L10: 7-3)"
         ],
         "odds_source": "Keine Quoten",
@@ -255,8 +247,8 @@
       }
     },
     {
-      "id": "nba_20260411_NYK_CHA",
-      "date": "2026-04-11",
+      "id": "nba_20260412_NYK_CHA",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "New York Knicks",
@@ -271,8 +263,8 @@
         "net_rating": 6.6,
         "efg": 0.58,
         "pace": 94.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -289,8 +281,8 @@
         "net_rating": 4.7,
         "efg": 0.559,
         "pace": 96.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -309,17 +301,15 @@
         "value_bet": false,
         "key_factors": [
           "NYK bessere Saisonbilanz (65.4% vs 53.1%)",
-          "NYK bessere Wurfeffizienz (eFG%)",
-          "NYK spielt Back-to-Back",
-          "CHA spielt Back-to-Back"
+          "NYK bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_PHI_MIL",
-      "date": "2026-04-11",
+      "id": "nba_20260412_PHI_MIL",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Philadelphia 76ers",
@@ -334,8 +324,8 @@
         "net_rating": -0.4,
         "efg": 0.521,
         "pace": 102.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -352,8 +342,8 @@
         "net_rating": -6.0,
         "efg": 0.583,
         "pace": 97.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -372,17 +362,15 @@
         "value_bet": false,
         "key_factors": [
           "PHI bessere Saisonbilanz (54.3% vs 39.5%)",
-          "MIL bessere Wurfeffizienz (eFG%)",
-          "PHI spielt Back-to-Back",
-          "MIL spielt Back-to-Back"
+          "MIL bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_TOR_BKN",
-      "date": "2026-04-11",
+      "id": "nba_20260412_TOR_BKN",
+      "date": "2026-04-12",
       "time": "00:00",
       "home": {
         "name": "Toronto Raptors",
@@ -397,8 +385,8 @@
         "net_rating": 2.4,
         "efg": 0.574,
         "pace": 99.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -415,8 +403,8 @@
         "net_rating": -9.7,
         "efg": 0.51,
         "pace": 99.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -435,17 +423,15 @@
         "value_bet": false,
         "key_factors": [
           "TOR bessere Saisonbilanz (55.6% vs 24.7%)",
-          "TOR bessere Wurfeffizienz (eFG%)",
-          "TOR spielt Back-to-Back",
-          "BKN spielt Back-to-Back"
+          "TOR bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_DAL_CHI",
-      "date": "2026-04-11",
+      "id": "nba_20260412_DAL_CHI",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Dallas Mavericks",
@@ -460,8 +446,8 @@
         "net_rating": -5.8,
         "efg": 0.507,
         "pace": 104.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -478,8 +464,8 @@
         "net_rating": -5.0,
         "efg": 0.531,
         "pace": 107.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -497,17 +483,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "CHI bessere Wurfeffizienz (eFG%)",
-          "DAL spielt Back-to-Back",
-          "CHI spielt Back-to-Back"
+          "CHI bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_HOU_MEM",
-      "date": "2026-04-11",
+      "id": "nba_20260412_HOU_MEM",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Houston Rockets",
@@ -522,8 +506,8 @@
         "net_rating": 4.9,
         "efg": 0.575,
         "pace": 99.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -540,8 +524,8 @@
         "net_rating": -5.7,
         "efg": 0.527,
         "pace": 104.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -561,8 +545,6 @@
         "key_factors": [
           "HOU bessere Saisonbilanz (63.0% vs 30.9%)",
           "HOU bessere Wurfeffizienz (eFG%)",
-          "HOU spielt Back-to-Back",
-          "MEM spielt Back-to-Back",
           "HOU in besserer Form (L10: 8-2)"
         ],
         "odds_source": "Keine Quoten",
@@ -570,8 +552,8 @@
       }
     },
     {
-      "id": "nba_20260411_MIN_NOP",
-      "date": "2026-04-11",
+      "id": "nba_20260412_MIN_NOP",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Minnesota Timberwolves",
@@ -586,8 +568,8 @@
         "net_rating": 3.3,
         "efg": 0.552,
         "pace": 102.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -604,8 +586,8 @@
         "net_rating": -4.5,
         "efg": 0.535,
         "pace": 103.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -624,8 +606,6 @@
         "value_bet": false,
         "key_factors": [
           "MIN bessere Saisonbilanz (59.3% vs 32.1%)",
-          "MIN spielt Back-to-Back",
-          "NOP spielt Back-to-Back",
           "MIN in besserer Form (L10: 5-5)"
         ],
         "odds_source": "Keine Quoten",
@@ -633,8 +613,8 @@
       }
     },
     {
-      "id": "nba_20260411_OKC_PHX",
-      "date": "2026-04-11",
+      "id": "nba_20260412_OKC_PHX",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Oklahoma City Thunder",
@@ -649,8 +629,8 @@
         "net_rating": 11.7,
         "efg": 0.585,
         "pace": 101.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -667,8 +647,8 @@
         "net_rating": 1.1,
         "efg": 0.517,
         "pace": 99.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -688,8 +668,6 @@
         "key_factors": [
           "OKC bessere Saisonbilanz (79.0% vs 54.3%)",
           "OKC bessere Wurfeffizienz (eFG%)",
-          "OKC spielt Back-to-Back",
-          "PHX spielt Back-to-Back",
           "OKC in besserer Form (L10: 8-2)"
         ],
         "odds_source": "Keine Quoten",
@@ -697,8 +675,8 @@
       }
     },
     {
-      "id": "nba_20260411_SAS_DEN",
-      "date": "2026-04-11",
+      "id": "nba_20260412_SAS_DEN",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -713,8 +691,8 @@
         "net_rating": 8.5,
         "efg": 0.574,
         "pace": 101.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -731,8 +709,8 @@
         "net_rating": 5.1,
         "efg": 0.605,
         "pace": 103.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -751,17 +729,15 @@
         "value_bet": false,
         "key_factors": [
           "SAS bessere Saisonbilanz (76.5% vs 65.4%)",
-          "DEN bessere Wurfeffizienz (eFG%)",
-          "SAS spielt Back-to-Back",
-          "DEN spielt Back-to-Back"
+          "DEN bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_LAL_UTA",
-      "date": "2026-04-11",
+      "id": "nba_20260412_LAL_UTA",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Los Angeles Lakers",
@@ -776,8 +752,8 @@
         "net_rating": 1.5,
         "efg": 0.58,
         "pace": 98.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -794,8 +770,8 @@
         "net_rating": -8.2,
         "efg": 0.544,
         "pace": 109.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -815,8 +791,6 @@
         "key_factors": [
           "LAL bessere Saisonbilanz (64.2% vs 27.2%)",
           "LAL bessere Wurfeffizienz (eFG%)",
-          "LAL spielt Back-to-Back",
-          "UTA spielt Back-to-Back",
           "LAL in besserer Form (L10: 6-4)"
         ],
         "odds_source": "Keine Quoten",
@@ -824,8 +798,8 @@
       }
     },
     {
-      "id": "nba_20260411_LAC_GSW",
-      "date": "2026-04-11",
+      "id": "nba_20260412_LAC_GSW",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Los Angeles Clippers",
@@ -840,8 +814,8 @@
         "net_rating": 1.1,
         "efg": 0.563,
         "pace": 99.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -858,8 +832,8 @@
         "net_rating": -0.5,
         "efg": 0.56,
         "pace": 99.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -876,17 +850,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "LAC spielt Back-to-Back",
-          "GSW spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260411_POR_SAC",
-      "date": "2026-04-11",
+      "id": "nba_20260412_POR_SAC",
+      "date": "2026-04-12",
       "time": "02:30",
       "home": {
         "name": "Portland Trail Blazers",
@@ -901,8 +872,8 @@
         "net_rating": -0.4,
         "efg": 0.55,
         "pace": 101.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -919,8 +890,8 @@
         "net_rating": -10.0,
         "efg": 0.55,
         "pace": 99.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -938,9 +909,7 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "POR bessere Saisonbilanz (50.6% vs 27.2%)",
-          "POR spielt Back-to-Back",
-          "SAC spielt Back-to-Back"
+          "POR bessere Saisonbilanz (50.6% vs 27.2%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
