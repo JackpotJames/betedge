@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>BetEdge — Predictions</title>
+<title>BetEdge — Sports Predictions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
   --green:#34d399;--green-soft:rgba(52,211,153,.1);--green-glow:rgba(52,211,153,.15);
   --red:#fb7185;--red-soft:rgba(251,113,133,.1);
   --blue:#60a5fa;--blue-soft:rgba(96,165,250,.1);
+  --tennis:#4ade80;--tennis-soft:rgba(74,222,128,.08);--tennis-glow:rgba(74,222,128,.15);
   --display:'Fraunces',Georgia,serif;
   --body:'Outfit',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
@@ -30,56 +31,65 @@ body{min-height:100dvh;padding-bottom:env(safe-area-inset-bottom);overflow-x:hid
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 input{font-family:inherit}
 
-/* ─── NOISE TEXTURE ─── */
+/* ─── NOISE + GLOW ─── */
 body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.025;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 body::after{content:'';position:fixed;top:-30%;left:50%;transform:translateX(-50%);width:140%;height:60%;
   background:radial-gradient(ellipse at center,rgba(255,107,43,.04) 0%,transparent 65%);pointer-events:none;z-index:-1}
+body.sport-atp::after{background:radial-gradient(ellipse at center,rgba(74,222,128,.04) 0%,transparent 65%)}
 
 /* ─── HEADER ─── */
-.header{padding:1rem 1.25rem .8rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;
-  background:rgba(7,8,10,.85);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4)}
-.brand{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.45rem}
+.header{padding:1rem 1.25rem .7rem;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;
+  background:rgba(7,8,10,.88);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4)}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.55rem}
+.brand{display:flex;align-items:baseline;gap:.6rem}
 .brand-mark{font-family:var(--display);font-weight:900;font-size:1.75rem;letter-spacing:-.03em;font-style:italic;
   background:linear-gradient(135deg,var(--ink) 40%,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .brand-ver{font-family:var(--mono);font-size:.58rem;color:var(--ink-mute);padding:.15rem .4rem;
   border:1px solid var(--border-hi);border-radius:4px;text-transform:uppercase;letter-spacing:.1em}
-.meta-row{display:flex;gap:.7rem;font-family:var(--mono);font-size:.62rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em;margin-top:.35rem}
+
+/* ─── SPORT SWITCHER ─── */
+.sport-switcher{display:flex;gap:.25rem;padding:.2rem;background:var(--surface);border-radius:10px;border:1px solid var(--border)}
+.sport-btn{padding:.35rem .75rem;border-radius:7px;font-family:var(--mono);font-size:.65rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--ink-mute);transition:all .2s;display:flex;align-items:center;gap:.3rem}
+.sport-btn:hover{color:var(--ink-dim)}
+.sport-btn.active[data-sport="nba"]{background:var(--accent-soft);color:var(--accent);box-shadow:0 0 0 1px rgba(255,107,43,.2)}
+.sport-btn.active[data-sport="atp"]{background:var(--tennis-soft);color:var(--tennis);box-shadow:0 0 0 1px rgba(74,222,128,.2)}
+.sport-icon{font-size:.85rem}
+
+.meta-row{display:flex;gap:.7rem;font-family:var(--mono);font-size:.62rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em}
 .pulse{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:.3rem;
   animation:pulse 2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(52,211,153,.4)}50%{opacity:.7;box-shadow:0 0 0 4px rgba(52,211,153,0)}}
 
-/* ─── SPORT SWITCHER ─── */
-.sport-switch{display:flex;gap:.3rem}
-.sport-btn{padding:.28rem .75rem;border-radius:20px;font-family:var(--mono);font-size:.62rem;
-  font-weight:600;letter-spacing:.06em;color:var(--ink-mute);border:1px solid var(--border);transition:all .2s}
-.sport-btn.active{background:var(--accent-soft);color:var(--accent);border-color:rgba(255,107,43,.35)}
-.sport-btn:hover:not(.active){color:var(--ink-dim);border-color:var(--border-hi)}
-
 /* ─── TABS ─── */
 .tabs{display:flex;gap:0;border-bottom:1px solid var(--border);background:rgba(7,8,10,.6);
-  backdrop-filter:blur(12px);position:sticky;top:82px;z-index:40;overflow-x:auto;scrollbar-width:none}
+  backdrop-filter:blur(12px);position:sticky;top:78px;z-index:40;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
 .tab{padding:.85rem 1rem;font-size:.68rem;font-weight:600;color:var(--ink-mute);text-transform:uppercase;
   letter-spacing:.1em;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;position:relative}
 .tab:hover{color:var(--ink-dim)}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+body.sport-atp .tab.active{color:var(--tennis);border-bottom-color:var(--tennis)}
 .tab-badge{position:absolute;top:.45rem;right:.3rem;min-width:16px;height:16px;padding:0 4px;
   background:var(--accent);color:#07080a;font-size:.55rem;font-weight:700;border-radius:8px;
   display:flex;align-items:center;justify-content:center;line-height:1}
+body.sport-atp .tab-badge{background:var(--tennis)}
 
-/* ─── MAIN ─── */
+/* ─── MAIN LAYOUT ─── */
 .main{padding:1rem 1rem 5rem;max-width:900px;margin:0 auto}
 .page{display:none}
 .page.active{display:block}
 
-/* ─── SKELETON ─── */
+/* ─── SKELETON LOADING ─── */
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skeleton{border-radius:var(--radius);overflow:hidden;position:relative}
 .skeleton::after{content:'';position:absolute;inset:0;
   background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.03) 50%,transparent 100%);
   background-size:200% 100%;animation:shimmer 1.8s ease-in-out infinite}
 .skel-card{height:220px;background:var(--surface);margin-bottom:.85rem;border:1px solid var(--border)}
+.skel-stat{height:100px;background:var(--surface);border:1px solid var(--border)}
 .loading-wrap{display:block}.loaded-wrap{display:none}
 body.loaded .loading-wrap{display:none}
 body.loaded .loaded-wrap{display:block}
@@ -87,31 +97,51 @@ body.loaded .loaded-wrap{display:block}
 /* ─── CARD ENTRANCE ─── */
 @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .game-card{animation:slideUp .4s ease both}
-.game-card:nth-child(1){animation-delay:0s}.game-card:nth-child(2){animation-delay:.08s}
-.game-card:nth-child(3){animation-delay:.16s}.game-card:nth-child(4){animation-delay:.24s}
+.game-card:nth-child(1){animation-delay:0s}
+.game-card:nth-child(2){animation-delay:.08s}
+.game-card:nth-child(3){animation-delay:.16s}
+.game-card:nth-child(4){animation-delay:.24s}
 .game-card:nth-child(5){animation-delay:.32s}
 
 /* ─── SECTION TITLE ─── */
 .section-title{font-family:var(--display);font-weight:600;font-size:1.05rem;font-style:italic;
   margin:1.2rem .2rem .6rem;display:flex;align-items:center;gap:.5rem;color:var(--ink-dim)}
 .section-title .accent-line{width:18px;height:2px;background:var(--accent);border-radius:1px}
+body.sport-atp .section-title .accent-line{background:var(--tennis)}
 .section-count{font-family:var(--mono);font-size:.6rem;color:var(--ink-mute);margin-left:auto;text-transform:uppercase;letter-spacing:.1em}
 
-/* ─── GAME CARD ─── */
+/* ─── GAME CARD (NBA + ATP base) ─── */
 .game-card{background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius);
   margin-bottom:.85rem;overflow:hidden;transition:border-color .25s,box-shadow .25s}
 .game-card:hover{border-color:rgba(255,107,43,.2);box-shadow:0 4px 24px -8px rgba(255,107,43,.12)}
 .game-card.value{border-color:rgba(255,107,43,.3);box-shadow:0 0 0 1px rgba(255,107,43,.08),0 8px 32px -8px rgba(255,107,43,.18)}
+body.sport-atp .game-card:hover{border-color:rgba(74,222,128,.2);box-shadow:0 4px 24px -8px rgba(74,222,128,.1)}
+body.sport-atp .game-card.value{border-color:rgba(74,222,128,.3);box-shadow:0 0 0 1px rgba(74,222,128,.06),0 8px 32px -8px rgba(74,222,128,.15)}
 
-.card-header{display:flex;justify-content:space-between;align-items:center;padding:.55rem 1rem;
-  border-bottom:1px solid var(--border);background:var(--bg-2);gap:.5rem;flex-wrap:wrap}
+.card-header{display:flex;justify-content:space-between;align-items:center;padding:.55rem .9rem;
+  border-bottom:1px solid var(--border);background:var(--bg-2)}
 .card-time{font-family:var(--mono);font-size:.62rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.08em}
 .value-badge{display:flex;align-items:center;gap:.3rem;font-family:var(--mono);font-size:.6rem;font-weight:700;
   color:var(--accent);padding:.2rem .5rem;background:var(--accent-soft);border-radius:4px;letter-spacing:.04em}
 .value-badge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 6px var(--accent)}
-.badge-row{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+body.sport-atp .value-badge{color:var(--tennis);background:var(--tennis-soft)}
+body.sport-atp .value-badge::before{background:var(--tennis);box-shadow:0 0 6px var(--tennis)}
 
-/* ─── MATCHUP ─── */
+/* ─── TIER BADGE (ATP) ─── */
+.tier-badge{font-family:var(--mono);font-size:.52rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:.15rem .45rem;border-radius:4px;line-height:1.4}
+.tier-gs{background:rgba(250,204,21,.12);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
+.tier-1000{background:rgba(168,85,247,.12);color:#c084fc;border:1px solid rgba(192,132,252,.25)}
+.tier-500{background:rgba(96,165,250,.12);color:#60a5fa;border:1px solid rgba(96,165,250,.25)}
+.tier-250{background:rgba(148,163,184,.08);color:#94a3b8;border:1px solid rgba(148,163,184,.2)}
+.surface-chip{font-family:var(--mono);font-size:.5rem;font-weight:600;text-transform:uppercase;
+  padding:.1rem .35rem;border-radius:3px;letter-spacing:.06em}
+.surface-clay{background:rgba(234,88,12,.12);color:#fb923c}
+.surface-hard{background:rgba(59,130,246,.1);color:#60a5fa}
+.surface-grass{background:rgba(74,222,128,.1);color:#4ade80}
+.surface-carpet{background:rgba(148,163,184,.08);color:#94a3b8}
+
+/* ─── MATCHUP (NBA) ─── */
 .matchup{padding:1rem 1rem .6rem;display:grid;grid-template-columns:1fr auto 1fr;gap:.5rem;align-items:center}
 .team{display:flex;flex-direction:column;align-items:center;gap:.25rem}
 .team.away{align-items:flex-start}
@@ -127,29 +157,27 @@ body.loaded .loaded-wrap{display:block}
 .vs-col{display:flex;flex-direction:column;align-items:center;gap:.3rem}
 .vs-at{font-family:var(--mono);font-size:.55rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.15em}
 
-/* ─── PLAYER AVATAR (ATP) ─── */
-.player-avatar{border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:900;font-style:italic;flex-shrink:0;transition:transform .2s;
-  background:hsl(var(--av-hue,25),50%,18%);
-  border:2px solid hsl(var(--av-hue,25),55%,38%);
-  color:hsl(var(--av-hue,25),60%,68%);
-  font-size:.85rem}
-.game-card:hover .player-avatar{transform:scale(1.05)}
-
-/* ─── TOURNAMENT LINE (ATP) ─── */
-.tournament-line{padding:.4rem 1rem .1rem;font-family:var(--mono);font-size:.6rem;color:var(--ink-mute);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-
-/* ─── SURFACE & CATEGORY BADGES ─── */
-.surface-badge,.cat-badge{font-family:var(--mono);font-size:.52rem;font-weight:700;
-  padding:.12rem .38rem;border-radius:4px;text-transform:uppercase;letter-spacing:.08em}
-.surface-clay{background:rgba(205,90,30,.12);color:#e07048;border:1px solid rgba(205,90,30,.25)}
-.surface-grass{background:rgba(34,197,94,.08);color:#34d399;border:1px solid rgba(34,197,94,.2)}
-.surface-hard{background:rgba(96,165,250,.08);color:#60a5fa;border:1px solid rgba(96,165,250,.2)}
-.cat-slam{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.25)}
-.cat-1000{background:rgba(167,139,250,.1);color:#a78bfa;border:1px solid rgba(167,139,250,.2)}
-.cat-500{background:rgba(52,211,153,.08);color:#34d399;border:1px solid rgba(52,211,153,.18)}
-.cat-250{color:var(--ink-mute);border:1px solid var(--border)}
+/* ─── PLAYER MATCHUP (ATP) ─── */
+.atp-matchup{padding:.85rem 1rem .6rem;display:grid;grid-template-columns:1fr auto 1fr;gap:.4rem;align-items:center}
+.player{display:flex;flex-direction:column;align-items:center;gap:.3rem;min-width:0}
+.player.p1{align-items:flex-start}
+.player.p2{align-items:flex-end}
+.player-photo-wrap{position:relative;flex-shrink:0}
+.player-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;
+  border:2px solid var(--border-hi);transition:transform .2s,border-color .2s;background:var(--bg-2)}
+.game-card:hover .player-photo{transform:scale(1.04)}
+.player-photo.has-value{border-color:var(--tennis)}
+.player-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:800;font-size:.95rem;font-style:italic;flex-shrink:0;
+  border:2px solid var(--border-hi);transition:transform .2s}
+.game-card:hover .player-avatar{transform:scale(1.04)}
+.player-name{font-family:var(--display);font-weight:800;font-size:.95rem;letter-spacing:-.01em;line-height:1.1}
+.player-name-long{font-size:.8rem}
+.player.p2 .player-name{text-align:right}
+.player-rank{font-family:var(--mono);font-size:.58rem;color:var(--ink-mute);margin-top:.05rem}
+.player.p2 .player-rank{text-align:right}
+.pick-arrow{font-size:.65rem;color:var(--tennis);font-weight:700;margin-top:.1rem;opacity:0;transition:opacity .2s}
+.pick-arrow.show{opacity:1}
 
 /* ─── CONFIDENCE RING ─── */
 .conf-ring{width:52px;height:52px;position:relative}
@@ -157,7 +185,7 @@ body.loaded .loaded-wrap{display:block}
 .conf-ring .track{fill:none;stroke:var(--border-hi);stroke-width:3}
 .conf-ring .bar{fill:none;stroke-width:3;stroke-linecap:round;transition:stroke-dasharray .8s ease}
 .conf-ring .val{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:.7rem;font-weight:700}
+  font-family:var(--mono);font-size:.7rem;font-weight:700;transform:none}
 
 /* ─── PROB BAR ─── */
 .prob-bar-wrap{padding:0 1rem .7rem}
@@ -167,6 +195,8 @@ body.loaded .loaded-wrap{display:block}
 .prob-fill.away{background:var(--surface-3);color:var(--ink-dim);border-right:1px solid var(--border)}
 .prob-fill.home{background:var(--accent-soft);color:var(--accent)}
 .prob-fill.pick-hl{background:rgba(255,107,43,.18);color:var(--accent-2)}
+body.sport-atp .prob-fill.home{background:var(--tennis-soft);color:var(--tennis)}
+body.sport-atp .prob-fill.pick-hl{background:rgba(74,222,128,.14);color:var(--tennis)}
 .prob-labels{display:flex;justify-content:space-between;padding:0 .15rem;margin-top:.3rem;
   font-family:var(--mono);font-size:.55rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.06em}
 
@@ -176,7 +206,8 @@ body.loaded .loaded-wrap{display:block}
 .odds-cell:last-child{border-right:none}
 .odds-lbl{font-family:var(--mono);font-size:.5rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
 .odds-val{font-family:var(--mono);font-weight:600;font-size:.8rem}
-.odds-val.pos{color:var(--green)}.odds-val.neg{color:var(--red)}
+.odds-val.pos{color:var(--green)}
+.odds-val.neg{color:var(--red)}
 
 /* ─── CARD ACTIONS ─── */
 .card-actions{display:flex;border-top:1px solid var(--border)}
@@ -186,6 +217,8 @@ body.loaded .loaded-wrap{display:block}
 .card-btn:active{transform:scale(.98)}
 .card-btn.primary{color:var(--accent)}
 .card-btn.primary:hover{background:var(--accent-soft)}
+body.sport-atp .card-btn.primary{color:var(--tennis)}
+body.sport-atp .card-btn.primary:hover{background:var(--tennis-soft)}
 .card-btn + .card-btn{border-left:1px solid var(--border)}
 .card-btn.placed{color:var(--green);background:var(--green-soft)}
 .expand{max-height:0;overflow:hidden;transition:max-height .3s ease;background:var(--bg-2)}
@@ -193,6 +226,7 @@ body.loaded .loaded-wrap{display:block}
 .expand-inner{padding:.7rem 1rem}
 .factor{display:flex;align-items:flex-start;gap:.4rem;padding:.3rem 0;font-size:.73rem;color:var(--ink-dim);line-height:1.4}
 .factor::before{content:'›';color:var(--accent);font-weight:700;flex-shrink:0}
+body.sport-atp .factor::before{color:var(--tennis)}
 
 /* ─── EMPTY STATE ─── */
 .empty-state{text-align:center;padding:3.5rem 1.5rem;background:var(--surface);border:1px solid var(--border);
@@ -209,11 +243,14 @@ body.loaded .loaded-wrap{display:block}
 .bank-input{width:100%;background:var(--bg-2);border:1px solid var(--border-hi);border-radius:var(--radius-sm);
   padding:.75rem .85rem;color:var(--ink);font-family:var(--mono);font-size:.95rem;margin-top:.7rem;outline:none;transition:border-color .2s}
 .bank-input:focus{border-color:var(--accent)}
+body.sport-atp .bank-input:focus{border-color:var(--tennis)}
 .btn{width:100%;padding:.8rem;background:var(--accent);color:#07080a;border-radius:var(--radius-sm);
   font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-top:.6rem;
   transition:transform .1s,filter .15s,box-shadow .2s}
 .btn:hover{box-shadow:0 4px 16px rgba(255,107,43,.25)}
 .btn:active{transform:scale(.98);filter:brightness(.9)}
+body.sport-atp .btn:not(.ghost){background:var(--tennis);color:#07080a}
+body.sport-atp .btn:hover:not(.ghost){box-shadow:0 4px 16px rgba(74,222,128,.2)}
 .btn.ghost{background:transparent;border:1px solid var(--border-hi);color:var(--ink-dim);box-shadow:none}
 .btn.ghost:hover{border-color:var(--ink-mute);color:var(--ink)}
 
@@ -224,7 +261,8 @@ body.loaded .loaded-wrap{display:block}
 .stat-box.wide{grid-column:1/-1}
 .stat-lbl{font-family:var(--mono);font-size:.55rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
 .stat-big{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.65rem;line-height:1;letter-spacing:-.02em}
-.stat-big.pos{color:var(--green)}.stat-big.neg{color:var(--red)}
+.stat-big.pos{color:var(--green)}
+.stat-big.neg{color:var(--red)}
 .stat-sub{font-family:var(--mono);font-size:.6rem;color:var(--ink-dim);margin-top:.2rem}
 
 /* ─── CHART ─── */
@@ -239,22 +277,30 @@ body.loaded .loaded-wrap{display:block}
 .bet-meta{font-family:var(--mono);font-size:.58rem;color:var(--ink-mute);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.1rem}
 .bet-matchup{font-family:var(--display);font-weight:700;font-size:.92rem;font-style:italic}
 .bet-matchup .pick{color:var(--accent)}
+body.sport-atp .bet-matchup .pick{color:var(--tennis)}
 .bet-line{font-family:var(--mono);font-size:.65rem;color:var(--ink-dim);margin-top:.08rem}
 .bet-result{display:flex;flex-direction:column;gap:.2rem;align-items:flex-end}
 .bet-amt{font-family:var(--mono);font-weight:700;font-size:.85rem}
-.bet-amt.pos{color:var(--green)}.bet-amt.neg{color:var(--red)}
+.bet-amt.pos{color:var(--green)}
+.bet-amt.neg{color:var(--red)}
 .bet-actions{display:flex;gap:.2rem}
 .bet-btn{padding:.25rem .45rem;border-radius:5px;font-family:var(--mono);font-size:.58rem;font-weight:700;
   text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--border);transition:all .15s}
 .bet-btn:hover{transform:scale(1.05)}
-.bet-btn.win{color:var(--green);border-color:rgba(52,211,153,.3)}.bet-btn.win:hover{background:var(--green-soft)}
-.bet-btn.loss{color:var(--red);border-color:rgba(251,113,133,.3)}.bet-btn.loss:hover{background:var(--red-soft)}
+.bet-btn.win{color:var(--green);border-color:rgba(52,211,153,.3)}
+.bet-btn.win:hover{background:var(--green-soft)}
+.bet-btn.loss{color:var(--red);border-color:rgba(251,113,133,.3)}
+.bet-btn.loss:hover{background:var(--red-soft)}
 .bet-btn.del{color:var(--ink-mute);border-color:var(--border)}
 .bet-btn.active-win{background:var(--green-soft);color:var(--green);border-color:var(--green)}
 .bet-btn.active-loss{background:var(--red-soft);color:var(--red);border-color:var(--red)}
-.bet-sport-pill{font-family:var(--mono);font-size:.5rem;padding:.1rem .3rem;border-radius:3px;margin-left:.3rem;vertical-align:middle;
-  background:var(--surface-2);color:var(--ink-mute);border:1px solid var(--border)}
 .empty{text-align:center;padding:1.5rem;color:var(--ink-mute);font-size:.78rem;font-style:italic}
+
+/* ─── ATP LOADING ─── */
+.atp-loading{text-align:center;padding:2.5rem 1rem;color:var(--ink-mute)}
+.atp-spin{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--tennis);
+  border-radius:50%;animation:spin .8s linear infinite;margin:0 auto .75rem}
+@keyframes spin{to{transform:rotate(360deg)}}
 
 /* ─── INFO ─── */
 .info-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;margin-bottom:.7rem}
@@ -262,6 +308,7 @@ body.loaded .loaded-wrap{display:block}
 .info-block p,.info-block li{font-size:.78rem;color:var(--ink-dim);line-height:1.6}
 .info-block ul{list-style:none;margin-top:.3rem}
 .info-block li::before{content:'→';color:var(--accent);margin-right:.4rem;font-weight:700}
+body.sport-atp .info-block li::before{color:var(--tennis)}
 .disclaimer{font-size:.7rem;color:var(--ink-mute);text-align:center;margin-top:1rem;line-height:1.5}
 .disclaimer a{color:var(--accent);text-decoration:none}
 
@@ -271,26 +318,29 @@ body.loaded .loaded-wrap{display:block}
   .games-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
   .games-grid .game-card{margin-bottom:0}
   .stat-grid{grid-template-columns:repeat(3,1fr)}
-  .header{padding:1.2rem 2rem .9rem}
-  .tabs{justify-content:center;top:88px}
+  .header{padding:1rem 2rem .7rem}
+  .tabs{justify-content:center}
   .tab{padding:.85rem 1.5rem}
   .team-logo{width:56px;height:56px}
+  .player-photo,.player-avatar{width:58px;height:58px}
 }
-@media(min-width:1024px){.main{max-width:1080px}}
+@media(min-width:1024px){
+  .main{max-width:1080px}
+}
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.45rem">
+  <div class="header-top">
     <div class="brand">
       <div class="brand-mark">BetEdge</div>
       <span class="brand-ver">v7</span>
     </div>
-    <div class="sport-switch">
-      <button class="sport-btn active" data-sport="nba">🏀 NBA</button>
-      <button class="sport-btn" data-sport="atp">🎾 ATP</button>
+    <div class="sport-switcher" id="sportSwitcher">
+      <button class="sport-btn active" data-sport="nba"><span class="sport-icon">🏀</span>NBA</button>
+      <button class="sport-btn" data-sport="atp"><span class="sport-icon">🎾</span>ATP</button>
     </div>
   </div>
   <div class="meta-row">
@@ -310,7 +360,6 @@ body.loaded .loaded-wrap{display:block}
 </nav>
 
 <main class="main">
-  <!-- SKELETONS -->
   <div class="loading-wrap">
     <div class="skeleton skel-card"></div>
     <div class="skeleton skel-card"></div>
@@ -330,7 +379,7 @@ body.loaded .loaded-wrap{display:block}
     <!-- ALL GAMES -->
     <section class="page" id="p-all">
       <div class="section-title">
-        <span class="accent-line"></span><span id="all-title">Alle Spiele</span>
+        <span class="accent-line"></span>Alle Spiele
         <span class="section-count" id="all-label"></span>
       </div>
       <div class="games-grid" id="all-games"></div>
@@ -359,7 +408,7 @@ body.loaded .loaded-wrap{display:block}
 
     <!-- STATS -->
     <section class="page" id="p-stats">
-      <div class="section-title"><span class="accent-line"></span>Statistik <span class="section-count" id="stats-sport-label"></span></div>
+      <div class="section-title"><span class="accent-line"></span>Statistik</div>
       <div class="chart-wrap">
         <div class="chart-title">Profit-Verlauf</div>
         <canvas id="profitChart"></canvas>
@@ -397,7 +446,6 @@ body.loaded .loaded-wrap{display:block}
     <!-- INFO -->
     <section class="page" id="p-info">
       <div class="section-title"><span class="accent-line"></span>Über BetEdge</div>
-      <!-- NBA Info -->
       <div id="info-nba">
         <div class="info-block">
           <h3>NBA Modell v7</h3>
@@ -410,37 +458,30 @@ body.loaded .loaded-wrap{display:block}
             <li>ESPN — Box Scores (15 Spiele rolling), Injuries, Rest Days</li>
             <li>The Odds API — H2H Quoten Consensus (EU Bookmaker)</li>
           </ul>
+          <p style="margin-top:.4rem">Cross-Validierung: NBA.com + ESPN Standings werden verglichen.</p>
         </div>
         <div class="info-block">
           <h3>Aktualisierung</h3>
           <p>Täglich 14:00 Uhr via GitHub Actions. Predictions werden automatisch generiert und deployed.</p>
         </div>
       </div>
-      <!-- ATP Info -->
       <div id="info-atp" style="display:none">
         <div class="info-block">
-          <h3>ATP Modell v1</h3>
-          <p>Markt-Wahrscheinlichkeiten (Devigged) + oberflächenspezifische Anpassung. Kelly-Criterion für Einsatzoptimierung. Turniere: ATP 250, 500, 1000 + Grand Slams.</p>
+          <h3>ATP Modell</h3>
+          <p>Live-Odds aus The Odds API (EU Bookmaker). Consensus-Wahrscheinlichkeiten aus mehreren Buchmachern, Vig-Korrektur. Value = Beste Quote &gt; faire Quote + 3% Edge-Schwelle.</p>
         </div>
         <div class="info-block">
-          <h3>Datenquellen</h3>
+          <h3>Turnierklassen</h3>
           <ul>
-            <li>The Odds API — ATP H2H Quoten (EU Consensus)</li>
-            <li>Turnierinfo — Kategorie + Untergrund automatisch erkannt</li>
-            <li>Value Threshold: +2.5% Expected Value</li>
+            <li>🏆 Grand Slam — Australian Open, Roland Garros, Wimbledon, US Open</li>
+            <li>🟣 ATP Masters 1000 — Indian Wells, Miami, Madrid, Rom, Montreal, Cincinnati, Shanghai, Paris</li>
+            <li>🔵 ATP 500 — Basel, Halle, Queen's, Wien, Peking u.a.</li>
+            <li>⚪ ATP 250 — Restliche Turniere</li>
           </ul>
         </div>
         <div class="info-block">
-          <h3>Untergrund-Logik</h3>
-          <ul>
-            <li>Clay — Baseline-Vorteil, längere Ballwechsel</li>
-            <li>Grass — Aufschlag-Dominanz, schnelle Points</li>
-            <li>Hard — Ausgeglichen, Allrounder im Vorteil</li>
-          </ul>
-        </div>
-        <div class="info-block">
-          <h3>Aktualisierung</h3>
-          <p>Täglich 14:00 Uhr gemeinsam mit NBA via GitHub Actions.</p>
+          <h3>Datenquelle</h3>
+          <p>The Odds API — Echtzeit H2H Quoten. Daten werden bei jedem Seitenaufruf direkt geladen.</p>
         </div>
       </div>
       <p class="disclaimer">
@@ -452,461 +493,720 @@ body.loaded .loaded-wrap{display:block}
 </main>
 
 <script>
-/* ─── LOGO / AVATAR HELPERS ─── */
-const LOGO={
+/* ═══════════════════════════════════════════
+   CONSTANTS & HELPERS
+═══════════════════════════════════════════ */
+const ODDS_KEY = '22bead9b3df0f24b03e57dc3d825937d';
+const EUR = v => '€' + v.toFixed(2);
+const PCT = v => (v * 100).toFixed(1) + '%';
+const CIRC = 2 * Math.PI * 15.9;
+
+/* NBA logo map */
+const LOGO = {
   ATL:'atl',BOS:'bos',BKN:'bkn',CHA:'cha',CHI:'chi',CLE:'cle',DAL:'dal',DEN:'den',DET:'det',
   GSW:'gs',HOU:'hou',IND:'ind',LAC:'lac',LAL:'lal',MEM:'mem',MIA:'mia',MIL:'mil',MIN:'min',
   NOP:'no',NYK:'ny',OKC:'okc',ORL:'orl',PHI:'phi',PHX:'phx',POR:'por',SAC:'sac',SAS:'sa',
   TOR:'tor',UTA:'utah',WAS:'wsh'
 };
-const logoUrl=a=>`https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${LOGO[a]||a.toLowerCase()}.png&h=80&w=80`;
+const logoUrl = a => `https://a.espncdn.com/combiner/i?img=/i/teamlogos/nba/500/${LOGO[a]||a.toLowerCase()}.png&h=80&w=80`;
 
-function playerAvatar(name,size=52){
-  // Deterministic hue from name
-  let h=0;for(const c of name)h=((h<<5)-h+c.charCodeAt(0))|0;
-  const hue=Math.abs(h)%360;
-  const parts=name.split(' ');
-  const ini=parts.length>=2?(parts[0][0]+parts[parts.length-1][0]).toUpperCase():name.slice(0,2).toUpperCase();
-  return `<div class="player-avatar" style="--av-hue:${hue};width:${size}px;height:${size}px">${ini}</div>`;
+/* ATP player ESPN photo IDs — top ~60 players */
+const ATP_PHOTOS = {
+  'novak djokovic':4349,'carlos alcaraz':7361629,'jannik sinner':4731763,
+  'daniil medvedev':3479787,'alexander zverev':4294965,'andrey rublev':4320013,
+  'hubert hurkacz':4432887,'casper ruud':4362737,'stefanos tsitsipas':3803196,
+  'taylor fritz':4204712,'ben shelton':4727839,'tommy paul':4432459,
+  'alex de minaur':4432898,'karen khachanov':4249177,'grigor dimitrov':3062165,
+  'holger rune':4726396,'frances tiafoe':4127803,'sebastian korda':4698068,
+  'ugo humbert':4432889,'lorenzo musetti':4698071,'nicolas jarry':4249262,
+  'alejandro davidovich fokina':4726401,'jiri lehecka':4736671,
+  'felix auger-aliassime':4432894,'denis shapovalov':3908861,
+  'brandon nakashima':4727838,'tomas martin etcheverry':4727841,
+  'francisco cerundolo':4727836,'rafael nadal':236,'andy murray':602,
+  'stan wawrinka':1409,'jack draper':4731753,'arthur fils':4737040,
+  'alexei popyrin':4726399,'tallon griekspoor':4737041,'roberto bautista agut':2478552,
+  'sebastian baez':4727835,'pablo carreno busta':2478551,'david goffin':2478549,
+  'cameron norrie':4432893,'botic van de zandschulp':4737042,'lucas pouille':2478548,
+  'aslan karatsev':4432891,'lloyd harris':4432890,'john isner':1401,
+  'miomir kecmanovic':4432897,'maxime cressy':4727833,'j.j. wolf':4727832,
+  'christopher eubanks':4727831,'ryan nishikoshi':4431800,'matteo berrettini':4432886,
+  'lorenzo sonego':4432885,'thomas fabiano':4432884,'pablo andujar':2478547,
+  'albert ramos-vinolas':2478546,'dominic thiem':3479786,'gael monfils':1403,
+  'richard gasquet':600,'jo-wilfried tsonga':601
+};
+
+function playerPhotoUrl(name) {
+  const key = name.toLowerCase().trim();
+  const id = ATP_PHOTOS[key];
+  return id ? `https://a.espncdn.com/i/headshots/tennis/players/full/${id}.png` : null;
 }
 
-const EUR=v=>'€'+v.toFixed(2);
-const CIRC=2*Math.PI*15.9;
-
-/* ─── STATE ─── */
-const S={
-  sport:'nba',
-  nba:null,
-  atp:null,
-  bankroll:parseFloat(localStorage.getItem('be_bankroll'))||0,
-  bets:JSON.parse(localStorage.getItem('be_bets')||'[]'),
-  qk:localStorage.getItem('be_quarter')==='1'
-};
-const save=()=>{
-  localStorage.setItem('be_bets',JSON.stringify(S.bets));
-  localStorage.setItem('be_bankroll',String(S.bankroll));
-};
-
-/* ─── TABS ─── */
-document.getElementById('tabs').addEventListener('click',e=>{
-  const t=e.target.closest('.tab');if(!t)return;
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-  t.classList.add('active');
-  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
-  document.getElementById('p-'+t.dataset.page).classList.add('active');
-  if(t.dataset.page==='stats'){renderStats();drawChart()}
-  if(t.dataset.page==='bank')renderBets();
-});
-
-/* ─── SPORT SWITCHER ─── */
-document.querySelector('.sport-switch').addEventListener('click',e=>{
-  const btn=e.target.closest('.sport-btn');
-  if(!btn||btn.classList.contains('active'))return;
-  document.querySelectorAll('.sport-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  S.sport=btn.dataset.sport;
-  // Update info panel
-  document.getElementById('info-nba').style.display=S.sport==='nba'?'':'none';
-  document.getElementById('info-atp').style.display=S.sport==='atp'?'':'none';
-  if(S.sport==='atp'&&!S.atp){loadAtp();}
-  else render();
-});
-
-/* ─── STAKE CALC ─── */
-function stake(kelly){
-  if(S.bankroll<=0||kelly<=0)return 0;
-  let s=S.bankroll*kelly;
-  if(S.qk)s/=4;
-  return Math.round(s*100)/100;
+/* Hash player name → hue 0-360 */
+function nameHue(name) {
+  let h = 0;
+  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) & 0xfffff;
+  return (h % 360 + 360) % 360;
 }
 
-/* ─── CONFIDENCE RING ─── */
-function confRing(pct){
-  const fill=pct>=60?'var(--green)':pct>=50?'var(--accent)':'var(--red)';
-  const dash=(pct/100)*CIRC;
+function playerInitials(name) {
+  const parts = name.trim().split(' ');
+  if (parts.length >= 2) return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  return name.slice(0, 2).toUpperCase();
+}
+
+/* ═══════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════ */
+const S = {
+  sport: localStorage.getItem('be_sport') || 'nba',
+  data: { nba: null, atp: null },
+  bets: {
+    nba: JSON.parse(localStorage.getItem('be_bets_nba') || '[]'),
+    atp: JSON.parse(localStorage.getItem('be_bets_atp') || '[]')
+  },
+  bankroll: parseFloat(localStorage.getItem('be_bankroll')) || 0,
+  qk: localStorage.getItem('be_quarter') === '1'
+};
+
+// Migrate old bets from be_bets → be_bets_nba
+(function migrate() {
+  const old = localStorage.getItem('be_bets');
+  if (old && !localStorage.getItem('be_bets_nba_migrated')) {
+    try {
+      const arr = JSON.parse(old);
+      if (arr.length) { S.bets.nba = arr; localStorage.setItem('be_bets_nba', old); }
+      localStorage.setItem('be_bets_nba_migrated', '1');
+    } catch(e) {}
+  }
+})();
+
+const save = () => {
+  localStorage.setItem('be_bets_nba', JSON.stringify(S.bets.nba));
+  localStorage.setItem('be_bets_atp', JSON.stringify(S.bets.atp));
+  localStorage.setItem('be_bankroll', String(S.bankroll));
+  localStorage.setItem('be_sport', S.sport);
+};
+const cb = () => S.bets[S.sport]; // current bets
+
+/* ═══════════════════════════════════════════
+   ATP — TOURNAMENT TIER
+═══════════════════════════════════════════ */
+const GS_NAMES = ['australian open','roland garros','french open','wimbledon','us open'];
+const M1000_NAMES = ['indian wells','miami','monte carlo','madrid','rome','canadian','montreal','toronto',
+  'cincinnati','shanghai','paris masters','bercy','rolex paris','china open'];
+const A500_NAMES = ['rotterdam','rio','dubai','acapulco','barcelona','hamburg','queen','queens',
+  'halle','washington','vienna','beijing','tokyo','base'];
+
+function tournamentTier(title) {
+  const t = (title || '').toLowerCase();
+  if (GS_NAMES.some(n => t.includes(n))) return 'gs';
+  if (M1000_NAMES.some(n => t.includes(n)) || t.includes('1000') || t.includes('masters')) return '1000';
+  if (A500_NAMES.some(n => t.includes(n)) || t.includes('500')) return '500';
+  return '250';
+}
+
+function tierLabel(tier) {
+  return {gs:'Grand Slam', '1000':'Masters 1000', '500':'ATP 500', '250':'ATP 250'}[tier] || 'ATP';
+}
+
+function surfaceFromTitle(title) {
+  const t = (title || '').toLowerCase();
+  if (t.includes('clay') || ['madrid','rome','roland','monte carlo','barcelona','hamburg','rio','buenos aires'].some(n => t.includes(n))) return 'clay';
+  if (t.includes('grass') || ['wimbledon','halle','queens','\'s-hertogenbosch','eastbourne'].some(n => t.includes(n))) return 'grass';
+  return 'hard';
+}
+
+/* ═══════════════════════════════════════════
+   ATP — VALUE CALCULATION
+═══════════════════════════════════════════ */
+function calcATPMatch(match) {
+  const p1Name = match.away_team; // ATP: away = first listed player
+  const p2Name = match.home_team;
+  const p1Odds = [], p2Odds = [];
+
+  (match.bookmakers || []).forEach(bm => {
+    const h2h = (bm.markets || []).find(m => m.key === 'h2h');
+    if (!h2h) return;
+    (h2h.outcomes || []).forEach(o => {
+      if (o.name === p1Name) p1Odds.push(o.price);
+      else if (o.name === p2Name) p2Odds.push(o.price);
+    });
+  });
+
+  if (!p1Odds.length || !p2Odds.length) return null;
+
+  const avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+  const avgP1 = avg(p1Odds), avgP2 = avg(p2Odds);
+
+  // Remove vig → true probabilities
+  const raw1 = 1 / avgP1, raw2 = 1 / avgP2;
+  const tot = raw1 + raw2;
+  const prob1 = raw1 / tot, prob2 = raw2 / tot;
+
+  // Best available odds
+  const best1 = Math.max(...p1Odds), best2 = Math.max(...p2Odds);
+
+  // EV (as %)
+  const ev1 = (best1 * prob1 - 1) * 100;
+  const ev2 = (best2 * prob2 - 1) * 100;
+
+  // Kelly
+  const kelly = (b, p) => b > 0 && p > 0 ? Math.max(0, (b * p - 1) / (b - 1)) : 0;
+  const k1 = kelly(best1, prob1), k2 = kelly(best2, prob2);
+
+  // Pick: higher probability player
+  const pickP1 = prob1 > prob2;
+  const pick = pickP1 ? p1Name : p2Name;
+  const pickOdds = pickP1 ? best1 : best2;
+  const pickEV = pickP1 ? ev1 : ev2;
+  const pickKelly = pickP1 ? k1 : k2;
+  const confidence = Math.round(Math.max(prob1, prob2) * 100);
+  const isValue = pickEV > 3; // >3% edge threshold
+
+  return { prob1, prob2, best1, best2, ev1, ev2, k1, k2,
+           pick, pickOdds, pickEV, pickKelly, confidence, isValue };
+}
+
+/* ═══════════════════════════════════════════
+   SHARED HELPERS
+═══════════════════════════════════════════ */
+function stake(kelly) {
+  if (S.bankroll <= 0 || kelly <= 0) return 0;
+  let s = S.bankroll * Math.min(kelly, 0.25);
+  if (S.qk) s /= 4;
+  return Math.round(s * 100) / 100;
+}
+
+function confRing(pct) {
+  const fill = pct >= 65 ? 'var(--green)' : pct >= 50 ? (S.sport === 'atp' ? 'var(--tennis)' : 'var(--accent)') : 'var(--red)';
+  const dash = (pct / 100) * CIRC;
   return `<div class="conf-ring">
     <svg viewBox="0 0 36 36"><circle class="track" cx="18" cy="18" r="15.9"/>
     <circle class="bar" cx="18" cy="18" r="15.9" stroke="${fill}"
-      stroke-dasharray="${dash} ${CIRC-dash}"/></svg>
+      stroke-dasharray="${dash} ${CIRC - dash}"/></svg>
     <div class="val">${pct}%</div></div>`;
 }
 
-/* ─── NBA GAME CARD ─── */
-function nbaCard(g){
-  const p=g.prediction;
-  const pickHome=p.model_pick===g.home.abbr;
-  const odds=pickHome?p.home_odds:p.away_odds;
-  const ev=pickHome?p.home_ev:p.away_ev;
-  const st=stake(p.kelly_fraction||0);
-  const id=g.id;
-  const placed=S.bets.some(b=>b.id===id);
-  const isValue=p.value_bet;
-  const awayPct=(p.away_win_prob*100).toFixed(1);
-  const homePct=(p.home_win_prob*100).toFixed(1);
+function toggleF(id) { document.getElementById('exp-' + id)?.classList.toggle('open'); }
 
-  return `<div class="game-card ${isValue?'value':''}" data-id="${id}">
+/* ═══════════════════════════════════════════
+   NBA CARD
+═══════════════════════════════════════════ */
+function gameCard(g) {
+  const p = g.prediction;
+  const pickHome = p.model_pick === g.home.abbr;
+  const odds = pickHome ? p.home_odds : p.away_odds;
+  const ev = pickHome ? p.home_ev : p.away_ev;
+  const st = stake(p.kelly_fraction || 0);
+  const id = g.id;
+  const placed = S.bets.nba.some(b => b.id === id);
+  const isValue = p.value_bet;
+  const awayPct = (p.away_win_prob * 100).toFixed(1);
+  const homePct = (p.home_win_prob * 100).toFixed(1);
+
+  return `<div class="game-card ${isValue ? 'value' : ''}" data-id="${id}">
     <div class="card-header">
       <span class="card-time">${g.time} Uhr · ${g.date}</span>
-      ${isValue?`<span class="value-badge">Value Bet</span>`:`<span class="card-time">${p.confidence}% Conf.</span>`}
+      ${isValue ? `<span class="value-badge">Value Bet</span>` : `<span class="card-time">${p.confidence}% Conf.</span>`}
     </div>
     <div class="matchup">
       <div class="team away">
         <img class="team-logo" src="${logoUrl(g.away.abbr)}" alt="${g.away.abbr}" onerror="this.outerHTML='<div class=\\'team-logo fallback\\'>'+this.alt+'</div>'">
         <div class="team-abbr">${g.away.abbr}</div>
         <div class="team-name">${g.away.name}</div>
-        <div class="team-record">${g.away.record} · L10 ${g.away.last10||'—'}</div>
+        <div class="team-record">${g.away.record} · L10 ${g.away.last10 || '—'}</div>
       </div>
       <div class="vs-col"><div class="vs-at">at</div>${confRing(p.confidence)}</div>
       <div class="team home">
         <img class="team-logo" src="${logoUrl(g.home.abbr)}" alt="${g.home.abbr}" onerror="this.outerHTML='<div class=\\'team-logo fallback\\'>'+this.alt+'</div>'">
         <div class="team-abbr">${g.home.abbr}</div>
         <div class="team-name">${g.home.name}</div>
-        <div class="team-record">${g.home.record} · L10 ${g.home.last10||'—'}</div>
+        <div class="team-record">${g.home.record} · L10 ${g.home.last10 || '—'}</div>
       </div>
     </div>
     <div class="prob-bar-wrap">
       <div class="prob-bar">
-        <div class="prob-fill ${!pickHome?'pick-hl':'away'}" style="width:${awayPct}%">${awayPct}%</div>
-        <div class="prob-fill ${pickHome?'pick-hl':'home'}" style="width:${homePct}%">${homePct}%</div>
+        <div class="prob-fill ${!pickHome ? 'pick-hl' : 'away'}" style="width:${awayPct}%">${awayPct}%</div>
+        <div class="prob-fill ${pickHome ? 'pick-hl' : 'home'}" style="width:${homePct}%">${homePct}%</div>
       </div>
       <div class="prob-labels"><span>${g.away.abbr}</span><span>${g.home.abbr}</span></div>
     </div>
     <div class="odds-strip">
       <div class="odds-cell"><div class="odds-lbl">Pick</div><div class="odds-val" style="color:var(--accent)">${p.model_pick}</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Quote</div><div class="odds-val">${odds?odds.toFixed(2):'—'}</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Edge</div><div class="odds-val ${(ev||0)>=0?'pos':'neg'}">${(ev||0)>=0?'+':''}${(ev||0).toFixed(1)}%</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Einsatz</div><div class="odds-val">${st>0?EUR(st):'—'}</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Quote</div><div class="odds-val">${odds ? odds.toFixed(2) : '—'}</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Edge</div><div class="odds-val ${(ev || 0) >= 0 ? 'pos' : 'neg'}">${(ev || 0) >= 0 ? '+' : ''}${(ev || 0).toFixed(1)}%</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Einsatz</div><div class="odds-val">${st > 0 ? EUR(st) : '—'}</div></div>
     </div>
     <div class="card-actions">
       <button class="card-btn" onclick="toggleF('${id}')">▾ Faktoren</button>
-      <button class="card-btn primary ${placed?'placed':''}" onclick="placeBet('${id}','nba')">
-        ${placed?'✓ Getippt':'Tipp setzen'}
+      <button class="card-btn primary ${placed ? 'placed' : ''}" onclick="placeBet('${id}','nba')">
+        ${placed ? '✓ Getippt' : 'Tipp setzen'}
       </button>
     </div>
     <div class="expand" id="exp-${id}">
       <div class="expand-inner">
-        ${(p.key_factors||[]).map(f=>`<div class="factor">${f}</div>`).join('')||'<div class="factor">Keine Details verfügbar</div>'}
+        ${(p.key_factors || []).map(f => `<div class="factor">${f}</div>`).join('') || '<div class="factor">Keine Details verfügbar</div>'}
         <div style="margin-top:.5rem;font-family:var(--mono);font-size:.58rem;color:var(--ink-mute)">
-          ORtg: ${g.home.offensive_rating||'—'} / ${g.away.offensive_rating||'—'} ·
-          DRtg: ${g.home.defensive_rating||'—'} / ${g.away.defensive_rating||'—'} ·
-          Pace: ${g.home.pace||'—'} / ${g.away.pace||'—'}
+          ORtg: ${g.home.offensive_rating || '—'} / ${g.away.offensive_rating || '—'} ·
+          DRtg: ${g.home.defensive_rating || '—'} / ${g.away.defensive_rating || '—'} ·
+          Pace: ${g.home.pace || '—'} / ${g.away.pace || '—'}
         </div>
       </div>
     </div>
   </div>`;
 }
 
-/* ─── ATP MATCH CARD ─── */
-function atpCard(m){
-  const p=m.prediction;
-  const pickIsP1=p.model_pick===m.player1.name;
-  const pickOdds=pickIsP1?p.player1_odds:p.player2_odds;
-  const pickEv=pickIsP1?p.player1_ev:p.player2_ev;
-  const st=stake(p.kelly_fraction||0);
-  const id=m.id;
-  const placed=S.bets.some(b=>b.id===id);
-  const isValue=p.value_bet;
-  const p1Pct=(p.player1_win_prob*100).toFixed(1);
-  const p2Pct=(p.player2_win_prob*100).toFixed(1);
+/* ═══════════════════════════════════════════
+   ATP CARD
+═══════════════════════════════════════════ */
+function playerAvatarHTML(name, isPickSide, isValue) {
+  const photoUrl = playerPhotoUrl(name);
+  const hue = nameHue(name);
+  const initials = playerInitials(name);
+  const isLong = name.length > 16;
 
-  const surfClass={Clay:'surface-clay',Grass:'surface-grass',Hard:'surface-hard'}[m.surface]||'surface-hard';
-  const catClass={'Grand Slam':'cat-slam','ATP 1000':'cat-1000','ATP 500':'cat-500','ATP 250':'cat-250'}[m.category]||'cat-250';
-  const pickLastName=p.model_pick.split(' ').pop();
+  if (photoUrl) {
+    return `<div class="player-photo-wrap">
+      <img class="player-photo ${isValue && isPickSide ? 'has-value' : ''}"
+        src="${photoUrl}" alt="${name}"
+        onerror="this.outerHTML=\`<div class='player-avatar' style='--hue:${hue};background:hsl(${hue},30%,18%);border-color:hsl(${hue},50%,35%);color:hsl(${hue},60%,65%)'>${initials}</div>\`">
+    </div>`;
+  }
+  return `<div class="player-avatar" style="background:hsl(${hue},30%,18%);border-color:hsl(${hue},50%,35%);color:hsl(${hue},60%,65%)">${initials}</div>`;
+}
 
-  return `<div class="game-card ${isValue?'value':''}" data-id="${id}">
+function atpCard(match, calc) {
+  if (!calc) return '';
+  const id = match.id;
+  const p1Name = match.away_team; // player 1
+  const p2Name = match.home_team; // player 2
+  const p1Pct = (calc.prob1 * 100).toFixed(1);
+  const p2Pct = (calc.prob2 * 100).toFixed(1);
+  const pickIsP1 = calc.pick === p1Name;
+  const st = stake(calc.pickKelly);
+  const placed = S.bets.atp.some(b => b.id === id);
+  const isValue = calc.isValue;
+
+  // Parse date/time
+  const dt = new Date(match.commence_time);
+  const dateStr = dt.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+  const timeStr = dt.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+  const tier = tournamentTier(match.sport_title || '');
+  const surface = surfaceFromTitle(match.sport_title || '');
+  const p1Short = p1Name.split(' ').pop();
+  const p2Short = p2Name.split(' ').pop();
+
+  return `<div class="game-card ${isValue ? 'value' : ''}" data-id="${id}">
     <div class="card-header">
-      <span class="card-time">${m.time} · ${m.date}</span>
-      <div class="badge-row">
-        <span class="cat-badge ${catClass}">${m.category}</span>
-        <span class="surface-badge ${surfClass}">${m.surface}</span>
-        ${isValue?'<span class="value-badge">Value</span>':''}
+      <div style="display:flex;align-items:center;gap:.4rem">
+        <span class="tier-badge tier-${tier}">${tierLabel(tier)}</span>
+        <span class="surface-chip surface-${surface}">${surface}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.4rem">
+        ${isValue ? `<span class="value-badge">Value</span>` : `<span class="card-time">${calc.confidence}% Conf.</span>`}
+        <span class="card-time">${timeStr} · ${dateStr}</span>
       </div>
     </div>
-    <div class="tournament-line">${m.tournament}</div>
-    <div class="matchup">
-      <div class="team away">
-        ${playerAvatar(m.player1.name,52)}
-        <div class="team-abbr" style="font-size:1rem">${m.player1.abbr}</div>
-        <div class="team-name">${m.player1.name.split(' ').pop()}</div>
-        <div class="team-record" style="font-size:.58rem">${m.player1.name.split(' ')[0]||''}</div>
+    <div class="atp-matchup">
+      <div class="player p1">
+        ${playerAvatarHTML(p1Name, pickIsP1, isValue)}
+        <div class="player-name ${p1Name.length > 16 ? 'player-name-long' : ''}">${p1Name.split(' ').pop()}</div>
+        <div class="player-rank" style="font-size:.55rem;color:var(--ink-mute)">${p1Name.includes(' ') ? p1Name.split(' ').slice(0,-1).join(' ') : ''}</div>
+        <div class="pick-arrow ${pickIsP1 ? 'show' : ''}">← Pick</div>
       </div>
-      <div class="vs-col"><div class="vs-at">vs</div>${confRing(p.confidence)}</div>
-      <div class="team home">
-        ${playerAvatar(m.player2.name,52)}
-        <div class="team-abbr" style="font-size:1rem">${m.player2.abbr}</div>
-        <div class="team-name">${m.player2.name.split(' ').pop()}</div>
-        <div class="team-record" style="font-size:.58rem">${m.player2.name.split(' ')[0]||''}</div>
+      <div class="vs-col"><div class="vs-at">vs</div>${confRing(calc.confidence)}</div>
+      <div class="player p2">
+        ${playerAvatarHTML(p2Name, !pickIsP1, isValue)}
+        <div class="player-name ${p2Name.length > 16 ? 'player-name-long' : ''}">${p2Name.split(' ').pop()}</div>
+        <div class="player-rank" style="font-size:.55rem;color:var(--ink-mute);text-align:right">${p2Name.includes(' ') ? p2Name.split(' ').slice(0,-1).join(' ') : ''}</div>
+        <div class="pick-arrow ${!pickIsP1 ? 'show' : ''}" style="text-align:right">Pick →</div>
       </div>
     </div>
     <div class="prob-bar-wrap">
       <div class="prob-bar">
-        <div class="prob-fill ${pickIsP1?'pick-hl':'away'}" style="width:${p1Pct}%">${p1Pct}%</div>
-        <div class="prob-fill ${!pickIsP1?'pick-hl':'home'}" style="width:${p2Pct}%">${p2Pct}%</div>
+        <div class="prob-fill ${pickIsP1 ? 'pick-hl' : 'away'}" style="width:${p1Pct}%">${p1Pct}%</div>
+        <div class="prob-fill ${!pickIsP1 ? 'pick-hl' : 'home'}" style="width:${p2Pct}%">${p2Pct}%</div>
       </div>
-      <div class="prob-labels"><span>${m.player1.abbr}</span><span>${m.player2.abbr}</span></div>
+      <div class="prob-labels"><span>${p1Short}</span><span>${p2Short}</span></div>
     </div>
     <div class="odds-strip">
-      <div class="odds-cell"><div class="odds-lbl">Pick</div><div class="odds-val" style="color:var(--accent)">${pickLastName}</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Quote</div><div class="odds-val">${pickOdds?pickOdds.toFixed(2):'—'}</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Edge</div><div class="odds-val ${(pickEv||0)>=0?'pos':'neg'}">${(pickEv||0)>=0?'+':''}${(pickEv||0).toFixed(1)}%</div></div>
-      <div class="odds-cell"><div class="odds-lbl">Einsatz</div><div class="odds-val">${st>0?EUR(st):'—'}</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Pick</div><div class="odds-val" style="color:var(--tennis);font-size:.62rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${calc.pick.split(' ').pop()}</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Quote</div><div class="odds-val">${calc.pickOdds.toFixed(2)}</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Edge</div><div class="odds-val ${calc.pickEV >= 0 ? 'pos' : 'neg'}">${calc.pickEV >= 0 ? '+' : ''}${calc.pickEV.toFixed(1)}%</div></div>
+      <div class="odds-cell"><div class="odds-lbl">Einsatz</div><div class="odds-val">${st > 0 ? EUR(st) : '—'}</div></div>
     </div>
     <div class="card-actions">
-      <button class="card-btn" onclick="toggleF('${id}')">▾ Faktoren</button>
-      <button class="card-btn primary ${placed?'placed':''}" onclick="placeBet('${id}','atp')">
-        ${placed?'✓ Getippt':'Tipp setzen'}
+      <button class="card-btn" onclick="toggleF('${id}')">▾ Details</button>
+      <button class="card-btn primary ${placed ? 'placed' : ''}" onclick="placeBet('${id}','atp')">
+        ${placed ? '✓ Getippt' : 'Tipp setzen'}
       </button>
     </div>
     <div class="expand" id="exp-${id}">
       <div class="expand-inner">
-        ${(p.key_factors||[]).map(f=>`<div class="factor">${f}</div>`).join('')||'<div class="factor">Keine Details verfügbar</div>'}
+        <div class="factor">${p1Name}: beste Quote ${calc.best1.toFixed(2)} · EV ${calc.ev1 >= 0 ? '+' : ''}${calc.ev1.toFixed(1)}%</div>
+        <div class="factor">${p2Name}: beste Quote ${calc.best2.toFixed(2)} · EV ${calc.ev2 >= 0 ? '+' : ''}${calc.ev2.toFixed(1)}%</div>
+        <div class="factor">Vig-korrigierte Wahrscheinlichkeiten: ${p1Name.split(' ').pop()} ${(calc.prob1*100).toFixed(1)}% / ${p2Name.split(' ').pop()} ${(calc.prob2*100).toFixed(1)}%</div>
+        <div class="factor">${(match.bookmakers||[]).length} Buchmacher verglichen</div>
+        <div style="margin-top:.5rem;font-family:var(--mono);font-size:.58rem;color:var(--ink-mute)">
+          Kelly ${(calc.pickKelly*100).toFixed(1)}% · Einsatz ${st > 0 ? EUR(st) : 'Bankroll = 0'}
+        </div>
       </div>
     </div>
   </div>`;
 }
 
-function toggleF(id){document.getElementById('exp-'+id)?.classList.toggle('open')}
+/* ═══════════════════════════════════════════
+   PLACE BET
+═══════════════════════════════════════════ */
+function placeBet(id, sport) {
+  sport = sport || S.sport;
+  const bets = S.bets[sport];
+  const i = bets.findIndex(b => b.id === id);
+  if (i >= 0) { if (confirm('Tipp entfernen?')) { bets.splice(i, 1); save(); render(); } return; }
 
-/* ─── PLACE BET (unified) ─── */
-function placeBet(id,sport){
-  const items=sport==='nba'?(S.nba?.games||[]):(S.atp?.matches||[]);
-  const item=items.find(x=>x.id===id);if(!item)return;
-  const i=S.bets.findIndex(b=>b.id===id);
-  if(i>=0){if(confirm('Tipp entfernen?')){S.bets.splice(i,1);save();render()}return}
-  const p=item.prediction;
-  const st=stake(p.kelly_fraction||0);
-  if(st<=0){alert('Kelly = 0 — kein Edge oder keine Bankroll');return}
-  if(sport==='nba'){
-    const pickHome=p.model_pick===item.home.abbr;
-    S.bets.push({
-      id,sport:'nba',date:item.date,time:item.time,
-      home:item.home.abbr,away:item.away.abbr,
-      pick:p.model_pick,odds:pickHome?p.home_odds:p.away_odds,
-      stake:st,result:null,placedAt:Date.now()
-    });
-  }else{
-    const pickIsP1=p.model_pick===item.player1.name;
-    S.bets.push({
-      id,sport:'atp',date:item.date,time:item.time,
-      home:item.player2.abbr,away:item.player1.abbr,
-      pick:p.model_pick.split(' ').pop(),
-      matchup:`${item.player1.name.split(' ').pop()} vs ${item.player2.name.split(' ').pop()}`,
-      odds:pickIsP1?p.player1_odds:p.player2_odds,
-      stake:st,result:null,placedAt:Date.now()
-    });
+  let pick, odds, kellyFrac;
+
+  if (sport === 'nba') {
+    const g = (S.data.nba?.games || []).find(x => x.id === id);
+    if (!g) return;
+    const p = g.prediction;
+    const pickHome = p.model_pick === g.home.abbr;
+    odds = pickHome ? p.home_odds : p.away_odds;
+    kellyFrac = p.kelly_fraction || 0;
+    pick = p.model_pick;
+  } else {
+    const m = S.data.atp?.find(x => x.id === id);
+    if (!m) return;
+    const c = calcATPMatch(m);
+    if (!c) return;
+    pick = c.pick; odds = c.pickOdds; kellyFrac = c.pickKelly;
   }
-  save();render();
+
+  const st = stake(kellyFrac);
+  if (st <= 0) { alert('Kelly = 0 — kein Edge oder keine Bankroll gesetzt'); return; }
+
+  let matchLabel = '';
+  if (sport === 'nba') {
+    const g = (S.data.nba?.games || []).find(x => x.id === id);
+    matchLabel = `${g.away.abbr} @ ${g.home.abbr}`;
+  } else {
+    const m = S.data.atp?.find(x => x.id === id);
+    matchLabel = `${m.away_team.split(' ').pop()} vs ${m.home_team.split(' ').pop()}`;
+  }
+
+  bets.push({
+    id, sport, matchLabel,
+    pick, odds, stake: st, result: null,
+    placedAt: Date.now(),
+    date: new Date().toLocaleDateString('de-DE', { day:'2-digit', month:'2-digit' })
+  });
+  save(); render();
 }
 
-/* ─── RENDER ─── */
-function render(){
-  if(S.sport==='nba') renderNBA();
+/* ═══════════════════════════════════════════
+   RENDER — NBA
+═══════════════════════════════════════════ */
+function renderNBA() {
+  const games = S.data.nba?.games || [];
+  const value = games.filter(g => g.prediction.value_bet);
+  const vbBadge = document.getElementById('vb-count');
+  vbBadge.textContent = value.length;
+  vbBadge.style.display = value.length ? 'flex' : 'none';
+
+  document.getElementById('value-label').textContent = value.length ? `${value.length} gefunden` : '';
+  document.getElementById('value-games').innerHTML = value.length
+    ? value.map(gameCard).join('')
+    : `<div class="empty-state"><div class="empty-icon">📊</div><h2>Keine Value Bets</h2>
+       <p>Heute keine Spiele mit positivem EV. Schau morgen wieder rein.</p></div>`;
+
+  document.getElementById('all-label').textContent = games.length ? `${games.length} Spiele` : '';
+  document.getElementById('all-games').innerHTML = games.length
+    ? games.map(gameCard).join('')
+    : `<div class="empty-state"><div class="empty-icon">🏀</div><h2>Keine Spiele heute</h2>
+       <p>Heute keine NBA-Spiele auf dem Programm.</p></div>`;
+}
+
+/* ═══════════════════════════════════════════
+   RENDER — ATP
+═══════════════════════════════════════════ */
+function renderATP() {
+  const matches = S.data.atp || [];
+  const calcs = matches.map(m => calcATPMatch(m));
+
+  const value = matches.filter((m, i) => calcs[i]?.isValue);
+  const valueCalcs = value.map(m => calcs[matches.indexOf(m)]);
+
+  const vbBadge = document.getElementById('vb-count');
+  vbBadge.textContent = value.length;
+  vbBadge.style.display = value.length ? 'flex' : 'none';
+
+  document.getElementById('value-label').textContent = value.length ? `${value.length} gefunden` : '';
+  document.getElementById('value-games').innerHTML = value.length
+    ? value.map((m, i) => atpCard(m, valueCalcs[i])).join('')
+    : `<div class="empty-state"><div class="empty-icon">🎾</div><h2>Keine Value Bets</h2>
+       <p>Aktuell keine ATP-Matches mit positivem Expected Value — schau später nochmal rein.</p></div>`;
+
+  document.getElementById('all-label').textContent = matches.length ? `${matches.length} Matches` : '';
+  document.getElementById('all-games').innerHTML = matches.length
+    ? matches.map((m, i) => atpCard(m, calcs[i])).filter(Boolean).join('')
+    : `<div class="empty-state"><div class="empty-icon">🎾</div><h2>Keine ATP Matches</h2>
+       <p>Momentan keine laufenden oder kommenden Matches verfügbar.</p></div>`;
+}
+
+/* ═══════════════════════════════════════════
+   MAIN RENDER DISPATCHER
+═══════════════════════════════════════════ */
+function render() {
+  if (S.sport === 'nba') renderNBA();
   else renderATP();
-  renderBR();renderBets();
-  if(document.getElementById('p-stats').classList.contains('active')){renderStats();drawChart()}
+  renderBR(); renderBets(); renderStats();
+  // Info tab
+  document.getElementById('info-nba').style.display = S.sport === 'nba' ? '' : 'none';
+  document.getElementById('info-atp').style.display = S.sport === 'atp' ? '' : 'none';
 }
 
-function renderNBA(){
-  const games=S.nba?.games||[];
-  const value=games.filter(g=>g.prediction.value_bet);
-  const vbBadge=document.getElementById('vb-count');
-  if(value.length>0){vbBadge.textContent=value.length;vbBadge.style.display='flex'}
-  else vbBadge.style.display='none';
-  document.getElementById('value-label').textContent=value.length?`${value.length} gefunden`:'';
-  document.getElementById('value-games').innerHTML=value.length?value.map(nbaCard).join(''):
-    `<div class="empty-state"><div class="empty-icon">📊</div><h2>Keine Value Bets</h2><p>Heute wurden keine Spiele mit positivem EV gefunden.</p></div>`;
-  document.getElementById('all-title').textContent='Alle Spiele';
-  document.getElementById('all-label').textContent=games.length?`${games.length} Spiele`:'';
-  document.getElementById('all-games').innerHTML=games.length?games.map(nbaCard).join(''):
-    `<div class="empty-state"><div class="empty-icon">🏀</div><h2>Keine Spiele heute</h2><p>Heute stehen keine NBA-Spiele auf dem Programm.</p></div>`;
+/* ═══════════════════════════════════════════
+   BANKROLL
+═══════════════════════════════════════════ */
+function renderBR() {
+  document.getElementById('br-display').textContent = S.bankroll.toLocaleString('de-DE', { minimumFractionDigits: 2 });
+  document.getElementById('br-input').value = '';
+  document.getElementById('kelly-toggle').textContent = 'Quarter-Kelly: ' + (S.qk ? 'an' : 'aus');
 }
-
-function renderATP(){
-  const matches=S.atp?.matches||[];
-  const value=matches.filter(m=>m.prediction.value_bet);
-  const vbBadge=document.getElementById('vb-count');
-  if(value.length>0){vbBadge.textContent=value.length;vbBadge.style.display='flex'}
-  else vbBadge.style.display='none';
-  document.getElementById('value-label').textContent=value.length?`${value.length} gefunden`:'';
-  document.getElementById('value-games').innerHTML=value.length?value.map(atpCard).join(''):
-    `<div class="empty-state"><div class="empty-icon">🎾</div><h2>Keine Value Bets</h2><p>Heute wurden keine ATP-Matches mit positivem EV gefunden.</p></div>`;
-  document.getElementById('all-title').textContent='Alle Matches';
-  document.getElementById('all-label').textContent=matches.length?`${matches.length} Matches`:'';
-  document.getElementById('all-games').innerHTML=matches.length?matches.map(atpCard).join(''):
-    `<div class="empty-state"><div class="empty-icon">🎾</div><h2>Keine Matches</h2><p>Keine ATP-Matches geladen. Prüfe den nächsten Run.</p></div>`;
-}
-
-/* ─── BANKROLL ─── */
-function renderBR(){
-  document.getElementById('br-display').textContent=S.bankroll.toLocaleString('de-DE',{minimumFractionDigits:2});
-  document.getElementById('br-input').value='';
-  document.getElementById('kelly-toggle').textContent='Quarter-Kelly: '+(S.qk?'an':'aus');
-}
-document.getElementById('br-save').addEventListener('click',()=>{
-  const v=parseFloat(document.getElementById('br-input').value);
-  if(isNaN(v)||v<0)return alert('Ungültiger Betrag');
-  S.bankroll=v;localStorage.setItem('be_bankroll',String(v));renderBR();render();
+document.getElementById('br-save').addEventListener('click', () => {
+  const v = parseFloat(document.getElementById('br-input').value);
+  if (isNaN(v) || v < 0) return alert('Ungültiger Betrag');
+  S.bankroll = v; localStorage.setItem('be_bankroll', String(v)); renderBR(); render();
 });
-document.getElementById('kelly-toggle').addEventListener('click',()=>{
-  S.qk=!S.qk;localStorage.setItem('be_quarter',S.qk?'1':'0');renderBR();render();
+document.getElementById('kelly-toggle').addEventListener('click', () => {
+  S.qk = !S.qk; localStorage.setItem('be_quarter', S.qk ? '1' : '0'); renderBR(); render();
 });
 
-/* ─── BETS ─── */
-function betRow(b){
-  let amt='';
-  if(b.result==='win')amt=`<div class="bet-amt pos">+${EUR(b.stake*(b.odds-1))}</div>`;
-  else if(b.result==='loss')amt=`<div class="bet-amt neg">−${EUR(b.stake)}</div>`;
-  else amt=`<div class="bet-amt">${EUR(b.stake)}</div>`;
-  const sportPill=`<span class="bet-sport-pill">${(b.sport||'nba').toUpperCase()}</span>`;
-  const matchupStr=b.sport==='atp'&&b.matchup?b.matchup:`${b.away} @ ${b.home}`;
+/* ═══════════════════════════════════════════
+   BETS
+═══════════════════════════════════════════ */
+function betRow(b) {
+  let amt = '';
+  if (b.result === 'win') amt = `<div class="bet-amt pos">+${EUR(b.stake * (b.odds - 1))}</div>`;
+  else if (b.result === 'loss') amt = `<div class="bet-amt neg">−${EUR(b.stake)}</div>`;
+  else amt = `<div class="bet-amt">${EUR(b.stake)}</div>`;
+  const label = b.matchLabel || (b.home ? `${b.away}@${b.home}` : b.pick);
   return `<div class="bet-row">
     <div>
-      <div class="bet-meta">${b.date} · ${b.time||''}${sportPill}</div>
-      <div class="bet-matchup">${matchupStr} <span class="pick">→ ${b.pick}</span></div>
-      <div class="bet-line">Quote ${Number(b.odds||0).toFixed(2)} · ${EUR(b.stake)}</div>
+      <div class="bet-meta">${b.date} · ${b.sport ? b.sport.toUpperCase() : 'NBA'}</div>
+      <div class="bet-matchup">${label} <span class="pick">→ ${b.pick}</span></div>
+      <div class="bet-line">Quote ${Number(b.odds || 0).toFixed(2)} · ${EUR(b.stake)}</div>
     </div>
     <div class="bet-result">${amt}
       <div class="bet-actions">
-        <button class="bet-btn ${b.result==='win'?'active-win':'win'}" onclick="setR('${b.id}','win')">W</button>
-        <button class="bet-btn ${b.result==='loss'?'active-loss':'loss'}" onclick="setR('${b.id}','loss')">L</button>
-        <button class="bet-btn del" onclick="delB('${b.id}')">×</button>
+        <button class="bet-btn ${b.result === 'win' ? 'active-win' : 'win'}" onclick="setR('${b.id}','win','${b.sport||'nba'}')">W</button>
+        <button class="bet-btn ${b.result === 'loss' ? 'active-loss' : 'loss'}" onclick="setR('${b.id}','loss','${b.sport||'nba'}')">L</button>
+        <button class="bet-btn del" onclick="delB('${b.id}','${b.sport||'nba'}')">×</button>
       </div>
     </div>
   </div>`;
 }
-function setR(id,r){const b=S.bets.find(x=>x.id===id);if(!b)return;b.result=b.result===r?null:r;save();renderBets();renderStats();drawChart()}
-function delB(id){if(!confirm('Löschen?'))return;S.bets=S.bets.filter(b=>b.id!==id);save();renderBets();renderStats();drawChart()}
-function renderBets(){
-  const open=S.bets.filter(b=>!b.result);
-  const closed=S.bets.filter(b=>b.result).sort((a,b)=>b.placedAt-a.placedAt);
-  document.getElementById('bets-open').innerHTML=open.length?open.map(betRow).join(''):'<div class="empty">Keine offenen Tipps</div>';
-  document.getElementById('bets-closed').innerHTML=closed.length?closed.map(betRow).join(''):'';
-  document.getElementById('open-count').textContent=open.length;
-  document.getElementById('closed-count').textContent=closed.length;
+
+function setR(id, r, sport) {
+  const b = S.bets[sport || S.sport].find(x => x.id === id);
+  if (!b) return; b.result = b.result === r ? null : r;
+  save(); renderBets(); renderStats(); drawChart();
+}
+function delB(id, sport) {
+  if (!confirm('Löschen?')) return;
+  S.bets[sport || S.sport] = S.bets[sport || S.sport].filter(b => b.id !== id);
+  save(); renderBets(); renderStats(); drawChart();
 }
 
-/* ─── STATS (per sport) ─── */
-function sportBets(){
-  // Support legacy bets without sport field as NBA
-  return S.bets.filter(b=>(b.sport||'nba')===S.sport);
-}
-function renderStats(){
-  document.getElementById('stats-sport-label').textContent=S.sport.toUpperCase();
-  const cl=sportBets().filter(b=>b.result);
-  const w=cl.filter(b=>b.result==='win'),l=cl.filter(b=>b.result==='loss');
-  const ts=cl.reduce((s,b)=>s+b.stake,0);
-  const pnl=w.reduce((s,b)=>s+b.stake*(b.odds-1),0)-l.reduce((s,b)=>s+b.stake,0);
-  const roi=ts>0?pnl/ts*100:0;
-  const hit=cl.length>0?w.length/cl.length*100:0;
-  const avg=cl.length>0?ts/cl.length:0;
-  const e=document.getElementById('s-pnl');
-  e.textContent=(pnl>=0?'+':'−')+EUR(Math.abs(pnl));e.className='stat-big '+(pnl>=0?'pos':'neg');
-  document.getElementById('s-pnl-sub').textContent=cl.length+' abgeschlossen';
-  const r=document.getElementById('s-roi');
-  r.textContent=cl.length?(roi>=0?'+':'')+roi.toFixed(1)+'%':'—';r.className='stat-big '+(roi>=0?'pos':'neg');
-  document.getElementById('s-hit').textContent=cl.length?hit.toFixed(0)+'%':'—';
-  document.getElementById('s-won').textContent=w.length;
-  document.getElementById('s-lost').textContent=l.length;
-  document.getElementById('s-avg').textContent=EUR(avg);
-  document.getElementById('s-total-stake').textContent='Gesamt: '+EUR(ts);
+function renderBets() {
+  const allBets = cb();
+  const open = allBets.filter(b => !b.result);
+  const closed = allBets.filter(b => b.result).sort((a, b) => b.placedAt - a.placedAt);
+  document.getElementById('bets-open').innerHTML = open.length ? open.map(betRow).join('') : '<div class="empty">Keine offenen Tipps</div>';
+  document.getElementById('bets-closed').innerHTML = closed.length ? closed.map(betRow).join('') : '';
+  document.getElementById('open-count').textContent = open.length;
+  document.getElementById('closed-count').textContent = closed.length;
 }
 
-/* ─── PROFIT CHART ─── */
-function drawChart(){
-  const canvas=document.getElementById('profitChart');
-  const ctx=canvas.getContext('2d');
-  const dpr=window.devicePixelRatio||1;
-  const rect=canvas.getBoundingClientRect();
-  canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;
-  ctx.scale(dpr,dpr);
-  const W=rect.width,H=rect.height;
-  ctx.clearRect(0,0,W,H);
-  const cl=sportBets().filter(b=>b.result).sort((a,b)=>a.placedAt-b.placedAt);
-  if(cl.length<2){
-    ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue('--ink-mute');
-    ctx.font='12px Outfit';ctx.textAlign='center';
-    ctx.fillText('Mindestens 2 abgeschlossene Tipps für Chart',W/2,H/2);
-    return;
+/* ═══════════════════════════════════════════
+   STATS
+═══════════════════════════════════════════ */
+function renderStats() {
+  const cl = cb().filter(b => b.result);
+  const w = cl.filter(b => b.result === 'win'), l = cl.filter(b => b.result === 'loss');
+  const ts = cl.reduce((s, b) => s + b.stake, 0);
+  const pnl = w.reduce((s, b) => s + b.stake * (b.odds - 1), 0) - l.reduce((s, b) => s + b.stake, 0);
+  const roi = ts > 0 ? pnl / ts * 100 : 0;
+  const hit = cl.length > 0 ? w.length / cl.length * 100 : 0;
+  const avg = cl.length > 0 ? ts / cl.length : 0;
+  const e = document.getElementById('s-pnl');
+  e.textContent = (pnl >= 0 ? '+' : '−') + EUR(Math.abs(pnl));
+  e.className = 'stat-big ' + (pnl >= 0 ? 'pos' : 'neg');
+  document.getElementById('s-pnl-sub').textContent = cl.length + ' abgeschlossen';
+  const r = document.getElementById('s-roi');
+  r.textContent = cl.length ? (roi >= 0 ? '+' : '') + roi.toFixed(1) + '%' : '—';
+  r.className = 'stat-big ' + (roi >= 0 ? 'pos' : 'neg');
+  document.getElementById('s-hit').textContent = cl.length ? hit.toFixed(0) + '%' : '—';
+  document.getElementById('s-won').textContent = w.length;
+  document.getElementById('s-lost').textContent = l.length;
+  document.getElementById('s-avg').textContent = EUR(avg);
+  document.getElementById('s-total-stake').textContent = 'Gesamt: ' + EUR(ts);
+}
+
+/* ═══════════════════════════════════════════
+   PROFIT CHART
+═══════════════════════════════════════════ */
+function drawChart() {
+  const canvas = document.getElementById('profitChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr; canvas.height = rect.height * dpr;
+  ctx.scale(dpr, dpr);
+  const W = rect.width, H = rect.height;
+  ctx.clearRect(0, 0, W, H);
+
+  const cl = cb().filter(b => b.result).sort((a, b) => a.placedAt - b.placedAt);
+  if (cl.length < 2) {
+    ctx.fillStyle = '#555460'; ctx.font = '12px Outfit'; ctx.textAlign = 'center';
+    ctx.fillText('Mindestens 2 abgeschlossene Tipps für Chart', W / 2, H / 2); return;
   }
-  let cum=0;const pts=[0];
-  cl.forEach(b=>{cum+=b.result==='win'?b.stake*(b.odds-1):-b.stake;pts.push(cum)});
-  const mn=Math.min(...pts),mx=Math.max(...pts);
-  const range=mx-mn||1;
-  const pad={t:16,b:24,l:45,r:12};
-  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
-  const x=i=>pad.l+(i/(pts.length-1))*cW;
-  const y=v=>pad.t+(1-(v-mn)/range)*cH;
-  ctx.strokeStyle='rgba(255,255,255,.04)';ctx.lineWidth=1;
-  for(let i=0;i<=4;i++){
-    const gy=pad.t+(cH/4)*i;
-    ctx.beginPath();ctx.moveTo(pad.l,gy);ctx.lineTo(W-pad.r,gy);ctx.stroke();
-    const val=mx-(range/4)*i;
-    ctx.fillStyle='rgba(255,255,255,.2)';ctx.font='10px JetBrains Mono';ctx.textAlign='right';
-    ctx.fillText('€'+val.toFixed(0),pad.l-6,gy+3);
+  let cum = 0; const pts = [0];
+  cl.forEach(b => { cum += b.result === 'win' ? b.stake * (b.odds - 1) : -b.stake; pts.push(cum); });
+  const mn = Math.min(...pts), mx = Math.max(...pts), range = mx - mn || 1;
+  const pad = { t: 16, b: 24, l: 45, r: 12 };
+  const cW = W - pad.l - pad.r, cH = H - pad.t - pad.b;
+  const x = i => pad.l + (i / (pts.length - 1)) * cW;
+  const y = v => pad.t + (1 - (v - mn) / range) * cH;
+
+  ctx.strokeStyle = 'rgba(255,255,255,.04)'; ctx.lineWidth = 1;
+  for (let i = 0; i <= 4; i++) {
+    const gy = pad.t + (cH / 4) * i;
+    ctx.beginPath(); ctx.moveTo(pad.l, gy); ctx.lineTo(W - pad.r, gy); ctx.stroke();
+    ctx.fillStyle = 'rgba(255,255,255,.2)'; ctx.font = '10px JetBrains Mono'; ctx.textAlign = 'right';
+    ctx.fillText('€' + (mx - (range / 4) * i).toFixed(0), pad.l - 6, gy + 3);
   }
-  if(mn<0&&mx>0){
-    ctx.strokeStyle='rgba(255,255,255,.08)';ctx.setLineDash([4,4]);
-    ctx.beginPath();ctx.moveTo(pad.l,y(0));ctx.lineTo(W-pad.r,y(0));ctx.stroke();
+  if (mn < 0 && mx > 0) {
+    ctx.strokeStyle = 'rgba(255,255,255,.08)'; ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(pad.l, y(0)); ctx.lineTo(W - pad.r, y(0)); ctx.stroke();
     ctx.setLineDash([]);
   }
-  const lastVal=pts[pts.length-1];
-  const gradColor=lastVal>=0?'52,211,153':'251,113,133';
-  const grad=ctx.createLinearGradient(0,pad.t,0,H-pad.b);
-  grad.addColorStop(0,`rgba(${gradColor},.15)`);grad.addColorStop(1,`rgba(${gradColor},0)`);
-  ctx.fillStyle=grad;
-  ctx.beginPath();ctx.moveTo(x(0),y(0));
-  pts.forEach((v,i)=>ctx.lineTo(x(i),y(v)));
-  ctx.lineTo(x(pts.length-1),y(0));ctx.closePath();ctx.fill();
-  ctx.strokeStyle=lastVal>=0?'#34d399':'#fb7185';ctx.lineWidth=2;ctx.lineJoin='round';
-  ctx.beginPath();pts.forEach((v,i)=>{i===0?ctx.moveTo(x(i),y(v)):ctx.lineTo(x(i),y(v))});ctx.stroke();
-  const lx=x(pts.length-1),ly=y(lastVal);
-  ctx.fillStyle=lastVal>=0?'#34d399':'#fb7185';
-  ctx.beginPath();ctx.arc(lx,ly,4,0,Math.PI*2);ctx.fill();
-  ctx.fillStyle='rgba(7,8,10,.6)';ctx.beginPath();ctx.arc(lx,ly,2,0,Math.PI*2);ctx.fill();
+  const lastVal = pts[pts.length - 1];
+  const gradColor = lastVal >= 0 ? '52,211,153' : '251,113,133';
+  const grad = ctx.createLinearGradient(0, pad.t, 0, H - pad.b);
+  grad.addColorStop(0, `rgba(${gradColor},.15)`); grad.addColorStop(1, `rgba(${gradColor},0)`);
+  ctx.fillStyle = grad;
+  ctx.beginPath(); ctx.moveTo(x(0), y(0));
+  pts.forEach((v, i) => ctx.lineTo(x(i), y(v)));
+  ctx.lineTo(x(pts.length - 1), y(0)); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle = lastVal >= 0 ? '#34d399' : '#fb7185'; ctx.lineWidth = 2; ctx.lineJoin = 'round';
+  ctx.beginPath(); pts.forEach((v, i) => { i === 0 ? ctx.moveTo(x(i), y(v)) : ctx.lineTo(x(i), y(v)); }); ctx.stroke();
+  const lx = x(pts.length - 1), ly = y(lastVal);
+  ctx.fillStyle = lastVal >= 0 ? '#34d399' : '#fb7185';
+  ctx.beginPath(); ctx.arc(lx, ly, 4, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = 'rgba(7,8,10,.6)'; ctx.beginPath(); ctx.arc(lx, ly, 2, 0, Math.PI * 2); ctx.fill();
 }
 
-/* ─── LOAD DATA ─── */
-async function loadNba(){
-  try{
-    const r=await fetch('data/predictions.json?t='+Date.now());
-    if(!r.ok)throw new Error(r.status);
-    S.nba=await r.json();
-    document.getElementById('status').textContent=S.nba.message||'Bereit';
-    document.getElementById('meta-date').textContent=S.nba.date||'';
-    document.getElementById('meta-acc').textContent=S.nba.accuracy?'Acc: '+S.nba.accuracy:'';
-    render();
-  }catch(e){
-    document.getElementById('status').textContent='Daten nicht verfügbar';
-    document.getElementById('value-games').innerHTML=
+/* ═══════════════════════════════════════════
+   TABS
+═══════════════════════════════════════════ */
+document.getElementById('tabs').addEventListener('click', e => {
+  const t = e.target.closest('.tab'); if (!t) return;
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  document.getElementById('p-' + t.dataset.page).classList.add('active');
+  if (t.dataset.page === 'stats') { renderStats(); drawChart(); }
+  if (t.dataset.page === 'bank') renderBets();
+});
+
+/* ═══════════════════════════════════════════
+   SPORT SWITCHER
+═══════════════════════════════════════════ */
+document.getElementById('sportSwitcher').addEventListener('click', e => {
+  const btn = e.target.closest('.sport-btn'); if (!btn) return;
+  const sport = btn.dataset.sport;
+  if (sport === S.sport) return;
+  S.sport = sport; save();
+  document.querySelectorAll('.sport-btn').forEach(b => b.classList.toggle('active', b.dataset.sport === sport));
+  document.body.classList.toggle('sport-atp', sport === 'atp');
+  document.body.classList.toggle('sport-nba', sport === 'nba');
+  // Reset to value bets tab
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.page === 'value'));
+  document.querySelectorAll('.page').forEach(p => p.classList.toggle('active', p.id === 'p-value'));
+  if (sport === 'atp' && !S.data.atp) loadATP();
+  else render();
+});
+
+/* ═══════════════════════════════════════════
+   DATA LOADING
+═══════════════════════════════════════════ */
+async function loadNBA() {
+  try {
+    const r = await fetch('data/predictions.json?t=' + Date.now());
+    if (!r.ok) throw new Error(r.status);
+    S.data.nba = await r.json();
+    document.getElementById('status').textContent = S.data.nba.message || 'NBA bereit';
+    document.getElementById('meta-date').textContent = S.data.nba.date || '';
+    document.getElementById('meta-acc').textContent = S.data.nba.accuracy ? 'Acc: ' + S.data.nba.accuracy : '';
+  } catch (e) {
+    document.getElementById('status').textContent = 'NBA-Daten nicht verfügbar';
+    document.getElementById('value-games').innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚡</div><h2>Noch keine Daten</h2>
-       <p>Predictions erscheinen nach dem nächsten Run (täglich 14 Uhr).</p></div>`;
+       <p>Workflow wurde gestartet. Predictions erscheinen nach dem nächsten Run (täglich 14 Uhr).</p></div>`;
   }
-  document.body.classList.add('loaded');
 }
 
-async function loadAtp(){
-  document.body.classList.remove('loaded');
-  document.getElementById('status').textContent='Lade ATP…';
-  try{
-    const r=await fetch('data/atp_predictions.json?t='+Date.now());
-    if(!r.ok)throw new Error(r.status);
-    S.atp=await r.json();
-    document.getElementById('status').textContent=S.atp.message||'Bereit';
-    document.getElementById('meta-date').textContent=S.atp.date||'';
-    document.getElementById('meta-acc').textContent='';
+async function loadATP() {
+  document.getElementById('status').textContent = 'ATP lädt…';
+  document.getElementById('value-games').innerHTML = `<div class="atp-loading"><div class="atp-spin"></div><div style="font-size:.8rem">Lade ATP Matches…</div></div>`;
+  document.getElementById('all-games').innerHTML = `<div class="atp-loading"><div class="atp-spin"></div></div>`;
+
+  try {
+    const url = `https://api.the-odds-api.com/v4/sports/tennis_atp/odds/?apiKey=${ODDS_KEY}&regions=eu&markets=h2h&oddsFormat=decimal`;
+    const r = await fetch(url);
+    if (!r.ok) throw new Error('API ' + r.status);
+    const data = await r.json();
+    // Sort by commence_time ascending
+    data.sort((a, b) => new Date(a.commence_time) - new Date(b.commence_time));
+    S.data.atp = data;
+    const rem = r.headers.get('x-requests-remaining');
+    document.getElementById('status').textContent = `ATP bereit · ${data.length} Matches`;
+    document.getElementById('meta-date').textContent = new Date().toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    document.getElementById('meta-acc').textContent = rem ? `API: ${rem} left` : '';
+  } catch (e) {
+    document.getElementById('status').textContent = 'ATP-Daten Fehler';
+    S.data.atp = [];
+    document.getElementById('value-games').innerHTML =
+      `<div class="empty-state"><div class="empty-icon">📡</div><h2>API nicht erreichbar</h2>
+       <p>The Odds API konnte nicht geladen werden. Bitte prüfe deine Verbindung oder den API Key.</p></div>`;
+    document.getElementById('all-games').innerHTML = '';
+  }
+  document.body.classList.add('loaded');
+  render();
+}
+
+/* ═══════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════ */
+async function init() {
+  // Restore sport
+  if (S.sport === 'atp') {
+    document.querySelectorAll('.sport-btn').forEach(b => b.classList.toggle('active', b.dataset.sport === 'atp'));
+    document.body.classList.add('sport-atp');
+  }
+  renderBR();
+  if (S.sport === 'nba') {
+    await loadNBA();
+    document.body.classList.add('loaded');
     render();
-  }catch(e){
-    document.getElementById('status').textContent='ATP Daten nicht verfügbar';
-    document.getElementById('value-games').innerHTML=
-      `<div class="empty-state"><div class="empty-icon">🎾</div><h2>Keine ATP Daten</h2>
-       <p>Der ATP Workflow läuft täglich. Predictions erscheinen nach dem nächsten Run.</p></div>`;
-    document.getElementById('all-games').innerHTML='';
+  } else {
+    await loadATP();
   }
-  document.body.classList.add('loaded');
 }
 
-renderBR();
-loadNba();
+init();
 </script>
 </body>
 </html>
