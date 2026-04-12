@@ -1,7 +1,8 @@
 {
-  "date": "",
-  "generated_at": "",
+  "date": "12.04.2026",
+  "generated_at": "2026-04-12T20:28:11.723024",
   "sport": "atp",
-  "message": "Noch keine Daten — kommt beim nächsten täglichen Run",
-  "matches": []
+  "message": "0 Matches · 0 Value Bets",
+  "matches": [],
+  "error": "401 Client Error: Unauthorized for url: https://api.the-odds-api.com/v4/sports/tennis_atp/odds/?apiKey=&regions=eu&markets=h2h&oddsFormat=decimal&dateFormat=iso"
 }
