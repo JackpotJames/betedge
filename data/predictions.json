@@ -1,10 +1,10 @@
 {
-  "date": "2026-04-13",
-  "updated": "16:23",
+  "date": "2026-04-14",
+  "updated": "15:58",
   "games": [
     {
-      "id": "nba_20260413_CHA_MIA",
-      "date": "2026-04-13",
+      "id": "nba_20260414_CHA_MIA",
+      "date": "2026-04-14",
       "time": "01:30",
       "home": {
         "name": "Charlotte Hornets",
@@ -19,8 +19,8 @@
         "net_rating": 4.8,
         "efg": 0.52,
         "pace": 98,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 2.3,
         "efg": 0.52,
         "pace": 98,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -55,17 +55,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "CHA spielt Back-to-Back",
-          "MIA spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260413_PHX_POR",
-      "date": "2026-04-13",
+      "id": "nba_20260414_PHX_POR",
+      "date": "2026-04-14",
       "time": "04:00",
       "home": {
         "name": "Phoenix Suns",
@@ -80,8 +77,8 @@
         "net_rating": 1.5,
         "efg": 0.52,
         "pace": 98,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -98,8 +95,8 @@
         "net_rating": -0.3,
         "efg": 0.52,
         "pace": 98,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -116,9 +113,124 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
+        "key_factors": [],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    },
+    {
+      "id": "nba_20260414_PHI_ORL",
+      "date": "2026-04-14",
+      "time": "01:30",
+      "home": {
+        "name": "Philadelphia 76ers",
+        "abbr": "PHI",
+        "record": "45-37",
+        "win_pct": 0.549,
+        "home_record": "23-18",
+        "away_record": "22-19",
+        "last10": "6-4",
+        "offensive_rating": 115.9,
+        "defensive_rating": 116.1,
+        "net_rating": -0.2,
+        "efg": 0.52,
+        "pace": 98,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "Orlando Magic",
+        "abbr": "ORL",
+        "record": "45-37",
+        "win_pct": 0.549,
+        "home_record": "25-15",
+        "away_record": "19-20",
+        "last10": "7-3",
+        "offensive_rating": 115.7,
+        "defensive_rating": 115.1,
+        "net_rating": 0.6,
+        "efg": 0.52,
+        "pace": 98,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.4931,
+        "away_win_prob": 0.5069,
+        "model_pick": "ORL",
+        "confidence": 51,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    },
+    {
+      "id": "nba_20260414_LAC_GSW",
+      "date": "2026-04-14",
+      "time": "04:00",
+      "home": {
+        "name": "Los Angeles Clippers",
+        "abbr": "LAC",
+        "record": "42-40",
+        "win_pct": 0.512,
+        "home_record": "23-18",
+        "away_record": "19-22",
+        "last10": "6-4",
+        "offensive_rating": 113.8,
+        "defensive_rating": 112.6,
+        "net_rating": 1.1,
+        "efg": 0.52,
+        "pace": 98,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "Golden State Warriors",
+        "abbr": "GSW",
+        "record": "37-45",
+        "win_pct": 0.451,
+        "home_record": "22-19",
+        "away_record": "15-26",
+        "last10": "3-7",
+        "offensive_rating": 114.6,
+        "defensive_rating": 115.2,
+        "net_rating": -0.6,
+        "efg": 0.52,
+        "pace": 98,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.5462,
+        "away_win_prob": 0.4538,
+        "model_pick": "LAC",
+        "confidence": 55,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
         "key_factors": [
-          "PHX spielt Back-to-Back",
-          "POR spielt Back-to-Back"
+          "LAC in besserer Form (L10: 6-4)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
