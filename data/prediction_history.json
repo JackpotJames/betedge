@@ -1329,7 +1329,8 @@
     "pick": "ORL",
     "home_prob": 0.4931,
     "confidence": 51,
-    "correct": null
+    "correct": false,
+    "actual_winner": "PHI"
   },
   {
     "date": "2026-04-15",
@@ -1339,6 +1340,27 @@
     "pick": "LAC",
     "home_prob": 0.5462,
     "confidence": 55,
+    "correct": false,
+    "actual_winner": "GSW"
+  },
+  {
+    "date": "2026-04-16",
+    "game_dt": "2026-04-17T23:30Z",
+    "home_abbr": "ORL",
+    "away_abbr": "CHA",
+    "pick": "CHA",
+    "home_prob": 0.2823,
+    "confidence": 72,
+    "correct": null
+  },
+  {
+    "date": "2026-04-16",
+    "game_dt": "2026-04-18T02:00Z",
+    "home_abbr": "PHX",
+    "away_abbr": "GSW",
+    "pick": "GSW",
+    "home_prob": 0.3504,
+    "confidence": 65,
     "correct": null
   }
 ]
