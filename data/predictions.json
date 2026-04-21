@@ -1,191 +1,10 @@
 {
-  "date": "2026-04-20",
-  "updated": "16:00",
+  "date": "2026-04-21",
+  "updated": "16:01",
   "games": [
     {
-      "id": "nba_20260420_CLE_TOR",
-      "date": "2026-04-20",
-      "time": "01:00",
-      "home": {
-        "name": "Cleveland Cavaliers",
-        "abbr": "CLE",
-        "record": "52-30",
-        "win_pct": 0.634,
-        "home_record": "27-14",
-        "away_record": "25-16",
-        "last10": "7-3",
-        "offensive_rating": 119.5,
-        "defensive_rating": 115.4,
-        "net_rating": 4.1,
-        "efg": 0.642,
-        "pace": 100.4,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Toronto Raptors",
-        "abbr": "TOR",
-        "record": "46-36",
-        "win_pct": 0.561,
-        "home_record": "24-17",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 114.6,
-        "defensive_rating": 111.8,
-        "net_rating": 2.8,
-        "efg": 0.613,
-        "pace": 100.4,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.6958,
-        "away_win_prob": 0.3042,
-        "model_pick": "CLE",
-        "confidence": 70,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "CLE bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260420_NYK_ATL",
-      "date": "2026-04-20",
-      "time": "02:00",
-      "home": {
-        "name": "New York Knicks",
-        "abbr": "NYK",
-        "record": "53-29",
-        "win_pct": 0.646,
-        "home_record": "30-10",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 116.5,
-        "defensive_rating": 110.1,
-        "net_rating": 6.3,
-        "efg": 0.55,
-        "pace": 98.8,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Atlanta Hawks",
-        "abbr": "ATL",
-        "record": "46-36",
-        "win_pct": 0.561,
-        "home_record": "24-17",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 118.5,
-        "defensive_rating": 116.0,
-        "net_rating": 2.4,
-        "efg": 0.517,
-        "pace": 98.8,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.7265,
-        "away_win_prob": 0.2735,
-        "model_pick": "NYK",
-        "confidence": 73,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "NYK bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260420_DEN_MIN",
-      "date": "2026-04-20",
-      "time": "04:30",
-      "home": {
-        "name": "Denver Nuggets",
-        "abbr": "DEN",
-        "record": "54-28",
-        "win_pct": 0.659,
-        "home_record": "28-13",
-        "away_record": "26-15",
-        "last10": "10-0",
-        "offensive_rating": 122.1,
-        "defensive_rating": 116.9,
-        "net_rating": 5.2,
-        "efg": 0.494,
-        "pace": 103.9,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Minnesota Timberwolves",
-        "abbr": "MIN",
-        "record": "49-33",
-        "win_pct": 0.598,
-        "home_record": "26-15",
-        "away_record": "23-18",
-        "last10": "5-5",
-        "offensive_rating": 118.0,
-        "defensive_rating": 114.6,
-        "net_rating": 3.4,
-        "efg": 0.523,
-        "pace": 103.9,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.7092,
-        "away_win_prob": 0.2908,
-        "model_pick": "DEN",
-        "confidence": 71,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "MIN bessere Wurfeffizienz (eFG%)",
-          "DEN in besserer Form (L10: 10-0)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260420_BOS_PHI",
-      "date": "2026-04-20",
+      "id": "nba_20260421_BOS_PHI",
+      "date": "2026-04-21",
       "time": "01:00",
       "home": {
         "name": "Boston Celtics",
@@ -200,8 +19,8 @@
         "net_rating": 7.7,
         "efg": 0.589,
         "pace": 102.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -218,8 +37,8 @@
         "net_rating": -0.2,
         "efg": 0.411,
         "pace": 102.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -238,17 +57,15 @@
         "value_bet": false,
         "key_factors": [
           "BOS bessere Saisonbilanz (68.3% vs 54.9%)",
-          "BOS bessere Wurfeffizienz (eFG%)",
-          "BOS spielt Back-to-Back",
-          "PHI spielt Back-to-Back"
+          "BOS bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260420_SAS_POR",
-      "date": "2026-04-20",
+      "id": "nba_20260421_SAS_POR",
+      "date": "2026-04-21",
       "time": "02:00",
       "home": {
         "name": "San Antonio Spurs",
@@ -263,8 +80,8 @@
         "net_rating": 8.3,
         "efg": 0.565,
         "pace": 96.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -281,8 +98,8 @@
         "net_rating": -0.3,
         "efg": 0.484,
         "pace": 96.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -301,17 +118,15 @@
         "value_bet": false,
         "key_factors": [
           "SAS bessere Saisonbilanz (75.6% vs 51.2%)",
-          "SAS bessere Wurfeffizienz (eFG%)",
-          "SAS spielt Back-to-Back",
-          "POR spielt Back-to-Back"
+          "SAS bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260420_LAL_HOU",
-      "date": "2026-04-20",
+      "id": "nba_20260421_LAL_HOU",
+      "date": "2026-04-21",
       "time": "04:30",
       "home": {
         "name": "Los Angeles Lakers",
@@ -326,7 +141,7 @@
         "net_rating": 1.8,
         "efg": 0.682,
         "pace": 94.2,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -344,7 +159,7 @@
         "net_rating": 5.2,
         "efg": 0.435,
         "pace": 94.2,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -373,9 +188,9 @@
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "66.2%",
-  "avg_confidence": 73,
-  "total_predictions": 74,
+  "accuracy": "64.9%",
+  "avg_confidence": 74,
+  "total_predictions": 77,
   "model_version": 6,
   "data_sources": {
     "standings": "nba.com + espn cross-check",
