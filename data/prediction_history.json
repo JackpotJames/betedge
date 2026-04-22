@@ -1654,7 +1654,8 @@
     "pick": "BOS",
     "home_prob": 0.7619,
     "confidence": 76,
-    "correct": null
+    "correct": false,
+    "actual_winner": "PHI"
   },
   {
     "date": "2026-04-21",
@@ -1664,7 +1665,8 @@
     "pick": "SAS",
     "home_prob": 0.7722,
     "confidence": 77,
-    "correct": null
+    "correct": false,
+    "actual_winner": "POR"
   },
   {
     "date": "2026-04-21",
@@ -1674,6 +1676,57 @@
     "pick": "LAL",
     "home_prob": 0.71,
     "confidence": 71,
+    "correct": true,
+    "actual_winner": "LAL"
+  },
+  {
+    "date": "2026-04-22",
+    "game_dt": "2026-04-22T23:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "ORL",
+    "pick": "ORL",
+    "home_prob": 0.3575,
+    "confidence": 64,
+    "correct": null
+  },
+  {
+    "date": "2026-04-22",
+    "game_dt": "2026-04-23T01:30Z",
+    "home_abbr": "OKC",
+    "away_abbr": "PHX",
+    "pick": "OKC",
+    "home_prob": 0.8078,
+    "confidence": 81,
+    "correct": null
+  },
+  {
+    "date": "2026-04-22",
+    "game_dt": "2026-04-23T23:00Z",
+    "home_abbr": "ATL",
+    "away_abbr": "NYK",
+    "pick": "NYK",
+    "home_prob": 0.458,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-22",
+    "game_dt": "2026-04-24T00:00Z",
+    "home_abbr": "TOR",
+    "away_abbr": "CLE",
+    "pick": "CLE",
+    "home_prob": 0.2796,
+    "confidence": 72,
+    "correct": null
+  },
+  {
+    "date": "2026-04-22",
+    "game_dt": "2026-04-24T01:30Z",
+    "home_abbr": "MIN",
+    "away_abbr": "DEN",
+    "pick": "DEN",
+    "home_prob": 0.4868,
+    "confidence": 51,
     "correct": null
   }
 ]
