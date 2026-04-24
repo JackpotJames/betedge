@@ -1,14 +1,14 @@
 {
-  "win_pct_diff": 0.2,
-  "net_rtg_diff": 0.22,
-  "recent_net_diff": 0.18,
-  "efg_diff": 0.12,
-  "tov_diff": 0.08,
-  "orb_diff": 0.06,
-  "ft_rate_diff": 0.05,
-  "rest_diff": 0.04,
-  "b2b_penalty": 0.03,
-  "home_advantage": 0.02,
+  "win_pct_diff": 0.18224006050871655,
+  "net_rtg_diff": 0.2175692861823746,
+  "recent_net_diff": 0.18550797521770684,
+  "efg_diff": 0.11806424015283382,
+  "tov_diff": 0.06806464439599602,
+  "orb_diff": 0.07155006314947224,
+  "ft_rate_diff": 0.060959598833112194,
+  "rest_diff": 0.04062739436927455,
+  "b2b_penalty": 0.0244480195086524,
+  "home_advantage": 0.03096871768186085,
   "version": 6,
-  "updated": null
+  "updated": "2026-04-24"
 }
