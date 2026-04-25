@@ -1802,7 +1802,8 @@
     "pick": "BOS",
     "home_prob": 0.4611,
     "confidence": 54,
-    "correct": null
+    "correct": true,
+    "actual_winner": "BOS"
   },
   {
     "date": "2026-04-24",
@@ -1812,7 +1813,8 @@
     "pick": "LAL",
     "home_prob": 0.2867,
     "confidence": 71,
-    "correct": null
+    "correct": true,
+    "actual_winner": "LAL"
   },
   {
     "date": "2026-04-24",
@@ -1822,7 +1824,8 @@
     "pick": "SAS",
     "home_prob": 0.4276,
     "confidence": 57,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-04-24",
@@ -1862,6 +1865,86 @@
     "pick": "MIN",
     "home_prob": 0.5592,
     "confidence": 56,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-25T17:00Z",
+    "home_abbr": "ORL",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.4569,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-25T19:30Z",
+    "home_abbr": "PHX",
+    "away_abbr": "OKC",
+    "pick": "OKC",
+    "home_prob": 0.2237,
+    "confidence": 78,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-25T22:00Z",
+    "home_abbr": "ATL",
+    "away_abbr": "NYK",
+    "pick": "ATL",
+    "home_prob": 0.5428,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-26T00:30Z",
+    "home_abbr": "MIN",
+    "away_abbr": "DEN",
+    "pick": "MIN",
+    "home_prob": 0.5578,
+    "confidence": 56,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-26T17:00Z",
+    "home_abbr": "TOR",
+    "away_abbr": "CLE",
+    "pick": "CLE",
+    "home_prob": 0.4281,
+    "confidence": 57,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-26T19:30Z",
+    "home_abbr": "POR",
+    "away_abbr": "SAS",
+    "pick": "SAS",
+    "home_prob": 0.3749,
+    "confidence": 63,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-26T23:00Z",
+    "home_abbr": "PHI",
+    "away_abbr": "BOS",
+    "pick": "BOS",
+    "home_prob": 0.3999,
+    "confidence": 60,
+    "correct": null
+  },
+  {
+    "date": "2026-04-25",
+    "game_dt": "2026-04-27T01:30Z",
+    "home_abbr": "HOU",
+    "away_abbr": "LAL",
+    "pick": "LAL",
+    "home_prob": 0.2912,
+    "confidence": 71,
     "correct": null
   }
 ]
