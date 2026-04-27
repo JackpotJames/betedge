@@ -1959,7 +1959,8 @@
     "pick": "CLE",
     "home_prob": 0.4281,
     "confidence": 57,
-    "correct": null
+    "correct": false,
+    "actual_winner": "TOR"
   },
   {
     "date": "2026-04-26",
@@ -1969,7 +1970,8 @@
     "pick": "SAS",
     "home_prob": 0.3749,
     "confidence": 63,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-04-26",
@@ -1979,7 +1981,8 @@
     "pick": "BOS",
     "home_prob": 0.3999,
     "confidence": 60,
-    "correct": null
+    "correct": true,
+    "actual_winner": "BOS"
   },
   {
     "date": "2026-04-26",
@@ -1989,7 +1992,8 @@
     "pick": "LAL",
     "home_prob": 0.2912,
     "confidence": 71,
-    "correct": null
+    "correct": false,
+    "actual_winner": "HOU"
   },
   {
     "date": "2026-04-26",
@@ -2019,6 +2023,66 @@
     "pick": "MIN",
     "home_prob": 0.411,
     "confidence": 59,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-28T00:00Z",
+    "home_abbr": "ORL",
+    "away_abbr": "DET",
+    "pick": "ORL",
+    "home_prob": 0.5398,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-28T01:30Z",
+    "home_abbr": "PHX",
+    "away_abbr": "OKC",
+    "pick": "OKC",
+    "home_prob": 0.2455,
+    "confidence": 75,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-28T02:30Z",
+    "home_abbr": "DEN",
+    "away_abbr": "MIN",
+    "pick": "MIN",
+    "home_prob": 0.4124,
+    "confidence": 59,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-28T23:00Z",
+    "home_abbr": "BOS",
+    "away_abbr": "PHI",
+    "pick": "BOS",
+    "home_prob": 0.6493,
+    "confidence": 65,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-29T00:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "ATL",
+    "pick": "NYK",
+    "home_prob": 0.5426,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-04-27",
+    "game_dt": "2026-04-29T01:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "POR",
+    "pick": "SAS",
+    "home_prob": 0.6666,
+    "confidence": 67,
     "correct": null
   }
 ]
