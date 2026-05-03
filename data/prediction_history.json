@@ -2328,7 +2328,8 @@
     "pick": "BOS",
     "home_prob": 0.5538,
     "confidence": 55,
-    "correct": null
+    "correct": false,
+    "actual_winner": "PHI"
   },
   {
     "date": "2026-05-02",
@@ -2348,6 +2349,46 @@
     "pick": "CLE",
     "home_prob": 0.5163,
     "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-05-03",
+    "game_dt": "2026-05-03T19:30Z",
+    "home_abbr": "DET",
+    "away_abbr": "ORL",
+    "pick": "DET",
+    "home_prob": 0.5574,
+    "confidence": 56,
+    "correct": null
+  },
+  {
+    "date": "2026-05-03",
+    "game_dt": "2026-05-03T23:30Z",
+    "home_abbr": "CLE",
+    "away_abbr": "TOR",
+    "pick": "CLE",
+    "home_prob": 0.5194,
+    "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-05-03",
+    "game_dt": "2026-05-05T00:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "PHI",
+    "pick": "NYK",
+    "home_prob": 0.6404,
+    "confidence": 64,
+    "correct": null
+  },
+  {
+    "date": "2026-05-03",
+    "game_dt": "2026-05-05T01:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "MIN",
+    "pick": "SAS",
+    "home_prob": 0.5966,
+    "confidence": 60,
     "correct": null
   }
 ]
