@@ -1,11 +1,11 @@
 {
-  "date": "2026-05-04",
-  "updated": "13:48",
+  "date": "2026-05-06",
+  "updated": "13:57",
   "games": [
     {
-      "id": "nba_20260504_NYK_PHI",
-      "date": "2026-05-04",
-      "time": "02:00",
+      "id": "nba_20260506_NYK_PHI",
+      "date": "2026-05-06",
+      "time": "01:00",
       "home": {
         "name": "New York Knicks",
         "abbr": "NYK",
@@ -17,9 +17,9 @@
         "offensive_rating": 116.5,
         "defensive_rating": 110.1,
         "net_rating": 6.3,
-        "efg": 0.58,
-        "pace": 98.6,
-        "rest_days": 3,
+        "efg": 0.611,
+        "pace": 98.5,
+        "rest_days": 1,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -35,18 +35,18 @@
         "offensive_rating": 115.9,
         "defensive_rating": 116.1,
         "net_rating": -0.2,
-        "efg": 0.52,
-        "pace": 95.5,
+        "efg": 0.514,
+        "pace": 96.0,
         "rest_days": 1,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.6404,
-        "away_win_prob": 0.3596,
+        "home_win_prob": 0.6195,
+        "away_win_prob": 0.3805,
         "model_pick": "NYK",
-        "confidence": 64,
+        "confidence": 62,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -56,16 +56,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "NYK bessere Wurfeffizienz (eFG%)",
-          "NYK ausgeruhter (3 vs 1 Tage Pause)"
+          "NYK bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260504_SAS_MIN",
-      "date": "2026-05-04",
+      "id": "nba_20260506_SAS_MIN",
+      "date": "2026-05-06",
       "time": "03:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -78,9 +77,9 @@
         "offensive_rating": 119.8,
         "defensive_rating": 111.5,
         "net_rating": 8.3,
-        "efg": 0.567,
-        "pace": 98.2,
-        "rest_days": 3,
+        "efg": 0.554,
+        "pace": 97.7,
+        "rest_days": 1,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -96,18 +95,18 @@
         "offensive_rating": 118.0,
         "defensive_rating": 114.6,
         "net_rating": 3.4,
-        "efg": 0.526,
-        "pace": 100.6,
-        "rest_days": 3,
+        "efg": 0.524,
+        "pace": 99.7,
+        "rest_days": 1,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.5701,
-        "away_win_prob": 0.4299,
+        "home_win_prob": 0.5311,
+        "away_win_prob": 0.4689,
         "model_pick": "SAS",
-        "confidence": 57,
+        "confidence": 53,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -126,8 +125,8 @@
       }
     },
     {
-      "id": "nba_20260504_DET_CLE",
-      "date": "2026-05-04",
+      "id": "nba_20260506_DET_CLE",
+      "date": "2026-05-06",
       "time": "01:00",
       "home": {
         "name": "Detroit Pistons",
@@ -140,8 +139,8 @@
         "offensive_rating": 117.8,
         "defensive_rating": 109.6,
         "net_rating": 8.2,
-        "efg": 0.506,
-        "pace": 96.8,
+        "efg": 0.505,
+        "pace": 96.5,
         "rest_days": 0,
         "back_to_back": true,
         "injuries": [],
@@ -158,18 +157,18 @@
         "offensive_rating": 119.5,
         "defensive_rating": 115.4,
         "net_rating": 4.1,
-        "efg": 0.543,
-        "pace": 100.8,
+        "efg": 0.542,
+        "pace": 99.8,
         "rest_days": 0,
         "back_to_back": true,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.5013,
-        "away_win_prob": 0.4987,
+        "home_win_prob": 0.5448,
+        "away_win_prob": 0.4552,
         "model_pick": "DET",
-        "confidence": 50,
+        "confidence": 54,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -188,9 +187,9 @@
       }
     },
     {
-      "id": "nba_20260504_OKC_LAL",
-      "date": "2026-05-04",
-      "time": "02:30",
+      "id": "nba_20260506_OKC_LAL",
+      "date": "2026-05-06",
+      "time": "03:30",
       "home": {
         "name": "Oklahoma City Thunder",
         "abbr": "OKC",
@@ -202,10 +201,10 @@
         "offensive_rating": 119.0,
         "defensive_rating": 107.9,
         "net_rating": 11.1,
-        "efg": 0.574,
-        "pace": 97.8,
-        "rest_days": 3,
-        "back_to_back": false,
+        "efg": 0.573,
+        "pace": 97.2,
+        "rest_days": 0,
+        "back_to_back": true,
         "injuries": [],
         "data_source": "espn"
       },
@@ -220,18 +219,18 @@
         "offensive_rating": 116.3,
         "defensive_rating": 114.6,
         "net_rating": 1.8,
-        "efg": 0.533,
-        "pace": 95.0,
-        "rest_days": 2,
-        "back_to_back": false,
+        "efg": 0.521,
+        "pace": 95.1,
+        "rest_days": 0,
+        "back_to_back": true,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.6512,
-        "away_win_prob": 0.3488,
+        "home_win_prob": 0.6425,
+        "away_win_prob": 0.3575,
         "model_pick": "OKC",
-        "confidence": 65,
+        "confidence": 64,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -242,7 +241,9 @@
         "value_bet": false,
         "key_factors": [
           "OKC bessere Saisonbilanz (78.0% vs 64.6%)",
-          "OKC bessere Wurfeffizienz (eFG%)"
+          "OKC bessere Wurfeffizienz (eFG%)",
+          "OKC spielt Back-to-Back",
+          "LAL spielt Back-to-Back"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -252,8 +253,8 @@
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "59.0%",
-  "avg_confidence": 59,
+  "accuracy": "58.0%",
+  "avg_confidence": 58,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {

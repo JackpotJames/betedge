@@ -2401,7 +2401,8 @@
     "pick": "NYK",
     "home_prob": 0.6404,
     "confidence": 64,
-    "correct": null
+    "correct": true,
+    "actual_winner": "NYK"
   },
   {
     "date": "2026-05-04",
@@ -2411,7 +2412,8 @@
     "pick": "SAS",
     "home_prob": 0.5701,
     "confidence": 57,
-    "correct": null
+    "correct": false,
+    "actual_winner": "MIN"
   },
   {
     "date": "2026-05-04",
@@ -2431,6 +2433,46 @@
     "pick": "OKC",
     "home_prob": 0.6512,
     "confidence": 65,
+    "correct": null
+  },
+  {
+    "date": "2026-05-06",
+    "game_dt": "2026-05-06T23:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "PHI",
+    "pick": "NYK",
+    "home_prob": 0.6195,
+    "confidence": 62,
+    "correct": null
+  },
+  {
+    "date": "2026-05-06",
+    "game_dt": "2026-05-07T01:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "MIN",
+    "pick": "SAS",
+    "home_prob": 0.5311,
+    "confidence": 53,
+    "correct": null
+  },
+  {
+    "date": "2026-05-06",
+    "game_dt": "2026-05-07T23:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "CLE",
+    "pick": "DET",
+    "home_prob": 0.5448,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-05-06",
+    "game_dt": "2026-05-08T01:30Z",
+    "home_abbr": "OKC",
+    "away_abbr": "LAL",
+    "pick": "OKC",
+    "home_prob": 0.6425,
+    "confidence": 64,
     "correct": null
   }
 ]
