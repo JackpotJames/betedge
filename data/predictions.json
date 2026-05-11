@@ -1,132 +1,10 @@
 {
-  "date": "2026-05-10",
-  "updated": "13:08",
+  "date": "2026-05-11",
+  "updated": "14:39",
   "games": [
     {
-      "id": "nba_20260510_PHI_NYK",
-      "date": "2026-05-10",
-      "time": "21:30",
-      "home": {
-        "name": "Philadelphia 76ers",
-        "abbr": "PHI",
-        "record": "45-37",
-        "win_pct": 0.549,
-        "home_record": "23-18",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 115.9,
-        "defensive_rating": 116.1,
-        "net_rating": -0.2,
-        "efg": 0.513,
-        "pace": 95.2,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "New York Knicks",
-        "abbr": "NYK",
-        "record": "53-29",
-        "win_pct": 0.646,
-        "home_record": "30-10",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 116.5,
-        "defensive_rating": 110.1,
-        "net_rating": 6.3,
-        "efg": 0.594,
-        "pace": 96.9,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.3684,
-        "away_win_prob": 0.6316,
-        "model_pick": "NYK",
-        "confidence": 63,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "NYK bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260510_MIN_SAS",
-      "date": "2026-05-10",
-      "time": "01:30",
-      "home": {
-        "name": "Minnesota Timberwolves",
-        "abbr": "MIN",
-        "record": "49-33",
-        "win_pct": 0.598,
-        "home_record": "26-15",
-        "away_record": "23-18",
-        "last10": "5-5",
-        "offensive_rating": 118.0,
-        "defensive_rating": 114.6,
-        "net_rating": 3.4,
-        "efg": 0.502,
-        "pace": 101.6,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "San Antonio Spurs",
-        "abbr": "SAS",
-        "record": "62-20",
-        "win_pct": 0.756,
-        "home_record": "32-8",
-        "away_record": "29-12",
-        "last10": "8-2",
-        "offensive_rating": 119.8,
-        "defensive_rating": 111.5,
-        "net_rating": 8.3,
-        "efg": 0.555,
-        "pace": 100.4,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.4169,
-        "away_win_prob": 0.5831,
-        "model_pick": "SAS",
-        "confidence": 58,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "SAS bessere Saisonbilanz (75.6% vs 59.8%)",
-          "SAS bessere Wurfeffizienz (eFG%)",
-          "SAS in besserer Form (L10: 8-2)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260510_CLE_DET",
-      "date": "2026-05-10",
+      "id": "nba_20260511_CLE_DET",
+      "date": "2026-05-11",
       "time": "02:00",
       "home": {
         "name": "Cleveland Cavaliers",
@@ -141,8 +19,8 @@
         "net_rating": 4.1,
         "efg": 0.549,
         "pace": 98.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -159,8 +37,8 @@
         "net_rating": 8.2,
         "efg": 0.513,
         "pace": 95.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -178,17 +56,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "CLE bessere Wurfeffizienz (eFG%)",
-          "CLE spielt Back-to-Back",
-          "DET spielt Back-to-Back"
+          "CLE bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260510_LAL_OKC",
-      "date": "2026-05-10",
+      "id": "nba_20260511_LAL_OKC",
+      "date": "2026-05-11",
       "time": "04:30",
       "home": {
         "name": "Los Angeles Lakers",
@@ -203,8 +79,8 @@
         "net_rating": 1.8,
         "efg": 0.534,
         "pace": 95.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -221,8 +97,8 @@
         "net_rating": 11.1,
         "efg": 0.6,
         "pace": 96.6,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -241,9 +117,71 @@
         "value_bet": false,
         "key_factors": [
           "OKC bessere Saisonbilanz (78.0% vs 64.6%)",
-          "OKC bessere Wurfeffizienz (eFG%)",
-          "LAL spielt Back-to-Back",
-          "OKC spielt Back-to-Back"
+          "OKC bessere Wurfeffizienz (eFG%)"
+        ],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    },
+    {
+      "id": "nba_20260511_SAS_MIN",
+      "date": "2026-05-11",
+      "time": "02:00",
+      "home": {
+        "name": "San Antonio Spurs",
+        "abbr": "SAS",
+        "record": "62-20",
+        "win_pct": 0.756,
+        "home_record": "32-8",
+        "away_record": "29-12",
+        "last10": "8-2",
+        "offensive_rating": 119.8,
+        "defensive_rating": 111.5,
+        "net_rating": 8.3,
+        "efg": 0.548,
+        "pace": 100.7,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "Minnesota Timberwolves",
+        "abbr": "MIN",
+        "record": "49-33",
+        "win_pct": 0.598,
+        "home_record": "26-15",
+        "away_record": "23-18",
+        "last10": "5-5",
+        "offensive_rating": 118.0,
+        "defensive_rating": 114.6,
+        "net_rating": 3.4,
+        "efg": 0.501,
+        "pace": 101.7,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.5668,
+        "away_win_prob": 0.4332,
+        "model_pick": "SAS",
+        "confidence": 57,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [
+          "SAS bessere Saisonbilanz (75.6% vs 59.8%)",
+          "SAS bessere Wurfeffizienz (eFG%)",
+          "SAS spielt Back-to-Back",
+          "MIN spielt Back-to-Back",
+          "SAS in besserer Form (L10: 8-2)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -253,8 +191,8 @@
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "58.0%",
-  "avg_confidence": 60,
+  "accuracy": "59.0%",
+  "avg_confidence": 59,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
