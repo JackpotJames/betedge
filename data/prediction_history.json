@@ -2685,10 +2685,21 @@
     "pick": "SAS",
     "home_prob": 0.5668,
     "confidence": 57,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-05-12",
+    "game_dt": "2026-05-14T00:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "CLE",
+    "pick": "DET",
+    "home_prob": 0.5217,
+    "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-05-13",
     "game_dt": "2026-05-14T00:00Z",
     "home_abbr": "DET",
     "away_abbr": "CLE",

@@ -1,72 +1,10 @@
 {
-  "date": "2026-05-12",
-  "updated": "14:10",
+  "date": "2026-05-13",
+  "updated": "14:22",
   "games": [
     {
-      "id": "nba_20260512_SAS_MIN",
-      "date": "2026-05-12",
-      "time": "02:00",
-      "home": {
-        "name": "San Antonio Spurs",
-        "abbr": "SAS",
-        "record": "62-20",
-        "win_pct": 0.756,
-        "home_record": "32-8",
-        "away_record": "29-12",
-        "last10": "8-2",
-        "offensive_rating": 119.8,
-        "defensive_rating": 111.5,
-        "net_rating": 8.3,
-        "efg": 0.548,
-        "pace": 100.7,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Minnesota Timberwolves",
-        "abbr": "MIN",
-        "record": "49-33",
-        "win_pct": 0.598,
-        "home_record": "26-15",
-        "away_record": "23-18",
-        "last10": "5-5",
-        "offensive_rating": 118.0,
-        "defensive_rating": 114.6,
-        "net_rating": 3.4,
-        "efg": 0.501,
-        "pace": 101.7,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.5668,
-        "away_win_prob": 0.4332,
-        "model_pick": "SAS",
-        "confidence": 57,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "SAS bessere Saisonbilanz (75.6% vs 59.8%)",
-          "SAS bessere Wurfeffizienz (eFG%)",
-          "SAS in besserer Form (L10: 8-2)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260512_DET_CLE",
-      "date": "2026-05-12",
+      "id": "nba_20260513_DET_CLE",
+      "date": "2026-05-13",
       "time": "02:00",
       "home": {
         "name": "Detroit Pistons",
@@ -81,8 +19,8 @@
         "net_rating": 8.2,
         "efg": 0.521,
         "pace": 95.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -99,8 +37,8 @@
         "net_rating": 4.1,
         "efg": 0.546,
         "pace": 97.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -118,9 +56,7 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "CLE bessere Wurfeffizienz (eFG%)",
-          "DET spielt Back-to-Back",
-          "CLE spielt Back-to-Back"
+          "CLE bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -131,7 +67,7 @@
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
   "accuracy": "59.0%",
-  "avg_confidence": 54,
+  "avg_confidence": 52,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
