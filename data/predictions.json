@@ -1,10 +1,10 @@
 {
-  "date": "2026-05-14",
-  "updated": "13:59",
+  "date": "2026-05-15",
+  "updated": "13:56",
   "games": [
     {
-      "id": "nba_20260514_CLE_DET",
-      "date": "2026-05-14",
+      "id": "nba_20260515_CLE_DET",
+      "date": "2026-05-15",
       "time": "01:00",
       "home": {
         "name": "Cleveland Cavaliers",
@@ -19,8 +19,8 @@
         "net_rating": 4.1,
         "efg": 0.545,
         "pace": 97.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 8.2,
         "efg": 0.518,
         "pace": 96.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -56,17 +56,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "CLE bessere Wurfeffizienz (eFG%)",
-          "CLE spielt Back-to-Back",
-          "DET spielt Back-to-Back"
+          "CLE bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20260514_MIN_SAS",
-      "date": "2026-05-14",
+      "id": "nba_20260515_MIN_SAS",
+      "date": "2026-05-15",
       "time": "03:30",
       "home": {
         "name": "Minnesota Timberwolves",
@@ -81,7 +79,7 @@
         "net_rating": 3.4,
         "efg": 0.493,
         "pace": 101.7,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -99,7 +97,7 @@
         "net_rating": 8.3,
         "efg": 0.555,
         "pace": 100.9,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"

@@ -2728,5 +2728,25 @@
     "home_prob": 0.4167,
     "confidence": 58,
     "correct": null
+  },
+  {
+    "date": "2026-05-15",
+    "game_dt": "2026-05-15T23:00Z",
+    "home_abbr": "CLE",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.4957,
+    "confidence": 50,
+    "correct": null
+  },
+  {
+    "date": "2026-05-15",
+    "game_dt": "2026-05-16T01:30Z",
+    "home_abbr": "MIN",
+    "away_abbr": "SAS",
+    "pick": "SAS",
+    "home_prob": 0.4167,
+    "confidence": 58,
+    "correct": null
   }
 ]
