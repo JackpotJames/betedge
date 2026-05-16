@@ -2737,7 +2737,8 @@
     "pick": "DET",
     "home_prob": 0.4957,
     "confidence": 50,
-    "correct": null
+    "correct": true,
+    "actual_winner": "DET"
   },
   {
     "date": "2026-05-15",
@@ -2747,6 +2748,17 @@
     "pick": "SAS",
     "home_prob": 0.4167,
     "confidence": 58,
+    "correct": true,
+    "actual_winner": "SAS"
+  },
+  {
+    "date": "2026-05-16",
+    "game_dt": "2026-05-18T00:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "CLE",
+    "pick": "DET",
+    "home_prob": 0.5218,
+    "confidence": 52,
     "correct": null
   }
 ]
