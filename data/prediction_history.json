@@ -2760,5 +2760,25 @@
     "home_prob": 0.5218,
     "confidence": 52,
     "correct": null
+  },
+  {
+    "date": "2026-05-17",
+    "game_dt": "2026-05-18T00:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "CLE",
+    "pick": "DET",
+    "home_prob": 0.5218,
+    "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-05-17",
+    "game_dt": "2026-05-19T00:30Z",
+    "home_abbr": "OKC",
+    "away_abbr": "SAS",
+    "pick": "OKC",
+    "home_prob": 0.6079,
+    "confidence": 61,
+    "correct": null
   }
 ]
