@@ -2769,7 +2769,8 @@
     "pick": "DET",
     "home_prob": 0.5218,
     "confidence": 52,
-    "correct": null
+    "correct": false,
+    "actual_winner": "CLE"
   },
   {
     "date": "2026-05-17",
@@ -2779,6 +2780,26 @@
     "pick": "OKC",
     "home_prob": 0.6079,
     "confidence": 61,
+    "correct": null
+  },
+  {
+    "date": "2026-05-18",
+    "game_dt": "2026-05-19T00:30Z",
+    "home_abbr": "OKC",
+    "away_abbr": "SAS",
+    "pick": "OKC",
+    "home_prob": 0.5907,
+    "confidence": 59,
+    "correct": null
+  },
+  {
+    "date": "2026-05-18",
+    "game_dt": "2026-05-20T00:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "CLE",
+    "pick": "NYK",
+    "home_prob": 0.6182,
+    "confidence": 62,
     "correct": null
   }
 ]
