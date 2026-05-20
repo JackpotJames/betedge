@@ -2811,7 +2811,8 @@
     "pick": "NYK",
     "home_prob": 0.5895,
     "confidence": 59,
-    "correct": null
+    "correct": true,
+    "actual_winner": "NYK"
   },
   {
     "date": "2026-05-19",
@@ -2821,6 +2822,26 @@
     "pick": "OKC",
     "home_prob": 0.5442,
     "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-05-20",
+    "game_dt": "2026-05-21T00:30Z",
+    "home_abbr": "OKC",
+    "away_abbr": "SAS",
+    "pick": "OKC",
+    "home_prob": 0.5441,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-05-20",
+    "game_dt": "2026-05-22T00:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "CLE",
+    "pick": "NYK",
+    "home_prob": 0.5614,
+    "confidence": 56,
     "correct": null
   }
 ]
