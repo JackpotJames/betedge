@@ -1,70 +1,10 @@
 {
-  "date": "2026-05-23",
+  "date": "2026-05-24",
   "updated": "13:15",
   "games": [
     {
-      "id": "nba_20260523_CLE_NYK",
-      "date": "2026-05-23",
-      "time": "02:00",
-      "home": {
-        "name": "Cleveland Cavaliers",
-        "abbr": "CLE",
-        "record": "52-30",
-        "win_pct": 0.634,
-        "home_record": "27-14",
-        "away_record": "25-16",
-        "last10": "7-3",
-        "offensive_rating": 119.5,
-        "defensive_rating": 115.4,
-        "net_rating": 4.1,
-        "efg": 0.519,
-        "pace": 98.2,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "New York Knicks",
-        "abbr": "NYK",
-        "record": "53-29",
-        "win_pct": 0.646,
-        "home_record": "30-10",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 116.5,
-        "defensive_rating": 110.1,
-        "net_rating": 6.3,
-        "efg": 0.596,
-        "pace": 97.8,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.4365,
-        "away_win_prob": 0.5635,
-        "model_pick": "NYK",
-        "confidence": 56,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "NYK bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260523_SAS_OKC",
-      "date": "2026-05-23",
+      "id": "nba_20260524_SAS_OKC",
+      "date": "2026-05-24",
       "time": "02:00",
       "home": {
         "name": "San Antonio Spurs",
@@ -74,15 +14,15 @@
         "home_record": "32-8",
         "away_record": "29-12",
         "last10": "8-2",
-        "offensive_rating": 119.8,
-        "defensive_rating": 111.5,
-        "net_rating": 8.3,
+        "offensive_rating": 120.0,
+        "defensive_rating": 112.0,
+        "net_rating": 8.0,
         "efg": 0.555,
         "pace": 102.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
-        "data_source": "espn"
+        "data_source": "nba.com"
       },
       "away": {
         "name": "Oklahoma City Thunder",
@@ -93,18 +33,18 @@
         "away_record": "30-10",
         "last10": "7-3",
         "offensive_rating": 119.0,
-        "defensive_rating": 107.9,
-        "net_rating": 11.1,
+        "defensive_rating": 108.0,
+        "net_rating": 11.0,
         "efg": 0.577,
         "pace": 99.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
-        "data_source": "espn"
+        "data_source": "nba.com"
       },
       "prediction": {
-        "home_win_prob": 0.4298,
-        "away_win_prob": 0.5702,
+        "home_win_prob": 0.4299,
+        "away_win_prob": 0.5701,
         "model_pick": "OKC",
         "confidence": 57,
         "book_home_prob": null,
@@ -116,9 +56,69 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "OKC bessere Wurfeffizienz (eFG%)",
-          "SAS spielt Back-to-Back",
-          "OKC spielt Back-to-Back"
+          "OKC bessere Wurfeffizienz (eFG%)"
+        ],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    },
+    {
+      "id": "nba_20260524_CLE_NYK",
+      "date": "2026-05-24",
+      "time": "02:00",
+      "home": {
+        "name": "Cleveland Cavaliers",
+        "abbr": "CLE",
+        "record": "52-30",
+        "win_pct": 0.634,
+        "home_record": "27-14",
+        "away_record": "25-16",
+        "last10": "7-3",
+        "offensive_rating": 120.0,
+        "defensive_rating": 115.0,
+        "net_rating": 4.0,
+        "efg": 0.523,
+        "pace": 98.1,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "nba.com"
+      },
+      "away": {
+        "name": "New York Knicks",
+        "abbr": "NYK",
+        "record": "53-29",
+        "win_pct": 0.646,
+        "home_record": "30-10",
+        "away_record": "22-19",
+        "last10": "6-4",
+        "offensive_rating": 116.0,
+        "defensive_rating": 110.0,
+        "net_rating": 6.0,
+        "efg": 0.6,
+        "pace": 97.7,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "nba.com"
+      },
+      "prediction": {
+        "home_win_prob": 0.4191,
+        "away_win_prob": 0.5809,
+        "model_pick": "NYK",
+        "confidence": 58,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [
+          "NYK bessere Wurfeffizienz (eFG%)",
+          "CLE spielt Back-to-Back",
+          "NYK spielt Back-to-Back"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -129,7 +129,7 @@
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
   "accuracy": "59.0%",
-  "avg_confidence": 56,
+  "avg_confidence": 57,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
