@@ -1,70 +1,10 @@
 {
-  "date": "2026-05-25",
-  "updated": "14:45",
+  "date": "2026-05-26",
+  "updated": "14:57",
   "games": [
     {
-      "id": "nba_20260525_CLE_NYK",
-      "date": "2026-05-25",
-      "time": "02:00",
-      "home": {
-        "name": "Cleveland Cavaliers",
-        "abbr": "CLE",
-        "record": "52-30",
-        "win_pct": 0.634,
-        "home_record": "27-14",
-        "away_record": "25-16",
-        "last10": "7-3",
-        "offensive_rating": 119.5,
-        "defensive_rating": 115.4,
-        "net_rating": 4.1,
-        "efg": 0.523,
-        "pace": 98.1,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "New York Knicks",
-        "abbr": "NYK",
-        "record": "53-29",
-        "win_pct": 0.646,
-        "home_record": "30-10",
-        "away_record": "22-19",
-        "last10": "6-4",
-        "offensive_rating": 116.5,
-        "defensive_rating": 110.1,
-        "net_rating": 6.3,
-        "efg": 0.6,
-        "pace": 97.7,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.4191,
-        "away_win_prob": 0.5809,
-        "model_pick": "NYK",
-        "confidence": 58,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "NYK bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20260525_OKC_SAS",
-      "date": "2026-05-25",
+      "id": "nba_20260526_OKC_SAS",
+      "date": "2026-05-26",
       "time": "02:30",
       "home": {
         "name": "Oklahoma City Thunder",
@@ -79,8 +19,8 @@
         "net_rating": 11.1,
         "efg": 0.548,
         "pace": 99.8,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -97,8 +37,8 @@
         "net_rating": 8.3,
         "efg": 0.541,
         "pace": 102.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -115,10 +55,7 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "OKC spielt Back-to-Back",
-          "SAS spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
@@ -127,8 +64,8 @@
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "58.0%",
-  "avg_confidence": 56,
+  "accuracy": "59.0%",
+  "avg_confidence": 54,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
