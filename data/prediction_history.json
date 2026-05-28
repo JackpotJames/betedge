@@ -2970,5 +2970,15 @@
     "home_prob": 0.4465,
     "confidence": 55,
     "correct": null
+  },
+  {
+    "date": "2026-05-28",
+    "game_dt": "2026-05-29T00:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "OKC",
+    "pick": "OKC",
+    "home_prob": 0.4465,
+    "confidence": 55,
+    "correct": null
   }
 ]

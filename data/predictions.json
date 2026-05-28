@@ -1,10 +1,10 @@
 {
-  "date": "2026-05-27",
-  "updated": "15:26",
+  "date": "2026-05-28",
+  "updated": "15:40",
   "games": [
     {
-      "id": "nba_20260527_SAS_OKC",
-      "date": "2026-05-27",
+      "id": "nba_20260528_SAS_OKC",
+      "date": "2026-05-28",
       "time": "02:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -19,8 +19,8 @@
         "net_rating": 8.3,
         "efg": 0.531,
         "pace": 102.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 11.1,
         "efg": 0.55,
         "pace": 100.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -55,10 +55,7 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "SAS spielt Back-to-Back",
-          "OKC spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
