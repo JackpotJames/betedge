@@ -2979,6 +2979,17 @@
     "pick": "OKC",
     "home_prob": 0.4465,
     "confidence": 55,
+    "correct": false,
+    "actual_winner": "SAS"
+  },
+  {
+    "date": "2026-05-29",
+    "game_dt": "2026-05-31T00:00Z",
+    "home_abbr": "OKC",
+    "away_abbr": "SAS",
+    "pick": "OKC",
+    "home_prob": 0.526,
+    "confidence": 53,
     "correct": null
   }
 ]
