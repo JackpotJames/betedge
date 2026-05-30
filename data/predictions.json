@@ -1,10 +1,10 @@
 {
-  "date": "2026-05-29",
-  "updated": "14:53",
+  "date": "2026-05-30",
+  "updated": "13:19",
   "games": [
     {
-      "id": "nba_20260529_OKC_SAS",
-      "date": "2026-05-29",
+      "id": "nba_20260530_OKC_SAS",
+      "date": "2026-05-30",
       "time": "02:00",
       "home": {
         "name": "Oklahoma City Thunder",
@@ -19,8 +19,8 @@
         "net_rating": 11.1,
         "efg": 0.535,
         "pace": 100.2,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 8.3,
         "efg": 0.535,
         "pace": 102.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -55,10 +55,7 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "OKC spielt Back-to-Back",
-          "SAS spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
