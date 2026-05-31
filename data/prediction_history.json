@@ -3000,6 +3000,7 @@
     "pick": "OKC",
     "home_prob": 0.526,
     "confidence": 53,
-    "correct": null
+    "correct": false,
+    "actual_winner": "SAS"
   }
 ]

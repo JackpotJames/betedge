@@ -1,76 +1,8 @@
 {
-  "date": "2026-05-30",
-  "updated": "13:19",
-  "games": [
-    {
-      "id": "nba_20260530_OKC_SAS",
-      "date": "2026-05-30",
-      "time": "02:00",
-      "home": {
-        "name": "Oklahoma City Thunder",
-        "abbr": "OKC",
-        "record": "64-18",
-        "win_pct": 0.78,
-        "home_record": "34-7",
-        "away_record": "30-10",
-        "last10": "7-3",
-        "offensive_rating": 119.0,
-        "defensive_rating": 107.9,
-        "net_rating": 11.1,
-        "efg": 0.535,
-        "pace": 100.2,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "San Antonio Spurs",
-        "abbr": "SAS",
-        "record": "62-20",
-        "win_pct": 0.756,
-        "home_record": "32-8",
-        "away_record": "29-12",
-        "last10": "8-2",
-        "offensive_rating": 119.8,
-        "defensive_rating": 111.5,
-        "net_rating": 8.3,
-        "efg": 0.535,
-        "pace": 102.4,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.526,
-        "away_win_prob": 0.474,
-        "model_pick": "OKC",
-        "confidence": 53,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    }
-  ],
-  "no_games": false,
-  "value_count": 0,
-  "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "59.0%",
-  "avg_confidence": 53,
-  "total_predictions": 100,
-  "model_version": 6,
-  "data_sources": {
-    "standings": "nba.com + espn cross-check",
-    "game_stats": "espn box scores",
-    "odds": "the-odds-api.com"
-  }
+  "date": "2026-05-31",
+  "updated": "13:27",
+  "games": [],
+  "no_games": true,
+  "message": "Keine upcoming NBA-Spiele gefunden.",
+  "model_version": 6
 }
