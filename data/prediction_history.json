@@ -3012,5 +3012,15 @@
     "home_prob": 0.4608,
     "confidence": 54,
     "correct": null
+  },
+  {
+    "date": "2026-06-03",
+    "game_dt": "2026-06-04T00:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "NYK",
+    "pick": "NYK",
+    "home_prob": 0.4786,
+    "confidence": 52,
+    "correct": null
   }
 ]

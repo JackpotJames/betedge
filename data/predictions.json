@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-02",
-  "updated": "16:13",
+  "date": "2026-06-03",
+  "updated": "16:29",
   "games": [
     {
-      "id": "nba_20260602_SAS_NYK",
-      "date": "2026-06-02",
+      "id": "nba_20260603_SAS_NYK",
+      "date": "2026-06-03",
       "time": "02:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -19,7 +19,7 @@
         "net_rating": 8.3,
         "efg": 0.536,
         "pace": 101.6,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -43,10 +43,10 @@
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4608,
-        "away_win_prob": 0.5392,
+        "home_win_prob": 0.4786,
+        "away_win_prob": 0.5214,
         "model_pick": "NYK",
-        "confidence": 54,
+        "confidence": 52,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -68,7 +68,7 @@
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
   "accuracy": "58.0%",
-  "avg_confidence": 54,
+  "avg_confidence": 52,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
