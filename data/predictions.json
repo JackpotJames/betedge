@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-04",
-  "updated": "14:47",
+  "date": "2026-06-05",
+  "updated": "14:38",
   "games": [
     {
-      "id": "nba_20260604_SAS_NYK",
-      "date": "2026-06-04",
+      "id": "nba_20260605_SAS_NYK",
+      "date": "2026-06-05",
       "time": "02:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -19,8 +19,8 @@
         "net_rating": 8.0,
         "efg": 0.521,
         "pace": 101.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "nba.com"
       },
@@ -37,8 +37,8 @@
         "net_rating": 6.0,
         "efg": 0.583,
         "pace": 98.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "nba.com"
       },
@@ -57,9 +57,7 @@
         "value_bet": false,
         "key_factors": [
           "SAS bessere Saisonbilanz (75.6% vs 64.6%)",
-          "NYK bessere Wurfeffizienz (eFG%)",
-          "SAS spielt Back-to-Back",
-          "NYK spielt Back-to-Back"
+          "NYK bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
