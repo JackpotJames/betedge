@@ -1,8 +1,79 @@
 {
-  "date": "2026-06-06",
-  "updated": "13:21",
-  "games": [],
-  "no_games": true,
-  "message": "Keine upcoming NBA-Spiele gefunden.",
-  "model_version": 6
+  "date": "2026-06-07",
+  "updated": "13:42",
+  "games": [
+    {
+      "id": "nba_20260607_NYK_SAS",
+      "date": "2026-06-07",
+      "time": "02:30",
+      "home": {
+        "name": "New York Knicks",
+        "abbr": "NYK",
+        "record": "53-29",
+        "win_pct": 0.646,
+        "home_record": "30-10",
+        "away_record": "22-19",
+        "last10": "6-4",
+        "offensive_rating": 116.5,
+        "defensive_rating": 110.1,
+        "net_rating": 6.3,
+        "efg": 0.574,
+        "pace": 98.6,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "San Antonio Spurs",
+        "abbr": "SAS",
+        "record": "62-20",
+        "win_pct": 0.756,
+        "home_record": "32-8",
+        "away_record": "29-12",
+        "last10": "8-2",
+        "offensive_rating": 119.8,
+        "defensive_rating": 111.5,
+        "net_rating": 8.3,
+        "efg": 0.521,
+        "pace": 101.4,
+        "rest_days": 1,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.5493,
+        "away_win_prob": 0.4507,
+        "model_pick": "NYK",
+        "confidence": 55,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [
+          "SAS bessere Saisonbilanz (75.6% vs 64.6%)",
+          "NYK bessere Wurfeffizienz (eFG%)"
+        ],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    }
+  ],
+  "no_games": false,
+  "value_count": 0,
+  "message": "Heute keine Value Bets gefunden.",
+  "accuracy": "58.0%",
+  "avg_confidence": 55,
+  "total_predictions": 100,
+  "model_version": 6,
+  "data_sources": {
+    "standings": "nba.com + espn cross-check",
+    "game_stats": "espn box scores",
+    "odds": "the-odds-api.com"
+  }
 }

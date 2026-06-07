@@ -3044,5 +3044,15 @@
     "confidence": 53,
     "correct": true,
     "actual_winner": "NYK"
+  },
+  {
+    "date": "2026-06-07",
+    "game_dt": "2026-06-09T00:30Z",
+    "home_abbr": "NYK",
+    "away_abbr": "SAS",
+    "pick": "NYK",
+    "home_prob": 0.5493,
+    "confidence": 55,
+    "correct": null
   }
 ]
