@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-07",
-  "updated": "13:42",
+  "date": "2026-06-08",
+  "updated": "15:40",
   "games": [
     {
-      "id": "nba_20260607_NYK_SAS",
-      "date": "2026-06-07",
+      "id": "nba_20260608_NYK_SAS",
+      "date": "2026-06-08",
       "time": "02:30",
       "home": {
         "name": "New York Knicks",
@@ -19,7 +19,7 @@
         "net_rating": 6.3,
         "efg": 0.574,
         "pace": 98.6,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -37,7 +37,7 @@
         "net_rating": 8.3,
         "efg": 0.521,
         "pace": 101.4,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
