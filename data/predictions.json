@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-08",
-  "updated": "15:40",
+  "date": "2026-06-09",
+  "updated": "14:38",
   "games": [
     {
-      "id": "nba_20260608_NYK_SAS",
-      "date": "2026-06-08",
+      "id": "nba_20260609_NYK_SAS",
+      "date": "2026-06-09",
       "time": "02:30",
       "home": {
         "name": "New York Knicks",
@@ -17,10 +17,10 @@
         "offensive_rating": 116.5,
         "defensive_rating": 110.1,
         "net_rating": 6.3,
-        "efg": 0.574,
-        "pace": 98.6,
-        "rest_days": 2,
-        "back_to_back": false,
+        "efg": 0.57,
+        "pace": 98.7,
+        "rest_days": 0,
+        "back_to_back": true,
         "injuries": [],
         "data_source": "espn"
       },
@@ -35,18 +35,18 @@
         "offensive_rating": 119.8,
         "defensive_rating": 111.5,
         "net_rating": 8.3,
-        "efg": 0.521,
-        "pace": 101.4,
-        "rest_days": 2,
-        "back_to_back": false,
+        "efg": 0.523,
+        "pace": 101.3,
+        "rest_days": 0,
+        "back_to_back": true,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.5493,
-        "away_win_prob": 0.4507,
+        "home_win_prob": 0.5361,
+        "away_win_prob": 0.4639,
         "model_pick": "NYK",
-        "confidence": 55,
+        "confidence": 54,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -57,7 +57,9 @@
         "value_bet": false,
         "key_factors": [
           "SAS bessere Saisonbilanz (75.6% vs 64.6%)",
-          "NYK bessere Wurfeffizienz (eFG%)"
+          "NYK bessere Wurfeffizienz (eFG%)",
+          "NYK spielt Back-to-Back",
+          "SAS spielt Back-to-Back"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -67,8 +69,8 @@
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "58.0%",
-  "avg_confidence": 55,
+  "accuracy": "57.0%",
+  "avg_confidence": 54,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
