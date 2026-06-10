@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-09",
-  "updated": "14:38",
+  "date": "2026-06-10",
+  "updated": "15:23",
   "games": [
     {
-      "id": "nba_20260609_NYK_SAS",
-      "date": "2026-06-09",
+      "id": "nba_20260610_NYK_SAS",
+      "date": "2026-06-10",
       "time": "02:30",
       "home": {
         "name": "New York Knicks",
@@ -19,8 +19,8 @@
         "net_rating": 6.3,
         "efg": 0.57,
         "pace": 98.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 8.3,
         "efg": 0.523,
         "pace": 101.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -57,9 +57,7 @@
         "value_bet": false,
         "key_factors": [
           "SAS bessere Saisonbilanz (75.6% vs 64.6%)",
-          "NYK bessere Wurfeffizienz (eFG%)",
-          "NYK spielt Back-to-Back",
-          "SAS spielt Back-to-Back"
+          "NYK bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
