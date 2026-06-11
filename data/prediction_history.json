@@ -3084,6 +3084,7 @@
     "pick": "NYK",
     "home_prob": 0.5361,
     "confidence": 54,
-    "correct": null
+    "correct": true,
+    "actual_winner": "NYK"
   }
 ]
