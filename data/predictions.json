@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-12",
-  "updated": "14:48",
+  "date": "2026-06-13",
+  "updated": "13:49",
   "games": [
     {
-      "id": "nba_20260612_SAS_NYK",
-      "date": "2026-06-12",
+      "id": "nba_20260613_SAS_NYK",
+      "date": "2026-06-13",
       "time": "02:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -19,7 +19,7 @@
         "net_rating": 8.3,
         "efg": 0.521,
         "pace": 100.3,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -37,7 +37,7 @@
         "net_rating": 6.3,
         "efg": 0.571,
         "pace": 98.1,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
