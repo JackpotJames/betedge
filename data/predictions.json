@@ -1,8 +1,17 @@
 {
-  "date": "2026-10-01",
-  "updated": "17:54",
+  "date": "2026-10-02",
+  "updated": "17:18",
   "games": [],
   "no_games": true,
-  "message": "Keine upcoming NBA-Spiele gefunden.",
-  "model_version": 6
+  "value_count": 0,
+  "message": "Heute keine Value Bets gefunden.",
+  "accuracy": "58.0%",
+  "avg_confidence": 0,
+  "total_predictions": 100,
+  "model_version": 6,
+  "data_sources": {
+    "standings": "nba.com + espn cross-check",
+    "game_stats": "espn box scores",
+    "odds": "the-odds-api.com"
+  }
 }
