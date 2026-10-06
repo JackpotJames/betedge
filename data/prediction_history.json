@@ -3107,5 +3107,25 @@
     "confidence": 55,
     "correct": true,
     "actual_winner": "NYK"
+  },
+  {
+    "date": "2026-10-06",
+    "game_dt": "2026-10-07T01:00Z",
+    "home_abbr": "UTA",
+    "away_abbr": "DEN",
+    "pick": "UTA",
+    "home_prob": 0.5877,
+    "confidence": 59,
+    "correct": null
+  },
+  {
+    "date": "2026-10-06",
+    "game_dt": "2026-10-07T02:00Z",
+    "home_abbr": "GSW",
+    "away_abbr": "LAL",
+    "pick": "LAL",
+    "home_prob": 0.2511,
+    "confidence": 75,
+    "correct": null
   }
 ]
