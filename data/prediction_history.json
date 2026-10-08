@@ -3138,7 +3138,8 @@
     "pick": "OKC",
     "home_prob": 0.5693,
     "confidence": 57,
-    "correct": null
+    "correct": false,
+    "actual_winner": "MIL"
   },
   {
     "date": "2026-10-07",
@@ -3168,6 +3169,46 @@
     "pick": "LAL",
     "home_prob": 0.6249,
     "confidence": 62,
+    "correct": null
+  },
+  {
+    "date": "2026-10-08",
+    "game_dt": "2026-10-08T23:30Z",
+    "home_abbr": "MIA",
+    "away_abbr": "NOP",
+    "pick": "MIA",
+    "home_prob": 0.5581,
+    "confidence": 56,
+    "correct": null
+  },
+  {
+    "date": "2026-10-08",
+    "game_dt": "2026-10-08T23:30Z",
+    "home_abbr": "BKN",
+    "away_abbr": "PHI",
+    "pick": "PHI",
+    "home_prob": 0.3888,
+    "confidence": 61,
+    "correct": null
+  },
+  {
+    "date": "2026-10-08",
+    "game_dt": "2026-10-09T02:30Z",
+    "home_abbr": "LAL",
+    "away_abbr": "SAC",
+    "pick": "LAL",
+    "home_prob": 0.6362,
+    "confidence": 64,
+    "correct": null
+  },
+  {
+    "date": "2026-10-08",
+    "game_dt": "2026-10-10T00:00Z",
+    "home_abbr": "CHI",
+    "away_abbr": "MEM",
+    "pick": "CHI",
+    "home_prob": 0.639,
+    "confidence": 64,
     "correct": null
   }
 ]
