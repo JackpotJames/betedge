@@ -1,318 +1,10 @@
 {
-  "date": "2026-10-13",
-  "updated": "18:50",
+  "date": "2026-10-14",
+  "updated": "16:25",
   "games": [
     {
-      "id": "nba_20261013_ORL_CLE",
-      "date": "2026-10-13",
-      "time": "01:00",
-      "home": {
-        "name": "Orlando Magic",
-        "abbr": "ORL",
-        "record": "1-1",
-        "win_pct": 0.5,
-        "home_record": "0-0",
-        "away_record": "1-1",
-        "last10": "1-9",
-        "offensive_rating": 113.5,
-        "defensive_rating": 118.5,
-        "net_rating": -5.0,
-        "efg": 0.534,
-        "pace": 105.3,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Cleveland Cavaliers",
-        "abbr": "CLE",
-        "record": "1-1",
-        "win_pct": 0.5,
-        "home_record": "1-1",
-        "away_record": "0-0",
-        "last10": "1-9",
-        "offensive_rating": 116.0,
-        "defensive_rating": 114.5,
-        "net_rating": 1.5,
-        "efg": 0.578,
-        "pace": 101.5,
-        "rest_days": 1,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.4471,
-        "away_win_prob": 0.5529,
-        "model_pick": "CLE",
-        "confidence": 55,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "CLE bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20261013_TOR_NYK",
-      "date": "2026-10-13",
-      "time": "01:00",
-      "home": {
-        "name": "Toronto Raptors",
-        "abbr": "TOR",
-        "record": "1-1",
-        "win_pct": 0.5,
-        "home_record": "1-1",
-        "away_record": "0-0",
-        "last10": "1-9",
-        "offensive_rating": 109.5,
-        "defensive_rating": 117.5,
-        "net_rating": -8.0,
-        "efg": 0.592,
-        "pace": 99.4,
-        "rest_days": 2,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "New York Knicks",
-        "abbr": "NYK",
-        "record": "0-3",
-        "win_pct": 0.0,
-        "home_record": "0-2",
-        "away_record": "0-1",
-        "last10": "0-10",
-        "offensive_rating": 103.3,
-        "defensive_rating": 117.7,
-        "net_rating": -14.3,
-        "efg": 0.57,
-        "pace": 94.1,
-        "rest_days": 0,
-        "back_to_back": true,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.6337,
-        "away_win_prob": 0.3663,
-        "model_pick": "TOR",
-        "confidence": 63,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "TOR bessere Saisonbilanz (50.0% vs 0.0%)",
-          "TOR bessere Wurfeffizienz (eFG%)",
-          "TOR ausgeruhter (2 vs 0 Tage Pause)",
-          "NYK spielt Back-to-Back"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20261013_OKC_IND",
-      "date": "2026-10-13",
-      "time": "02:00",
-      "home": {
-        "name": "Oklahoma City Thunder",
-        "abbr": "OKC",
-        "record": "0-3",
-        "win_pct": 0.0,
-        "home_record": "0-1",
-        "away_record": "0-1",
-        "last10": "0-10",
-        "offensive_rating": 115.3,
-        "defensive_rating": 119.0,
-        "net_rating": -3.7,
-        "efg": 0.579,
-        "pace": 101.7,
-        "rest_days": 0,
-        "back_to_back": true,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Indiana Pacers",
-        "abbr": "IND",
-        "record": "1-1",
-        "win_pct": 0.5,
-        "home_record": "0-1",
-        "away_record": "0-0",
-        "last10": "1-9",
-        "offensive_rating": 120.0,
-        "defensive_rating": 115.5,
-        "net_rating": 4.5,
-        "efg": 0.573,
-        "pace": 103.5,
-        "rest_days": 2,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.457,
-        "away_win_prob": 0.543,
-        "model_pick": "IND",
-        "confidence": 54,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "IND bessere Saisonbilanz (50.0% vs 0.0%)",
-          "IND ausgeruhter (2 vs 0 Tage Pause)",
-          "OKC spielt Back-to-Back"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20261013_LAL_GSW",
-      "date": "2026-10-13",
-      "time": "04:00",
-      "home": {
-        "name": "Los Angeles Lakers",
-        "abbr": "LAL",
-        "record": "2-1",
-        "win_pct": 0.667,
-        "home_record": "1-0",
-        "away_record": "1-1",
-        "last10": "2-8",
-        "offensive_rating": 113.0,
-        "defensive_rating": 112.3,
-        "net_rating": 0.7,
-        "efg": 0.586,
-        "pace": 98.7,
-        "rest_days": 3,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Golden State Warriors",
-        "abbr": "GSW",
-        "record": "2-2",
-        "win_pct": 0.5,
-        "home_record": "2-0",
-        "away_record": "0-1",
-        "last10": "2-8",
-        "offensive_rating": 113.5,
-        "defensive_rating": 107.8,
-        "net_rating": 5.8,
-        "efg": 0.55,
-        "pace": 99.5,
-        "rest_days": 2,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.6344,
-        "away_win_prob": 0.3656,
-        "model_pick": "LAL",
-        "confidence": 63,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "LAL bessere Saisonbilanz (66.7% vs 50.0%)",
-          "LAL bessere Wurfeffizienz (eFG%)"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20261013_SAC_POR",
-      "date": "2026-10-13",
-      "time": "04:00",
-      "home": {
-        "name": "Sacramento Kings",
-        "abbr": "SAC",
-        "record": "0-3",
-        "win_pct": 0.0,
-        "home_record": "0-1",
-        "away_record": "0-2",
-        "last10": "0-10",
-        "offensive_rating": 106.3,
-        "defensive_rating": 117.3,
-        "net_rating": -11.0,
-        "efg": 0.546,
-        "pace": 99.5,
-        "rest_days": 2,
-        "back_to_back": false,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "away": {
-        "name": "Portland Trail Blazers",
-        "abbr": "POR",
-        "record": "2-0",
-        "win_pct": 1.0,
-        "home_record": "2-0",
-        "away_record": "0-0",
-        "last10": "2-8",
-        "offensive_rating": 121.0,
-        "defensive_rating": 92.0,
-        "net_rating": 29.0,
-        "efg": 0.548,
-        "pace": 100.9,
-        "rest_days": 0,
-        "back_to_back": true,
-        "injuries": [],
-        "data_source": "espn"
-      },
-      "prediction": {
-        "home_win_prob": 0.2919,
-        "away_win_prob": 0.7081,
-        "model_pick": "POR",
-        "confidence": 71,
-        "book_home_prob": null,
-        "book_away_prob": null,
-        "home_odds": null,
-        "away_odds": null,
-        "home_ev": 0,
-        "away_ev": 0,
-        "kelly_fraction": 0,
-        "value_bet": false,
-        "key_factors": [
-          "POR bessere Saisonbilanz (100.0% vs 0.0%)",
-          "SAC ausgeruhter (2 vs 0 Tage Pause)",
-          "POR spielt Back-to-Back"
-        ],
-        "odds_source": "Keine Quoten",
-        "model_version": 6
-      }
-    },
-    {
-      "id": "nba_20261013_MIA_BKN",
-      "date": "2026-10-13",
+      "id": "nba_20261014_MIA_BKN",
+      "date": "2026-10-14",
       "time": "01:30",
       "home": {
         "name": "Miami Heat",
@@ -327,7 +19,7 @@
         "net_rating": 11.0,
         "efg": 0.586,
         "pace": 103.4,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -345,16 +37,16 @@
         "net_rating": 16.3,
         "efg": 0.505,
         "pace": 99.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.5405,
-        "away_win_prob": 0.4595,
+        "home_win_prob": 0.5245,
+        "away_win_prob": 0.4755,
         "model_pick": "MIA",
-        "confidence": 54,
+        "confidence": 52,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -366,16 +58,15 @@
         "key_factors": [
           "BKN bessere Saisonbilanz (100.0% vs 66.7%)",
           "MIA bessere Wurfeffizienz (eFG%)",
-          "MIA ausgeruhter (2 vs 0 Tage Pause)",
-          "BKN spielt Back-to-Back"
+          "MIA ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261013_BOS_CHA",
-      "date": "2026-10-13",
+      "id": "nba_20261014_BOS_CHA",
+      "date": "2026-10-14",
       "time": "01:30",
       "home": {
         "name": "Boston Celtics",
@@ -390,7 +81,7 @@
         "net_rating": 24.5,
         "efg": 0.581,
         "pace": 98.4,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -408,14 +99,14 @@
         "net_rating": -9.5,
         "efg": 0.561,
         "pace": 96.6,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.6457,
-        "away_win_prob": 0.3543,
+        "home_win_prob": 0.6481,
+        "away_win_prob": 0.3519,
         "model_pick": "BOS",
         "confidence": 65,
         "book_home_prob": null,
@@ -434,8 +125,8 @@
       }
     },
     {
-      "id": "nba_20261013_SAS_PHX",
-      "date": "2026-10-13",
+      "id": "nba_20261014_SAS_PHX",
+      "date": "2026-10-14",
       "time": "02:00",
       "home": {
         "name": "San Antonio Spurs",
@@ -450,8 +141,8 @@
         "net_rating": -7.0,
         "efg": 0.57,
         "pace": 101.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -468,16 +159,16 @@
         "net_rating": -1.7,
         "efg": 0.532,
         "pace": 99.3,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4611,
-        "away_win_prob": 0.5389,
+        "home_win_prob": 0.4704,
+        "away_win_prob": 0.5296,
         "model_pick": "PHX",
-        "confidence": 54,
+        "confidence": 53,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -489,16 +180,15 @@
         "key_factors": [
           "PHX bessere Saisonbilanz (33.3% vs 0.0%)",
           "SAS bessere Wurfeffizienz (eFG%)",
-          "PHX ausgeruhter (2 vs 0 Tage Pause)",
-          "SAS spielt Back-to-Back"
+          "PHX ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261013_DAL_NOP",
-      "date": "2026-10-13",
+      "id": "nba_20261014_DAL_NOP",
+      "date": "2026-10-14",
       "time": "02:00",
       "home": {
         "name": "Dallas Mavericks",
@@ -513,7 +203,7 @@
         "net_rating": -0.5,
         "efg": 0.523,
         "pace": 106.0,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -537,10 +227,10 @@
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4685,
-        "away_win_prob": 0.5315,
+        "home_win_prob": 0.484,
+        "away_win_prob": 0.516,
         "model_pick": "NOP",
-        "confidence": 53,
+        "confidence": 52,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -549,16 +239,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "NOP ausgeruhter (3 vs 1 Tage Pause)"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261013_MIL_CHI",
-      "date": "2026-10-13",
+      "id": "nba_20261014_MIL_CHI",
+      "date": "2026-10-14",
       "time": "02:00",
       "home": {
         "name": "Milwaukee Bucks",
@@ -573,7 +261,7 @@
         "net_rating": -10.7,
         "efg": 0.572,
         "pace": 98.1,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -591,16 +279,16 @@
         "net_rating": -0.7,
         "efg": 0.533,
         "pace": 108.2,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.5053,
-        "away_win_prob": 0.4947,
-        "model_pick": "MIL",
-        "confidence": 51,
+        "home_win_prob": 0.4962,
+        "away_win_prob": 0.5038,
+        "model_pick": "CHI",
+        "confidence": 50,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -617,8 +305,8 @@
       }
     },
     {
-      "id": "nba_20261013_MIN_DET",
-      "date": "2026-10-13",
+      "id": "nba_20261014_MIN_DET",
+      "date": "2026-10-14",
       "time": "02:00",
       "home": {
         "name": "Minnesota Timberwolves",
@@ -633,8 +321,8 @@
         "net_rating": 6.8,
         "efg": 0.551,
         "pace": 103.5,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -651,16 +339,16 @@
         "net_rating": -2.0,
         "efg": 0.585,
         "pace": 101.4,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.441,
-        "away_win_prob": 0.559,
+        "home_win_prob": 0.4461,
+        "away_win_prob": 0.5539,
         "model_pick": "DET",
-        "confidence": 56,
+        "confidence": 55,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -672,16 +360,15 @@
         "key_factors": [
           "MIN bessere Saisonbilanz (75.0% vs 50.0%)",
           "DET bessere Wurfeffizienz (eFG%)",
-          "DET ausgeruhter (2 vs 0 Tage Pause)",
-          "MIN spielt Back-to-Back"
+          "DET ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261013_LAC_DEN",
-      "date": "2026-10-13",
+      "id": "nba_20261014_LAC_DEN",
+      "date": "2026-10-14",
       "time": "04:30",
       "home": {
         "name": "Los Angeles Clippers",
@@ -696,7 +383,7 @@
         "net_rating": -2.5,
         "efg": 0.563,
         "pace": 99.0,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -714,14 +401,14 @@
         "net_rating": 1.3,
         "efg": 0.6,
         "pace": 103.2,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.405,
-        "away_win_prob": 0.595,
+        "home_win_prob": 0.4049,
+        "away_win_prob": 0.5951,
         "model_pick": "DEN",
         "confidence": 60,
         "book_home_prob": null,
@@ -739,13 +426,138 @@
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
+    },
+    {
+      "id": "nba_20261014_NYK_TOR",
+      "date": "2026-10-14",
+      "time": "01:30",
+      "home": {
+        "name": "New York Knicks",
+        "abbr": "NYK",
+        "record": "0-4",
+        "win_pct": 0.0,
+        "home_record": "0-2",
+        "away_record": "0-2",
+        "last10": "0-10",
+        "offensive_rating": 102.0,
+        "defensive_rating": 125.2,
+        "net_rating": -23.2,
+        "efg": 0.57,
+        "pace": 94.1,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "Toronto Raptors",
+        "abbr": "TOR",
+        "record": "2-1",
+        "win_pct": 0.667,
+        "home_record": "2-1",
+        "away_record": "0-0",
+        "last10": "2-8",
+        "offensive_rating": 122.3,
+        "defensive_rating": 111.0,
+        "net_rating": 11.3,
+        "efg": 0.592,
+        "pace": 99.4,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.3924,
+        "away_win_prob": 0.6076,
+        "model_pick": "TOR",
+        "confidence": 61,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [
+          "TOR bessere Saisonbilanz (66.7% vs 0.0%)",
+          "TOR bessere Wurfeffizienz (eFG%)",
+          "NYK spielt Back-to-Back",
+          "TOR spielt Back-to-Back"
+        ],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
+    },
+    {
+      "id": "nba_20261014_HOU_OKC",
+      "date": "2026-10-14",
+      "time": "02:30",
+      "home": {
+        "name": "Houston Rockets",
+        "abbr": "HOU",
+        "record": "1-1",
+        "win_pct": 0.5,
+        "home_record": "0-0",
+        "away_record": "0-0",
+        "last10": "1-9",
+        "offensive_rating": 125.0,
+        "defensive_rating": 124.5,
+        "net_rating": 0.5,
+        "efg": 0.57,
+        "pace": 100.3,
+        "rest_days": 2,
+        "back_to_back": false,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "away": {
+        "name": "Oklahoma City Thunder",
+        "abbr": "OKC",
+        "record": "1-3",
+        "win_pct": 0.25,
+        "home_record": "1-1",
+        "away_record": "0-1",
+        "last10": "1-9",
+        "offensive_rating": 115.0,
+        "defensive_rating": 117.2,
+        "net_rating": -2.2,
+        "efg": 0.579,
+        "pace": 101.7,
+        "rest_days": 0,
+        "back_to_back": true,
+        "injuries": [],
+        "data_source": "espn"
+      },
+      "prediction": {
+        "home_win_prob": 0.6304,
+        "away_win_prob": 0.3696,
+        "model_pick": "HOU",
+        "confidence": 63,
+        "book_home_prob": null,
+        "book_away_prob": null,
+        "home_odds": null,
+        "away_odds": null,
+        "home_ev": 0,
+        "away_ev": 0,
+        "kelly_fraction": 0,
+        "value_bet": false,
+        "key_factors": [
+          "HOU bessere Saisonbilanz (50.0% vs 25.0%)",
+          "HOU ausgeruhter (2 vs 0 Tage Pause)",
+          "OKC spielt Back-to-Back"
+        ],
+        "odds_source": "Keine Quoten",
+        "model_version": 6
+      }
     }
   ],
   "no_games": false,
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
-  "accuracy": "56.0%",
-  "avg_confidence": 58,
+  "accuracy": "54.0%",
+  "avg_confidence": 56,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
