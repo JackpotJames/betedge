@@ -4074,5 +4074,35 @@
     "confidence": 50,
     "correct": false,
     "actual_winner": "DEN"
+  },
+  {
+    "date": "2026-10-19",
+    "game_dt": "2026-10-20T19:00Z",
+    "home_abbr": "DET",
+    "away_abbr": "BOS",
+    "pick": "BOS",
+    "home_prob": 0.4611,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-10-19",
+    "game_dt": "2026-10-20T23:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "PHI",
+    "pick": "NYK",
+    "home_prob": 0.5552,
+    "confidence": 56,
+    "correct": null
+  },
+  {
+    "date": "2026-10-19",
+    "game_dt": "2026-10-21T01:30Z",
+    "home_abbr": "SAS",
+    "away_abbr": "OKC",
+    "pick": "SAS",
+    "home_prob": 0.5441,
+    "confidence": 54,
+    "correct": null
   }
 ]
