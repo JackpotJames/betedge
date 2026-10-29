@@ -4713,7 +4713,8 @@
     "pick": "ATL",
     "home_prob": 0.6504,
     "confidence": 65,
-    "correct": null
+    "correct": false,
+    "actual_winner": "MIA"
   },
   {
     "date": "2026-10-28",
@@ -4723,7 +4724,8 @@
     "pick": "CLE",
     "home_prob": 0.6748,
     "confidence": 67,
-    "correct": null
+    "correct": true,
+    "actual_winner": "CLE"
   },
   {
     "date": "2026-10-28",
@@ -4733,7 +4735,8 @@
     "pick": "CHA",
     "home_prob": 0.4739,
     "confidence": 53,
-    "correct": null
+    "correct": false,
+    "actual_winner": "DET"
   },
   {
     "date": "2026-10-28",
@@ -4743,7 +4746,8 @@
     "pick": "PHI",
     "home_prob": 0.3505,
     "confidence": 65,
-    "correct": null
+    "correct": true,
+    "actual_winner": "PHI"
   },
   {
     "date": "2026-10-28",
@@ -4753,7 +4757,8 @@
     "pick": "TOR",
     "home_prob": 0.6027,
     "confidence": 60,
-    "correct": null
+    "correct": true,
+    "actual_winner": "TOR"
   },
   {
     "date": "2026-10-28",
@@ -4763,7 +4768,8 @@
     "pick": "NYK",
     "home_prob": 0.454,
     "confidence": 55,
-    "correct": null
+    "correct": true,
+    "actual_winner": "NYK"
   },
   {
     "date": "2026-10-28",
@@ -4773,7 +4779,8 @@
     "pick": "HOU",
     "home_prob": 0.2588,
     "confidence": 74,
-    "correct": null
+    "correct": true,
+    "actual_winner": "HOU"
   },
   {
     "date": "2026-10-28",
@@ -4783,7 +4790,8 @@
     "pick": "MIN",
     "home_prob": 0.6441,
     "confidence": 64,
-    "correct": null
+    "correct": false,
+    "actual_winner": "GSW"
   },
   {
     "date": "2026-10-28",
@@ -4793,7 +4801,8 @@
     "pick": "DEN",
     "home_prob": 0.3654,
     "confidence": 63,
-    "correct": null
+    "correct": true,
+    "actual_winner": "DEN"
   },
   {
     "date": "2026-10-28",
@@ -4803,7 +4812,8 @@
     "pick": "SAS",
     "home_prob": 0.3642,
     "confidence": 64,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-10-28",
@@ -4813,7 +4823,8 @@
     "pick": "OKC",
     "home_prob": 0.2906,
     "confidence": 71,
-    "correct": null
+    "correct": false,
+    "actual_winner": "DAL"
   },
   {
     "date": "2026-10-28",
@@ -4823,6 +4834,37 @@
     "pick": "LAL",
     "home_prob": 0.4679,
     "confidence": 53,
+    "correct": true,
+    "actual_winner": "LAL"
+  },
+  {
+    "date": "2026-10-29",
+    "game_dt": "2026-10-30T00:00:00Z",
+    "home_abbr": "ATL",
+    "away_abbr": "CLE",
+    "pick": "CLE",
+    "home_prob": 0.4189,
+    "confidence": 58,
+    "correct": null
+  },
+  {
+    "date": "2026-10-29",
+    "game_dt": "2026-10-30T00:00:00Z",
+    "home_abbr": "NOP",
+    "away_abbr": "SAC",
+    "pick": "SAC",
+    "home_prob": 0.3998,
+    "confidence": 60,
+    "correct": null
+  },
+  {
+    "date": "2026-10-29",
+    "game_dt": "2026-10-30T02:00:00Z",
+    "home_abbr": "POR",
+    "away_abbr": "MEM",
+    "pick": "POR",
+    "home_prob": 0.5941,
+    "confidence": 59,
     "correct": null
   }
 ]
