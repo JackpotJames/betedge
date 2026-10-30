@@ -4845,7 +4845,8 @@
     "pick": "CLE",
     "home_prob": 0.4189,
     "confidence": 58,
-    "correct": null
+    "correct": false,
+    "actual_winner": "ATL"
   },
   {
     "date": "2026-10-29",
@@ -4855,7 +4856,8 @@
     "pick": "SAC",
     "home_prob": 0.3998,
     "confidence": 60,
-    "correct": null
+    "correct": false,
+    "actual_winner": "NOP"
   },
   {
     "date": "2026-10-29",
@@ -4865,6 +4867,107 @@
     "pick": "POR",
     "home_prob": 0.5941,
     "confidence": 59,
+    "correct": false,
+    "actual_winner": "MEM"
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-30T23:00:00Z",
+    "home_abbr": "WAS",
+    "away_abbr": "CHA",
+    "pick": "CHA",
+    "home_prob": 0.3379,
+    "confidence": 66,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-30T23:30:00Z",
+    "home_abbr": "BOS",
+    "away_abbr": "CHI",
+    "pick": "BOS",
+    "home_prob": 0.7703,
+    "confidence": 77,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-30T23:30:00Z",
+    "home_abbr": "BKN",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.2504,
+    "confidence": 75,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-30T23:30:00Z",
+    "home_abbr": "PHI",
+    "away_abbr": "NYK",
+    "pick": "PHI",
+    "home_prob": 0.54,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-30T23:30:00Z",
+    "home_abbr": "TOR",
+    "away_abbr": "ORL",
+    "pick": "TOR",
+    "home_prob": 0.6421,
+    "confidence": 64,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-31T00:00:00Z",
+    "home_abbr": "MIA",
+    "away_abbr": "IND",
+    "pick": "IND",
+    "home_prob": 0.487,
+    "confidence": 51,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-31T00:00:00Z",
+    "home_abbr": "DAL",
+    "away_abbr": "HOU",
+    "pick": "HOU",
+    "home_prob": 0.3103,
+    "confidence": 69,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-31T00:00:00Z",
+    "home_abbr": "MIN",
+    "away_abbr": "LAC",
+    "pick": "MIN",
+    "home_prob": 0.5767,
+    "confidence": 58,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-31T02:00:00Z",
+    "home_abbr": "GSW",
+    "away_abbr": "LAL",
+    "pick": "LAL",
+    "home_prob": 0.3316,
+    "confidence": 67,
+    "correct": null
+  },
+  {
+    "date": "2026-10-30",
+    "game_dt": "2026-10-31T02:00:00Z",
+    "home_abbr": "PHX",
+    "away_abbr": "DEN",
+    "pick": "DEN",
+    "home_prob": 0.4358,
+    "confidence": 56,
     "correct": null
   }
 ]
