@@ -1,58 +1,5 @@
 [
   {
-    "date": "2026-04-11",
-    "game_dt": "2026-04-13T00:30Z",
-    "home_abbr": "LAC",
-    "away_abbr": "GSW",
-    "pick": "LAC",
-    "home_prob": 0.5474,
-    "confidence": 55,
-    "correct": null
-  },
-  {
-    "date": "2026-04-11",
-    "game_dt": "2026-04-13T00:30Z",
-    "home_abbr": "POR",
-    "away_abbr": "SAC",
-    "pick": "POR",
-    "home_prob": 0.6064,
-    "confidence": 61,
-    "correct": null
-  },
-  {
-    "date": "2026-04-12",
-    "game_dt": "2026-04-12T22:00Z",
-    "home_abbr": "BOS",
-    "away_abbr": "ORL",
-    "pick": "BOS",
-    "home_prob": 0.5923,
-    "confidence": 59,
-    "correct": true,
-    "actual_winner": "BOS"
-  },
-  {
-    "date": "2026-04-12",
-    "game_dt": "2026-04-12T22:00Z",
-    "home_abbr": "CLE",
-    "away_abbr": "WAS",
-    "pick": "CLE",
-    "home_prob": 0.7341,
-    "confidence": 73,
-    "correct": true,
-    "actual_winner": "CLE"
-  },
-  {
-    "date": "2026-04-12",
-    "game_dt": "2026-04-12T22:00Z",
-    "home_abbr": "IND",
-    "away_abbr": "DET",
-    "pick": "DET",
-    "home_prob": 0.2794,
-    "confidence": 72,
-    "correct": true,
-    "actual_winner": "DET"
-  },
-  {
     "date": "2026-04-12",
     "game_dt": "2026-04-12T22:00Z",
     "home_abbr": "MIA",
@@ -5241,7 +5188,8 @@
     "pick": "NYK",
     "home_prob": 0.3557,
     "confidence": 64,
-    "correct": null
+    "correct": false,
+    "actual_winner": "IND"
   },
   {
     "date": "2026-11-13",
@@ -5251,7 +5199,8 @@
     "pick": "ORL",
     "home_prob": 0.5834,
     "confidence": 58,
-    "correct": null
+    "correct": true,
+    "actual_winner": "ORL"
   },
   {
     "date": "2026-11-13",
@@ -5261,7 +5210,8 @@
     "pick": "CLE",
     "home_prob": 0.4565,
     "confidence": 54,
-    "correct": null
+    "correct": false,
+    "actual_winner": "MIA"
   },
   {
     "date": "2026-11-13",
@@ -5271,7 +5221,8 @@
     "pick": "ATL",
     "home_prob": 0.2546,
     "confidence": 75,
-    "correct": null
+    "correct": false,
+    "actual_winner": "CHI"
   },
   {
     "date": "2026-11-13",
@@ -5281,7 +5232,8 @@
     "pick": "MEM",
     "home_prob": 0.4665,
     "confidence": 53,
-    "correct": null
+    "correct": true,
+    "actual_winner": "MEM"
   },
   {
     "date": "2026-11-13",
@@ -5291,7 +5243,8 @@
     "pick": "HOU",
     "home_prob": 0.7531,
     "confidence": 75,
-    "correct": null
+    "correct": true,
+    "actual_winner": "HOU"
   },
   {
     "date": "2026-11-13",
@@ -5301,7 +5254,8 @@
     "pick": "SAS",
     "home_prob": 0.6379,
     "confidence": 64,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-11-13",
@@ -5311,7 +5265,8 @@
     "pick": "POR",
     "home_prob": 0.3456,
     "confidence": 65,
-    "correct": null
+    "correct": true,
+    "actual_winner": "POR"
   },
   {
     "date": "2026-11-13",
@@ -5321,6 +5276,57 @@
     "pick": "OKC",
     "home_prob": 0.3885,
     "confidence": 61,
+    "correct": false,
+    "actual_winner": "LAC"
+  },
+  {
+    "date": "2026-11-14",
+    "game_dt": "2026-11-15T00:00:00Z",
+    "home_abbr": "NOP",
+    "away_abbr": "DEN",
+    "pick": "DEN",
+    "home_prob": 0.2403,
+    "confidence": 76,
+    "correct": null
+  },
+  {
+    "date": "2026-11-14",
+    "game_dt": "2026-11-15T00:30:00Z",
+    "home_abbr": "CLE",
+    "away_abbr": "DAL",
+    "pick": "CLE",
+    "home_prob": 0.5184,
+    "confidence": 52,
+    "correct": null
+  },
+  {
+    "date": "2026-11-14",
+    "game_dt": "2026-11-15T01:00:00Z",
+    "home_abbr": "MIA",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.309,
+    "confidence": 69,
+    "correct": null
+  },
+  {
+    "date": "2026-11-14",
+    "game_dt": "2026-11-15T01:00:00Z",
+    "home_abbr": "MEM",
+    "away_abbr": "BKN",
+    "pick": "BKN",
+    "home_prob": 0.4909,
+    "confidence": 51,
+    "correct": null
+  },
+  {
+    "date": "2026-11-14",
+    "game_dt": "2026-11-15T01:00:00Z",
+    "home_abbr": "MIN",
+    "away_abbr": "CHI",
+    "pick": "MIN",
+    "home_prob": 0.7322,
+    "confidence": 73,
     "correct": null
   }
 ]
