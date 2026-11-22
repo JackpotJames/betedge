@@ -1,79 +1,5 @@
 [
   {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-19T17:00Z",
-    "home_abbr": "BOS",
-    "away_abbr": "PHI",
-    "pick": "BOS",
-    "home_prob": 0.6384,
-    "confidence": 64,
-    "correct": true,
-    "actual_winner": "BOS"
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-19T19:30Z",
-    "home_abbr": "OKC",
-    "away_abbr": "PHX",
-    "pick": "OKC",
-    "home_prob": 0.7139,
-    "confidence": 71,
-    "correct": true,
-    "actual_winner": "OKC"
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-19T22:30Z",
-    "home_abbr": "DET",
-    "away_abbr": "ORL",
-    "pick": "DET",
-    "home_prob": 0.6773,
-    "confidence": 68,
-    "correct": false,
-    "actual_winner": "ORL"
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-20T01:00Z",
-    "home_abbr": "SAS",
-    "away_abbr": "POR",
-    "pick": "SAS",
-    "home_prob": 0.6857,
-    "confidence": 69,
-    "correct": true,
-    "actual_winner": "SAS"
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-20T23:00Z",
-    "home_abbr": "CLE",
-    "away_abbr": "TOR",
-    "pick": "CLE",
-    "home_prob": 0.6958,
-    "confidence": 70,
-    "correct": null
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-21T00:00Z",
-    "home_abbr": "NYK",
-    "away_abbr": "ATL",
-    "pick": "NYK",
-    "home_prob": 0.7265,
-    "confidence": 73,
-    "correct": null
-  },
-  {
-    "date": "2026-04-19",
-    "game_dt": "2026-04-21T02:30Z",
-    "home_abbr": "DEN",
-    "away_abbr": "MIN",
-    "pick": "DEN",
-    "home_prob": 0.7092,
-    "confidence": 71,
-    "correct": null
-  },
-  {
     "date": "2026-04-20",
     "game_dt": "2026-04-20T23:00Z",
     "home_abbr": "CLE",
@@ -5301,7 +5227,8 @@
     "pick": "POR",
     "home_prob": 0.4964,
     "confidence": 50,
-    "correct": null
+    "correct": false,
+    "actual_winner": "NYK"
   },
   {
     "date": "2026-11-21",
@@ -5311,7 +5238,8 @@
     "pick": "DAL",
     "home_prob": 0.5376,
     "confidence": 54,
-    "correct": null
+    "correct": true,
+    "actual_winner": "DAL"
   },
   {
     "date": "2026-11-21",
@@ -5321,7 +5249,8 @@
     "pick": "MIN",
     "home_prob": 0.5753,
     "confidence": 58,
-    "correct": null
+    "correct": true,
+    "actual_winner": "MIN"
   },
   {
     "date": "2026-11-21",
@@ -5331,7 +5260,8 @@
     "pick": "SAS",
     "home_prob": 0.7677,
     "confidence": 77,
-    "correct": null
+    "correct": true,
+    "actual_winner": "SAS"
   },
   {
     "date": "2026-11-21",
@@ -5341,6 +5271,77 @@
     "pick": "BOS",
     "home_prob": 0.2266,
     "confidence": 77,
+    "correct": false,
+    "actual_winner": "SAC"
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-22T20:30:00Z",
+    "home_abbr": "ATL",
+    "away_abbr": "DET",
+    "pick": "DET",
+    "home_prob": 0.4548,
+    "confidence": 55,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-22T23:00:00Z",
+    "home_abbr": "MIA",
+    "away_abbr": "OKC",
+    "pick": "OKC",
+    "home_prob": 0.4896,
+    "confidence": 51,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-23T00:00:00Z",
+    "home_abbr": "WAS",
+    "away_abbr": "ORL",
+    "pick": "ORL",
+    "home_prob": 0.3978,
+    "confidence": 60,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-23T00:00:00Z",
+    "home_abbr": "CHI",
+    "away_abbr": "DEN",
+    "pick": "DEN",
+    "home_prob": 0.2897,
+    "confidence": 71,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-23T00:00:00Z",
+    "home_abbr": "UTA",
+    "away_abbr": "DAL",
+    "pick": "DAL",
+    "home_prob": 0.4625,
+    "confidence": 54,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-23T01:00:00Z",
+    "home_abbr": "NYK",
+    "away_abbr": "IND",
+    "pick": "NYK",
+    "home_prob": 0.6061,
+    "confidence": 61,
+    "correct": null
+  },
+  {
+    "date": "2026-11-22",
+    "game_dt": "2026-11-23T01:30:00Z",
+    "home_abbr": "GSW",
+    "away_abbr": "BOS",
+    "pick": "BOS",
+    "home_prob": 0.4702,
+    "confidence": 53,
     "correct": null
   }
 ]
