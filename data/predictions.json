@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-26",
-  "updated": "20:53",
+  "date": "2026-11-27",
+  "updated": "20:38",
   "games": [
     {
-      "id": "nba_20261126_NYK_MIA",
-      "date": "2026-11-26",
+      "id": "nba_20261127_NYK_MIA",
+      "date": "2026-11-27",
       "time": "02:00",
       "home": {
         "name": "New York Knicks",
@@ -19,8 +19,8 @@
         "net_rating": 6.4,
         "efg": 0.57,
         "pace": 94.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -37,8 +37,8 @@
         "net_rating": 0.8,
         "efg": 0.586,
         "pace": 103.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -55,17 +55,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "NYK spielt Back-to-Back",
-          "MIA spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_DET_MIL",
-      "date": "2026-11-26",
+      "id": "nba_20261127_DET_MIL",
+      "date": "2026-11-27",
       "time": "02:30",
       "home": {
         "name": "Detroit Pistons",
@@ -80,7 +77,7 @@
         "net_rating": 5.6,
         "efg": 0.585,
         "pace": 101.4,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -98,16 +95,16 @@
         "net_rating": -11.2,
         "efg": 0.572,
         "pace": 98.1,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.7691,
-        "away_win_prob": 0.2309,
+        "home_win_prob": 0.7466,
+        "away_win_prob": 0.2534,
         "model_pick": "DET",
-        "confidence": 77,
+        "confidence": 75,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -118,7 +115,6 @@
         "value_bet": false,
         "key_factors": [
           "DET bessere Saisonbilanz (64.7% vs 10.5%)",
-          "MIL spielt Back-to-Back",
           "DET in besserer Form (L10: 5-5)"
         ],
         "odds_source": "Keine Quoten",
@@ -126,8 +122,8 @@
       }
     },
     {
-      "id": "nba_20261126_IND_PHI",
-      "date": "2026-11-26",
+      "id": "nba_20261127_IND_PHI",
+      "date": "2026-11-27",
       "time": "02:30",
       "home": {
         "name": "Indiana Pacers",
@@ -142,7 +138,7 @@
         "net_rating": -3.3,
         "efg": 0.573,
         "pace": 103.5,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -160,16 +156,16 @@
         "net_rating": 2.1,
         "efg": 0.533,
         "pace": 102.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4282,
-        "away_win_prob": 0.5718,
+        "home_win_prob": 0.3985,
+        "away_win_prob": 0.6015,
         "model_pick": "PHI",
-        "confidence": 57,
+        "confidence": 60,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -181,8 +177,7 @@
         "key_factors": [
           "PHI bessere Saisonbilanz (78.9% vs 33.3%)",
           "IND bessere Wurfeffizienz (eFG%)",
-          "IND ausgeruhter (2 vs 0 Tage Pause)",
-          "PHI spielt Back-to-Back",
+          "IND ausgeruhter (3 vs 1 Tage Pause)",
           "PHI in besserer Form (L10: 7-3)"
         ],
         "odds_source": "Keine Quoten",
@@ -190,8 +185,8 @@
       }
     },
     {
-      "id": "nba_20261126_TOR_BKN",
-      "date": "2026-11-26",
+      "id": "nba_20261127_TOR_BKN",
+      "date": "2026-11-27",
       "time": "02:30",
       "home": {
         "name": "Toronto Raptors",
@@ -206,7 +201,7 @@
         "net_rating": -0.1,
         "efg": 0.592,
         "pace": 99.4,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -224,16 +219,16 @@
         "net_rating": -8.1,
         "efg": 0.505,
         "pace": 99.4,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.7097,
-        "away_win_prob": 0.2903,
+        "home_win_prob": 0.6837,
+        "away_win_prob": 0.3163,
         "model_pick": "TOR",
-        "confidence": 71,
+        "confidence": 68,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -245,16 +240,15 @@
         "key_factors": [
           "TOR bessere Saisonbilanz (35.3% vs 23.5%)",
           "TOR bessere Wurfeffizienz (eFG%)",
-          "TOR ausgeruhter (2 vs 0 Tage Pause)",
-          "BKN spielt Back-to-Back"
+          "TOR ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_BOS_ATL",
-      "date": "2026-11-26",
+      "id": "nba_20261127_BOS_ATL",
+      "date": "2026-11-27",
       "time": "03:00",
       "home": {
         "name": "Boston Celtics",
@@ -269,7 +263,7 @@
         "net_rating": 9.4,
         "efg": 0.581,
         "pace": 98.4,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -293,10 +287,10 @@
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4688,
-        "away_win_prob": 0.5312,
+        "home_win_prob": 0.4986,
+        "away_win_prob": 0.5014,
         "model_pick": "ATL",
-        "confidence": 53,
+        "confidence": 50,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -305,16 +299,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "ATL ausgeruhter (3 vs 1 Tage Pause)"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_MIN_MEM",
-      "date": "2026-11-26",
+      "id": "nba_20261127_MIN_MEM",
+      "date": "2026-11-27",
       "time": "03:30",
       "home": {
         "name": "Minnesota Timberwolves",
@@ -329,8 +321,8 @@
         "net_rating": 10.4,
         "efg": 0.551,
         "pace": 103.5,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -347,8 +339,8 @@
         "net_rating": 9.4,
         "efg": 0.521,
         "pace": 105.0,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -366,17 +358,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "MIN bessere Wurfeffizienz (eFG%)",
-          "MIN spielt Back-to-Back",
-          "MEM spielt Back-to-Back"
+          "MIN bessere Wurfeffizienz (eFG%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_PHX_DAL",
-      "date": "2026-11-26",
+      "id": "nba_20261127_PHX_DAL",
+      "date": "2026-11-27",
       "time": "04:00",
       "home": {
         "name": "Phoenix Suns",
@@ -391,8 +381,8 @@
         "net_rating": -1.2,
         "efg": 0.532,
         "pace": 99.3,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -409,16 +399,16 @@
         "net_rating": 1.0,
         "efg": 0.523,
         "pace": 106.0,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4483,
-        "away_win_prob": 0.5517,
+        "home_win_prob": 0.4789,
+        "away_win_prob": 0.5211,
         "model_pick": "DAL",
-        "confidence": 55,
+        "confidence": 52,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -427,16 +417,14 @@
         "away_ev": 0,
         "kelly_fraction": 0,
         "value_bet": false,
-        "key_factors": [
-          "PHX spielt Back-to-Back"
-        ],
+        "key_factors": [],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_SAS_LAL",
-      "date": "2026-11-26",
+      "id": "nba_20261127_SAS_LAL",
+      "date": "2026-11-27",
       "time": "04:30",
       "home": {
         "name": "San Antonio Spurs",
@@ -451,8 +439,8 @@
         "net_rating": 11.3,
         "efg": 0.57,
         "pace": 101.7,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -469,16 +457,16 @@
         "net_rating": 6.7,
         "efg": 0.586,
         "pace": 98.7,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4151,
-        "away_win_prob": 0.5849,
+        "home_win_prob": 0.4452,
+        "away_win_prob": 0.5548,
         "model_pick": "LAL",
-        "confidence": 58,
+        "confidence": 55,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -488,16 +476,15 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "LAL ausgeruhter (2 vs 0 Tage Pause)",
-          "SAS spielt Back-to-Back"
+          "LAL ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_UTA_DEN",
-      "date": "2026-11-26",
+      "id": "nba_20261127_UTA_DEN",
+      "date": "2026-11-27",
       "time": "04:30",
       "home": {
         "name": "Utah Jazz",
@@ -512,7 +499,7 @@
         "net_rating": -7.5,
         "efg": 0.535,
         "pace": 108.7,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -530,7 +517,7 @@
         "net_rating": 0.5,
         "efg": 0.6,
         "pace": 103.2,
-        "rest_days": 1,
+        "rest_days": 2,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
@@ -558,8 +545,8 @@
       }
     },
     {
-      "id": "nba_20261126_LAC_NOP",
-      "date": "2026-11-26",
+      "id": "nba_20261127_LAC_NOP",
+      "date": "2026-11-27",
       "time": "04:30",
       "home": {
         "name": "Los Angeles Clippers",
@@ -574,8 +561,8 @@
         "net_rating": -7.5,
         "efg": 0.563,
         "pace": 99.0,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -592,16 +579,16 @@
         "net_rating": -8.0,
         "efg": 0.522,
         "pace": 104.5,
-        "rest_days": 2,
+        "rest_days": 3,
         "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
       "prediction": {
-        "home_win_prob": 0.4637,
-        "away_win_prob": 0.5363,
+        "home_win_prob": 0.4944,
+        "away_win_prob": 0.5056,
         "model_pick": "NOP",
-        "confidence": 54,
+        "confidence": 51,
         "book_home_prob": null,
         "book_away_prob": null,
         "home_odds": null,
@@ -612,16 +599,15 @@
         "value_bet": false,
         "key_factors": [
           "LAC bessere Wurfeffizienz (eFG%)",
-          "NOP ausgeruhter (2 vs 0 Tage Pause)",
-          "LAC spielt Back-to-Back"
+          "NOP ausgeruhter (3 vs 1 Tage Pause)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
       }
     },
     {
-      "id": "nba_20261126_POR_GSW",
-      "date": "2026-11-26",
+      "id": "nba_20261127_POR_GSW",
+      "date": "2026-11-27",
       "time": "04:30",
       "home": {
         "name": "Portland Trail Blazers",
@@ -636,8 +622,8 @@
         "net_rating": 6.4,
         "efg": 0.548,
         "pace": 100.9,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -654,8 +640,8 @@
         "net_rating": 0.3,
         "efg": 0.55,
         "pace": 99.5,
-        "rest_days": 0,
-        "back_to_back": true,
+        "rest_days": 1,
+        "back_to_back": false,
         "injuries": [],
         "data_source": "espn"
       },
@@ -673,9 +659,7 @@
         "kelly_fraction": 0,
         "value_bet": false,
         "key_factors": [
-          "POR bessere Saisonbilanz (66.7% vs 55.6%)",
-          "POR spielt Back-to-Back",
-          "GSW spielt Back-to-Back"
+          "POR bessere Saisonbilanz (66.7% vs 55.6%)"
         ],
         "odds_source": "Keine Quoten",
         "model_version": 6
@@ -686,7 +670,7 @@
   "value_count": 0,
   "message": "Heute keine Value Bets gefunden.",
   "accuracy": "57.0%",
-  "avg_confidence": 61,
+  "avg_confidence": 59,
   "total_predictions": 100,
   "model_version": 6,
   "data_sources": {
